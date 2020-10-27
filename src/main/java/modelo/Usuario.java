@@ -57,7 +57,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "nome=" + nome + ", \nnomeUsuario=" + nomeUsuario + ", \nsenha=" + senha + ", \npermissao=" + permissao + '}';
+        return "Usuario :" + " nome=" + nome + ", nomeUsuario=" + nomeUsuario + ", senha=" + senha + ", permissao=" + permissao + "\n" ;
     }
     
 

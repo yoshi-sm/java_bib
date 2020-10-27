@@ -37,40 +37,27 @@ public class ListaUsuario {
         this.lista.forEach((n) -> auxLogin(n, nomeUsuario, senha, temp));
         return temp;
     }
-    
-    
-    //funcao auxiliar do metodo adicionar
-    public void auxCadastrar(Usuario u, String s, boolean bool){
-        if(u.getNomeUsuario().equals(s)){
-            bool = false;
-        }
-    }
         
-    
-    
     //adiciona usuario à lista. Se nome de usuario ja existe retorna falso
     public boolean cadastrar(Usuario usuario){
         boolean bool = true;
-        this.lista.forEach((n) -> auxCadastrar(n, usuario.getNomeUsuario(), bool));
+        for (int i = 0; i < this.lista.size(); i++){
+            if (this.lista.get(i).getNomeUsuario().equals(usuario.getNomeUsuario())){
+                bool = false;
+            }
+        }
         if (bool){
             this.lista.add(usuario);
         }
         return bool;
     }
-    
-    //funcao auxiliar do metodo remover
-    public void auxRemover(ArrayList a, Usuario u, String nomeU, int temp){       
-        if (u.getNomeUsuario().equals(nomeU)){
-            temp = a.indexOf(u);
-        }
-    }
-    
+   
     //removendo usuario à lista
     public void remover(String nomeUsuario){
-        int temp = -1;
-        this.lista.forEach((n) -> auxRemover(this.lista, n, nomeUsuario, temp));
-        if (temp != -1)    {
-            this.lista.remove(temp);
+        for (int i = 0; i < this.lista.size(); i++){
+            if (this.lista.get(i).getNomeUsuario().equals(nomeUsuario)){
+                this.lista.remove(i);
+            }
         }
     }
     
