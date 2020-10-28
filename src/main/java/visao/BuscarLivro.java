@@ -15,13 +15,6 @@ public class BuscarLivro extends javax.swing.JFrame {
     
     
     String titulo, temp_string;
-    Livro l1 = new Livro("joao");
-    Livro l2 = new Livro("mamata");
-    Livro l3 = new Livro("joao");
-    Livro l4 = new Livro("joao");
-    Livro l5 = new Livro("harry potter");
-    
-
     ArrayList<Livro> temp = new ArrayList<>();
     //apagar
     ArrayList<Livro> lista = new ArrayList<>();
@@ -164,12 +157,6 @@ public class BuscarLivro extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfirmarActionPerformed
-    lista.add(l1);
-    lista.add(l2);
-    lista.add(l3);
-    lista.add(l4);
-    lista.add(l5);
-    
 
     titulo = this.txttitulo.getText();
     temp = a1.buscaLivro(titulo);
