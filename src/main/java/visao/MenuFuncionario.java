@@ -65,6 +65,11 @@ public class MenuFuncionario extends javax.swing.JFrame {
         });
 
         btcadastrarevento.setText("Cadastrar Eventos");
+        btcadastrarevento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btcadastrareventoActionPerformed(evt);
+            }
+        });
 
         btrelatorios.setText("Gerar Relatórios");
 
@@ -166,6 +171,10 @@ public class MenuFuncionario extends javax.swing.JFrame {
     private void btcadastrarlivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcadastrarlivroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btcadastrarlivroActionPerformed
+
+    private void btcadastrareventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcadastrareventoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btcadastrareventoActionPerformed
 
     /**
      * @param args the command line arguments
