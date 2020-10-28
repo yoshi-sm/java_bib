@@ -51,6 +51,11 @@ public class MenuFuncionario extends javax.swing.JFrame {
         });
 
         btcadastrarlivro.setText("Cadastrar Livro");
+        btcadastrarlivro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btcadastrarlivroActionPerformed(evt);
+            }
+        });
 
         btbuscar.setText("Buscar Livro");
         btbuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -157,6 +162,10 @@ public class MenuFuncionario extends javax.swing.JFrame {
         buscarlivro.setLocationRelativeTo(null);
         buscarlivro.setVisible(true);
     }//GEN-LAST:event_btbuscarActionPerformed
+
+    private void btcadastrarlivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcadastrarlivroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btcadastrarlivroActionPerformed
 
     /**
      * @param args the command line arguments
