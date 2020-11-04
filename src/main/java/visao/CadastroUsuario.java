@@ -5,14 +5,45 @@
  */
 package visao;
 
+import modelo.*;
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
 /**
  *
  * @author nando
  */
 public class CadastroUsuario extends javax.swing.JFrame {
-
+    
+    String nome, nomeUsuario, senha, permissao;
+    //apagar
+    ArrayList<Usuario> lista = new ArrayList<>();
+    ListaUsuario a1 = new ListaUsuario(lista);
+    
+    
+    public void LimparCadastroUsuario(){
+           txtnome.setText("");
+           txtlogin.setText("");
+           txtsenha.setText("");           
+           cbprofessor.setSelected(false);
+           cbaluno.setSelected(false);
+           cbvisitante.setSelected(false);
+           txtnome.requestFocusInWindow();
+    }
+    
+    public void ConfirmaCamposObrigatorios(){
+        if(txtnome.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"Campo Nome Obrigatório","Aviso",JOptionPane.WARNING_MESSAGE);
+            return;
+        }if( txtlogin.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"Campo Login Obrigatório","Aviso",JOptionPane.WARNING_MESSAGE);
+            return;
+        }if(txtsenha.getPassword().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"Campo Senha Obrigatório","Aviso",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+    }
+    
     /**
      * Creates new form CadastroUsuario
      */
@@ -72,6 +103,24 @@ public class CadastroUsuario extends javax.swing.JFrame {
 
         lbsenha.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lbsenha.setText("Senha:");
+
+        txtsenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtsenhaActionPerformed(evt);
+            }
+        });
+
+        txtlogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtloginActionPerformed(evt);
+            }
+        });
+
+        txtnome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnomeActionPerformed(evt);
+            }
+        });
 
         btconfirmar.setText("Confirmar");
         btconfirmar.addActionListener(new java.awt.event.ActionListener() {
@@ -202,38 +251,49 @@ public class CadastroUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btvoltarActionPerformed
 
     private void btconfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btconfirmarActionPerformed
-                    
+       nome = this.txtnome.getText();
+       nomeUsuario = this.txtlogin.getText();
+       senha = String.valueOf(this.txtsenha.getPassword());
+       if (this.cbprofessor.isSelected()){
+           permissao = "professor";
+       }
+       else if(this.cbaluno.isSelected()){
+           permissao = "aluno";
+       }
+       else if(this.cbvisitante.isSelected()){
+           permissao = "visitante";
+       }
+       a1.cadastrar(new Usuario(nome, nomeUsuario, senha, permissao));
        ConfirmaCamposObrigatorios();       
        LimparCadastroUsuario();
-       
+       System.out.println(a1);
        
     }//GEN-LAST:event_btconfirmarActionPerformed
-    public void LimparCadastroUsuario(){
-           txtnome.setText("");
-           txtlogin.setText("");
-           txtsenha.setText("");           
-           cbprofessor.setSelected(false);
-           cbaluno.setSelected(false);
-           cbvisitante.setSelected(false);
-           txtnome.requestFocusInWindow();
-    }
+
+    private void txtnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnomeActionPerformed
+               // TODO add your handling code here:
+    }//GEN-LAST:event_txtnomeActionPerformed
+
+    private void txtloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtloginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtloginActionPerformed
+
+    private void txtsenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtsenhaActionPerformed
     
-    public void ConfirmaCamposObrigatorios(){
-        if(txtnome.getText().equals("")){
-            JOptionPane.showMessageDialog(rootPane,"Campo Nome Obrigatório","Aviso",JOptionPane.WARNING_MESSAGE);
-            return;
-        }if( txtlogin.getText().equals("")){
-            JOptionPane.showMessageDialog(rootPane,"Campo Login Obrigatório","Aviso",JOptionPane.WARNING_MESSAGE);
-            return;
-        }if(txtsenha.getPassword().equals("")){
-            JOptionPane.showMessageDialog(rootPane,"Campo Senha Obrigatório","Aviso",JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-    }
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        
+        
+        
+        
+        
+        
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

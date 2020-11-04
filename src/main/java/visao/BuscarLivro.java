@@ -4,13 +4,22 @@
  * and open the template in the editor.
  */
 package visao;
+import modelo.*;
+import java.util.ArrayList;
 
 /**
  *
  * @author nando
  */
 public class BuscarLivro extends javax.swing.JFrame {
-
+    
+    
+    String titulo, temp_string;
+    ArrayList<Livro> temp = new ArrayList<>();
+    //apagar
+    ArrayList<Livro> lista = new ArrayList<>();
+    ListaLivro a1 = new ListaLivro(lista);
+    
     /**
      * Creates new form BuscarLivro
      */
@@ -27,14 +36,15 @@ public class BuscarLivro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        textArea1 = new java.awt.TextArea();
         jPanel1 = new javax.swing.JPanel();
         lbtitulogrande = new javax.swing.JLabel();
         lbtitulo = new javax.swing.JLabel();
         txttitulo = new javax.swing.JTextField();
-        txtresultado = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btConfirmar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        txtResultado = new java.awt.TextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,16 +54,16 @@ public class BuscarLivro extends javax.swing.JFrame {
         lbtitulo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lbtitulo.setText("Título do livro:");
 
-        txtresultado.addActionListener(new java.awt.event.ActionListener() {
+        txttitulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtresultadoActionPerformed(evt);
+                txttituloActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Confirmar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btConfirmar.setText("Confirmar");
+        btConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btConfirmarActionPerformed(evt);
             }
         });
 
@@ -88,14 +98,14 @@ public class BuscarLivro extends javax.swing.JFrame {
                         .addComponent(txttitulo))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(txtresultado))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(txtResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -106,11 +116,11 @@ public class BuscarLivro extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbtitulo)
                     .addComponent(txttitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(txtresultado, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtResultado, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(btConfirmar)
                     .addComponent(jButton2)
                     .addComponent(jButton3)))
         );
@@ -135,10 +145,6 @@ public class BuscarLivro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtresultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtresultadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtresultadoActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         LimparBuscarLivro();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -150,18 +156,38 @@ public class BuscarLivro extends javax.swing.JFrame {
        menufunc.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        LimparBuscarLivro();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfirmarActionPerformed
+
+    titulo = this.txttitulo.getText();
+    temp = a1.buscaLivro(titulo);
+    temp_string = "";
+    for(int i = 0; i < temp.size(); i++){
+        temp_string += temp.get(i) +",\n";
+    }
+    this.txtResultado.setText(temp_string);
+    
+    LimparBuscarLivro2();
+    }//GEN-LAST:event_btConfirmarActionPerformed
+
+    private void txttituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttituloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txttituloActionPerformed
     public void LimparBuscarLivro(){
            txttitulo.setText("");
-           txtresultado.setText("");           
+           txtResultado.setText("");           
            txttitulo.requestFocusInWindow();
     }
+    public void LimparBuscarLivro2(){
+           txttitulo.setText("");           
+           txttitulo.requestFocusInWindow();
+    }
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+      
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -184,7 +210,7 @@ public class BuscarLivro extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(BuscarLivro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -194,13 +220,14 @@ public class BuscarLivro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btConfirmar;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbtitulo;
     private javax.swing.JLabel lbtitulogrande;
-    private javax.swing.JTextField txtresultado;
+    private java.awt.TextArea textArea1;
+    private java.awt.TextArea txtResultado;
     private javax.swing.JTextField txttitulo;
     // End of variables declaration//GEN-END:variables
 }

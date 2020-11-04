@@ -190,6 +190,7 @@ public class MenuFuncionario extends javax.swing.JFrame {
         cadastrarlivro.setVisible(true);
     }//GEN-LAST:event_btcadastrarlivroActionPerformed
 
+<<<<<<< HEAD
     private void btlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlogoutActionPerformed
         this.setVisible(false);
         Login Login = new Login();
@@ -216,6 +217,10 @@ public class MenuFuncionario extends javax.swing.JFrame {
         this.setVisible(false);
         cadastrarevento.setLocationRelativeTo(null);
         cadastrarevento.setVisible(true);
+=======
+    private void btcadastrareventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcadastrareventoActionPerformed
+        // TODO add your handling code here:
+>>>>>>> 42221a519c7acac4f7d11ad51c546dd1360f336a
     }//GEN-LAST:event_btcadastrareventoActionPerformed
 
     /**
