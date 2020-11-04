@@ -64,7 +64,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btcatalografica" min="-2" pref="150" max="-2" attributes="0"/>
-                              <Component id="jButton11" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="btremoverusuario" min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -93,7 +93,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btalugar" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="jButton11" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="btremoverusuario" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -139,6 +139,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastrar Eventos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btcadastrareventoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btrelatorios">
           <Properties>
@@ -154,16 +157,25 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Alugar Livro"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btalugarActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton11">
+        <Component class="javax.swing.JButton" name="btremoverusuario">
           <Properties>
             <Property name="text" type="java.lang.String" value="Remover Usu&#xe1;rio"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btremoverusuarioActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btlogout">
           <Properties>
             <Property name="text" type="java.lang.String" value="Logout"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btlogoutActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btreservarsala">
           <Properties>

@@ -35,7 +35,7 @@ public class MenuFuncionario extends javax.swing.JFrame {
         btrelatorios = new javax.swing.JButton();
         btcatalografica = new javax.swing.JButton();
         btalugar = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        btremoverusuario = new javax.swing.JButton();
         btlogout = new javax.swing.JButton();
         btreservarsala = new javax.swing.JButton();
 
@@ -65,16 +65,36 @@ public class MenuFuncionario extends javax.swing.JFrame {
         });
 
         btcadastrarevento.setText("Cadastrar Eventos");
+        btcadastrarevento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btcadastrareventoActionPerformed(evt);
+            }
+        });
 
         btrelatorios.setText("Gerar Relatórios");
 
         btcatalografica.setText("Gerar Ficha Catalografica");
 
         btalugar.setText("Alugar Livro");
+        btalugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btalugarActionPerformed(evt);
+            }
+        });
 
-        jButton11.setText("Remover Usuário");
+        btremoverusuario.setText("Remover Usuário");
+        btremoverusuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btremoverusuarioActionPerformed(evt);
+            }
+        });
 
         btlogout.setText("Logout");
+        btlogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btlogoutActionPerformed(evt);
+            }
+        });
 
         btreservarsala.setText("Reservar sala de estudo");
 
@@ -100,7 +120,7 @@ public class MenuFuncionario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btcatalografica, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btremoverusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btreservarsala, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -121,7 +141,7 @@ public class MenuFuncionario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btalugar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btremoverusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btrelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -164,8 +184,39 @@ public class MenuFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_btbuscarActionPerformed
 
     private void btcadastrarlivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcadastrarlivroActionPerformed
-        // TODO add your handling code here:
+        CadastrarLivro cadastrarlivro = new CadastrarLivro();
+        this.setVisible(false);
+        cadastrarlivro.setLocationRelativeTo(null);
+        cadastrarlivro.setVisible(true);
     }//GEN-LAST:event_btcadastrarlivroActionPerformed
+
+    private void btlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlogoutActionPerformed
+        this.setVisible(false);
+        Login Login = new Login();
+        Login.setLocationRelativeTo(null);
+        Login.setVisible(true);
+    }//GEN-LAST:event_btlogoutActionPerformed
+
+    private void btalugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btalugarActionPerformed
+        AlugarLivro alugarlivro = new AlugarLivro();
+        this.setVisible(false);
+        alugarlivro.setLocationRelativeTo(null);
+        alugarlivro.setVisible(true);
+    }//GEN-LAST:event_btalugarActionPerformed
+
+    private void btremoverusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btremoverusuarioActionPerformed
+        RemoverUsuario removerusuario = new RemoverUsuario();
+        this.setVisible(false);
+        removerusuario.setLocationRelativeTo(null);
+        removerusuario.setVisible(true);
+    }//GEN-LAST:event_btremoverusuarioActionPerformed
+
+    private void btcadastrareventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcadastrareventoActionPerformed
+        CadastrarEvento cadastrarevento = new CadastrarEvento();
+        this.setVisible(false);
+        cadastrarevento.setLocationRelativeTo(null);
+        cadastrarevento.setVisible(true);
+    }//GEN-LAST:event_btcadastrareventoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,8 +263,8 @@ public class MenuFuncionario extends javax.swing.JFrame {
     private javax.swing.JButton btcatalografica;
     private javax.swing.JButton btlogout;
     private javax.swing.JButton btrelatorios;
+    private javax.swing.JButton btremoverusuario;
     private javax.swing.JButton btreservarsala;
-    private javax.swing.JButton jButton11;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
