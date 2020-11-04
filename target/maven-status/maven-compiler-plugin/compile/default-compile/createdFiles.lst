@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 visao\AlugarLivro$2.class
 visao\Login$4.class
 visao\RemoverUsuario$1.class
@@ -45,4 +46,10 @@ visao\CadastroUsuario$5.class
 modelo\Usuario.class
 visao\AlugarLivro$1.class
 visao\MenuFuncionario$4.class
+=======
+modelo\ListaUsuario.class
+visao\Teste.class
+modelo\Livro.class
+modelo\Usuario.class
+>>>>>>> 400db9b66e0e43dc82aaef36a999c7a7fd38a1f8
 modelo\ListaLivro.class

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\nando\Documents\Projeto Java\src\main\java\modelo\Dados.java
 C:\Users\nando\Documents\Projeto Java\src\main\java\modelo\ListaUsuario.java
 C:\Users\nando\Documents\Projeto Java\src\main\java\visao\BuscarLivro.java
@@ -9,3 +10,10 @@ C:\Users\nando\Documents\Projeto Java\src\main\java\visao\CadastroUsuario.java
 C:\Users\nando\Documents\Projeto Java\src\main\java\visao\Login.java
 C:\Users\nando\Documents\Projeto Java\src\main\java\modelo\ListaLivro.java
 C:\Users\nando\Documents\Projeto Java\src\main\java\modelo\ProjetoJava.java
+=======
+C:\Users\xiuki\OneDrive\Documentos\NetBeansProjects\java_bib\src\main\java\modelo\Usuario.java
+C:\Users\xiuki\OneDrive\Documentos\NetBeansProjects\java_bib\src\main\java\modelo\Livro.java
+C:\Users\xiuki\OneDrive\Documentos\NetBeansProjects\java_bib\src\main\java\modelo\ListaUsuario.java
+C:\Users\xiuki\OneDrive\Documentos\NetBeansProjects\java_bib\src\main\java\visao\Teste.java
+C:\Users\xiuki\OneDrive\Documentos\NetBeansProjects\java_bib\src\main\java\modelo\ListaLivro.java
+>>>>>>> 400db9b66e0e43dc82aaef36a999c7a7fd38a1f8
