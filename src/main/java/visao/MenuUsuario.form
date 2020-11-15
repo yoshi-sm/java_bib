@@ -31,31 +31,23 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="btreservarsala" min="-2" pref="150" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btvisualizarficha" min="-2" pref="150" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
-                              <Component id="btlogout" min="-2" pref="150" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="btsolicitarficha" min="-2" pref="150" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btlogout" min="-2" pref="150" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel1" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="btvisualizarficha" min="-2" pref="150" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btreservarsala" min="-2" pref="150" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
                               <Component id="btbuscar" min="-2" pref="150" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btreservar" min="-2" pref="150" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="btalugar" min="-2" pref="150" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btsolicitarficha" min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -72,25 +64,23 @@
                   <Component id="btbuscar" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
                   <Component id="btreservar" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btalugar" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
-                  <Component id="btsolicitarficha" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
-              </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                       <Component id="jPanel1" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btreservarsala" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
                           <Component id="btvisualizarficha" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btlogout" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btsolicitarficha" pref="79" max="32767" attributes="0"/>
+                          <Component id="btlogout" max="32767" attributes="0"/>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -124,11 +114,6 @@
         <Property name="text" type="java.lang.String" value="Reservar Livro"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btalugar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Alugar Livro"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="btsolicitarficha">
       <Properties>
         <Property name="text" type="java.lang.String" value="Solicitar Ficha catalogr&#xe1;fica"/>
@@ -148,6 +133,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Logout"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btlogoutActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

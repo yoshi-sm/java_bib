@@ -29,13 +29,12 @@ public class MenuFuncionario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btcadastrarusuario = new javax.swing.JButton();
-        btcadastrarlivro = new javax.swing.JButton();
         btbuscar = new javax.swing.JButton();
         btcadastrarevento = new javax.swing.JButton();
         btrelatorios = new javax.swing.JButton();
         btcatalografica = new javax.swing.JButton();
         btalugar = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        btremoverusuario = new javax.swing.JButton();
         btlogout = new javax.swing.JButton();
         btreservarsala = new javax.swing.JButton();
 
@@ -47,13 +46,6 @@ public class MenuFuncionario extends javax.swing.JFrame {
         btcadastrarusuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btcadastrarusuarioActionPerformed(evt);
-            }
-        });
-
-        btcadastrarlivro.setText("Cadastrar Livro");
-        btcadastrarlivro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btcadastrarlivroActionPerformed(evt);
             }
         });
 
@@ -76,10 +68,25 @@ public class MenuFuncionario extends javax.swing.JFrame {
         btcatalografica.setText("Gerar Ficha Catalografica");
 
         btalugar.setText("Alugar Livro");
+        btalugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btalugarActionPerformed(evt);
+            }
+        });
 
-        jButton11.setText("Remover Usuário");
+        btremoverusuario.setText("Remover Usuário");
+        btremoverusuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btremoverusuarioActionPerformed(evt);
+            }
+        });
 
         btlogout.setText("Logout");
+        btlogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btlogoutActionPerformed(evt);
+            }
+        });
 
         btreservarsala.setText("Reservar sala de estudo");
 
@@ -91,24 +98,23 @@ public class MenuFuncionario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btcadastrarlivro, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btcadastrarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btalugar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btcadastrarevento, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btcadastrarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btrelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btalugar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btreservarsala, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btcatalografica, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btremoverusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btreservarsala, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(156, 156, 156)
                         .addComponent(btlogout, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -117,24 +123,22 @@ public class MenuFuncionario extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btcadastrarlivro, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btcadastrarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btcadastrarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btcadastrarevento, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btcadastrarevento, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btalugar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btalugar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btremoverusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btrelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btrelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btcatalografica, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btcatalografica, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btreservarsala, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btreservarsala, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btlogout, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btlogout)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -168,12 +172,33 @@ public class MenuFuncionario extends javax.swing.JFrame {
         buscarlivro.setVisible(true);
     }//GEN-LAST:event_btbuscarActionPerformed
 
-    private void btcadastrarlivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcadastrarlivroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btcadastrarlivroActionPerformed
+    private void btlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlogoutActionPerformed
+        this.setVisible(false);
+        Login Login = new Login();
+        Login.setLocationRelativeTo(null);
+        Login.setVisible(true);
+    }//GEN-LAST:event_btlogoutActionPerformed
 
+    private void btalugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btalugarActionPerformed
+        AlugarLivro alugarlivro = new AlugarLivro();
+        this.setVisible(false);
+        alugarlivro.setLocationRelativeTo(null);
+        alugarlivro.setVisible(true);
+    }//GEN-LAST:event_btalugarActionPerformed
+
+    private void btremoverusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btremoverusuarioActionPerformed
+        RemoverUsuario removerusuario = new RemoverUsuario();
+        this.setVisible(false);
+        removerusuario.setLocationRelativeTo(null);
+        removerusuario.setVisible(true);
+    }//GEN-LAST:event_btremoverusuarioActionPerformed
+                                                   
     private void btcadastrareventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcadastrareventoActionPerformed
-        // TODO add your handling code here:
+        CadastrarEvento cadastrarevento = new CadastrarEvento();
+        this.setVisible(false);
+        cadastrarevento.setLocationRelativeTo(null);
+        cadastrarevento.setVisible(true);
+
     }//GEN-LAST:event_btcadastrareventoActionPerformed
 
     /**
@@ -216,13 +241,12 @@ public class MenuFuncionario extends javax.swing.JFrame {
     private javax.swing.JButton btalugar;
     private javax.swing.JButton btbuscar;
     private javax.swing.JButton btcadastrarevento;
-    private javax.swing.JButton btcadastrarlivro;
     private javax.swing.JButton btcadastrarusuario;
     private javax.swing.JButton btcatalografica;
     private javax.swing.JButton btlogout;
     private javax.swing.JButton btrelatorios;
+    private javax.swing.JButton btremoverusuario;
     private javax.swing.JButton btreservarsala;
-    private javax.swing.JButton jButton11;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
