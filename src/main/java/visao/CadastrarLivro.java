@@ -31,18 +31,8 @@ public class CadastrarLivro extends javax.swing.JFrame {
         lbcadastrodeusuario = new javax.swing.JLabel();
         lbtitulo = new javax.swing.JLabel();
         lbautor = new javax.swing.JLabel();
-        lbcategoria = new javax.swing.JLabel();
-        lbtematica = new javax.swing.JLabel();
-        lbassunto = new javax.swing.JLabel();
-        lbano = new javax.swing.JLabel();
-        lbunidade = new javax.swing.JLabel();
         txttitulo = new javax.swing.JTextField();
         txtautor = new javax.swing.JTextField();
-        txtcategoria = new javax.swing.JTextField();
-        txttematica = new javax.swing.JTextField();
-        txtassunto = new javax.swing.JTextField();
-        txtano = new javax.swing.JTextField();
-        txtunidade = new javax.swing.JTextField();
         btconfirmar = new javax.swing.JButton();
         btlimpar = new javax.swing.JButton();
         lbvoltar = new javax.swing.JButton();
@@ -53,26 +43,11 @@ public class CadastrarLivro extends javax.swing.JFrame {
         lbcadastrodeusuario.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lbcadastrodeusuario.setText("Cadastro de usuário");
 
-        lbtitulo.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lbtitulo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lbtitulo.setText("Título:");
 
-        lbautor.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lbautor.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lbautor.setText("Autor:");
-
-        lbcategoria.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        lbcategoria.setText("Categoria:");
-
-        lbtematica.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        lbtematica.setText("Temática:");
-
-        lbassunto.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        lbassunto.setText("Assunto:");
-
-        lbano.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        lbano.setText("Ano:");
-
-        lbunidade.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        lbunidade.setText("Unidade:");
 
         btconfirmar.setText("Confirmar");
         btconfirmar.addActionListener(new java.awt.event.ActionListener() {
@@ -101,43 +76,26 @@ public class CadastrarLivro extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lbunidade)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtunidade, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btconfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
                         .addComponent(btlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                         .addComponent(lbvoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbassunto)
-                            .addComponent(lbano))
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtano, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtassunto)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbcategoria)
-                            .addComponent(lbtematica)
                             .addComponent(lbautor)
                             .addComponent(lbtitulo))
-                        .addGap(9, 9, 9)
+                        .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txttitulo)
-                            .addComponent(txtautor)
-                            .addComponent(txttematica)
-                            .addComponent(txtcategoria))))
+                            .addComponent(txtautor))))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(109, 109, 109)
                 .addComponent(lbcadastrodeusuario)
-                .addGap(96, 96, 96))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,27 +110,7 @@ public class CadastrarLivro extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbautor)
                     .addComponent(txtautor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbcategoria)
-                    .addComponent(txtcategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(5, 5, 5)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbtematica, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txttematica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbassunto)
-                    .addComponent(txtassunto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbano)
-                    .addComponent(txtano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbunidade)
-                    .addComponent(txtunidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btconfirmar)
                     .addComponent(btlimpar)
@@ -201,32 +139,28 @@ public class CadastrarLivro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lbvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbvoltarActionPerformed
-        MenuFuncionario menufunc = new MenuFuncionario();
-        this.setVisible(false);
-        menufunc.setLocationRelativeTo(null);
-        menufunc.setVisible(true);
+        
     }//GEN-LAST:event_lbvoltarActionPerformed
 
     private void btlimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlimparActionPerformed
-        LimparCadastroLivro();
+        //LimparCadastroLivro();
     }//GEN-LAST:event_btlimparActionPerformed
 
     private void btconfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btconfirmarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btconfirmarActionPerformed
 
-    private void LimparCadastroLivro(){
+    /*private void LimparCadastroLivro(){
         
         txttitulo.setText("");
         txtautor.setText("");
-        txtcategoria.setText("");
-        txttematica.setText("");
-        txtassunto.setText("");
+        
+       
         txtano.setText("");
-        txtunidade.setText("");
+        
         txttitulo.requestFocusInWindow();
     }
-    
+    */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -263,21 +197,11 @@ public class CadastrarLivro extends javax.swing.JFrame {
     private javax.swing.JButton btconfirmar;
     private javax.swing.JButton btlimpar;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lbano;
-    private javax.swing.JLabel lbassunto;
     private javax.swing.JLabel lbautor;
     private javax.swing.JLabel lbcadastrodeusuario;
-    private javax.swing.JLabel lbcategoria;
-    private javax.swing.JLabel lbtematica;
     private javax.swing.JLabel lbtitulo;
-    private javax.swing.JLabel lbunidade;
     private javax.swing.JButton lbvoltar;
-    private javax.swing.JTextField txtano;
-    private javax.swing.JTextField txtassunto;
     private javax.swing.JTextField txtautor;
-    private javax.swing.JTextField txtcategoria;
-    private javax.swing.JTextField txttematica;
     private javax.swing.JTextField txttitulo;
-    private javax.swing.JTextField txtunidade;
     // End of variables declaration//GEN-END:variables
 }

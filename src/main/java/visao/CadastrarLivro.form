@@ -49,53 +49,32 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="lbunidade" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="txtunidade" min="-2" pref="312" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="btconfirmar" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                           <Component id="btlimpar" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="40" max="32767" attributes="0"/>
                           <Component id="lbvoltar" min="-2" pref="100" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lbassunto" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lbano" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtano" min="-2" pref="56" max="-2" attributes="0"/>
-                              <Component id="txtassunto" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lbcategoria" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lbtematica" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lbautor" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lbtitulo" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txttitulo" max="32767" attributes="0"/>
                               <Component id="txtautor" max="32767" attributes="0"/>
-                              <Component id="txttematica" max="32767" attributes="0"/>
-                              <Component id="txtcategoria" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
                   <Component id="lbcadastrodeusuario" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -114,32 +93,7 @@
                       <Component id="lbautor" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtautor" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbcategoria" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtcategoria" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbtematica" alignment="1" min="-2" pref="17" max="-2" attributes="0"/>
-                      <Component id="txttematica" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbassunto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtassunto" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbano" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtano" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lbunidade" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtunidade" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="11" max="32767" attributes="0"/>
+                  <EmptySpace pref="20" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btconfirmar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btlimpar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -162,7 +116,7 @@
         <Component class="javax.swing.JLabel" name="lbtitulo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="11" style="1"/>
+              <Font name="Arial" size="14" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="T&#xed;tulo:"/>
           </Properties>
@@ -170,64 +124,14 @@
         <Component class="javax.swing.JLabel" name="lbautor">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="11" style="1"/>
+              <Font name="Arial" size="14" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Autor:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lbcategoria">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="11" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Categoria:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lbtematica">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="11" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Tem&#xe1;tica:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lbassunto">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="11" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Assunto:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lbano">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="11" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Ano:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lbunidade">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="11" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Unidade:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txttitulo">
         </Component>
         <Component class="javax.swing.JTextField" name="txtautor">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtcategoria">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txttematica">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtassunto">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtano">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtunidade">
         </Component>
         <Component class="javax.swing.JButton" name="btconfirmar">
           <Properties>

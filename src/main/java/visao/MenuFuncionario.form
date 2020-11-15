@@ -47,19 +47,19 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="btcadastrarlivro" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="btalugar" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btcadastrarusuario" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="btcadastrarevento" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="btbuscar" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btcadastrarevento" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="btcadastrarusuario" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="btrelatorios" min="-2" pref="150" max="-2" attributes="0"/>
-                              <Component id="btalugar" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="btreservarsala" min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -68,8 +68,7 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="btreservarsala" min="-2" pref="150" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
                           <Component id="btlogout" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -82,29 +81,26 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btcadastrarlivro" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
                       <Component id="btcadastrarusuario" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btbuscar" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="btcadastrarevento" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btcadastrarevento" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
                       <Component id="btalugar" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btremoverusuario" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="btrelatorios" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btrelatorios" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="btcatalografica" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btcatalografica" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="btreservarsala" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btreservarsala" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="btlogout" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="btlogout" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -117,14 +113,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btcadastrarusuarioActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btcadastrarlivro">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Cadastrar Livro"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btcadastrarlivroActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btbuscar">

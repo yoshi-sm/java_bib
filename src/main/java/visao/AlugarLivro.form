@@ -38,23 +38,18 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lbtitulo" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lbano" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbautor" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbtitulo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbano1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="txttitulo" min="-2" pref="278" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lbano" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="txtano" min="-2" pref="278" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lbautor" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txtautor" min="-2" pref="278" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txttitulo" min="-2" pref="278" max="-2" attributes="0"/>
+                          <Component id="txtautor" min="-2" pref="278" max="-2" attributes="0"/>
+                          <Component id="txtano" min="-2" pref="278" max="-2" attributes="0"/>
+                          <Component id="txtano1" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -63,11 +58,11 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="btconfirmar" min="-2" pref="100" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
               <Component id="btlimpar" min="-2" pref="100" max="-2" attributes="0"/>
-              <EmptySpace pref="30" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="btvoltar" min="-2" pref="100" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -91,13 +86,18 @@
                   <Component id="lbano" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtano" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="69" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtano1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbano1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="17" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btconfirmar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btlimpar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btvoltar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -132,10 +132,13 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Ano:"/>
+        <Property name="text" type="java.lang.String" value="Usu&#xe1;rio:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txttitulo">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txttituloActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtautor">
     </Component>
@@ -161,6 +164,16 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btvoltarActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtano1">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbano1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Data Devolu&#xe7;&#xe3;o:"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
