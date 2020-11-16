@@ -249,22 +249,24 @@ public class CadastroUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btvoltarActionPerformed
 
     private void btconfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btconfirmarActionPerformed
-       nome = this.txtnome.getText();
-       nomeUsuario = this.txtlogin.getText();
-       senha = String.valueOf(this.txtsenha.getPassword());
-       if (this.cbprofessor.isSelected()){
-           permissao = 'p';
-       }
-       else if(this.cbaluno.isSelected()){
-           permissao = 'a';
-       }
-       else if(this.cbvisitante.isSelected()){
-           permissao = 'v';
-       }
-       a1.cadastrar(new Usuario(nome, nomeUsuario, senha, permissao));
-       ConfirmaCamposObrigatorios();       
-       LimparCadastroUsuario();
-       System.out.println(a1);
+        a1.carregarUsuarios();
+        nome = this.txtnome.getText();
+        nomeUsuario = this.txtlogin.getText();
+        senha = String.valueOf(this.txtsenha.getPassword());
+        if (this.cbprofessor.isSelected()){
+            permissao = 'p';
+        }
+        else if(this.cbaluno.isSelected()){
+            permissao = 'a';
+        }
+        else if(this.cbvisitante.isSelected()){
+            permissao = 'v';
+        }
+        a1.cadastrar(new Usuario(nome, nomeUsuario, senha, permissao));
+        a1.salvarUsuarios();
+        ConfirmaCamposObrigatorios();       
+        LimparCadastroUsuario();
+        System.out.println(a1);
        
     }//GEN-LAST:event_btconfirmarActionPerformed
 
