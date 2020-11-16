@@ -1,12 +1,15 @@
 
 package visao;
 
-import modelo.Dados;
+import modelo.*;
 import javax.swing.JOptionPane;
-
+import java.util.ArrayList;
 
 public class Login extends javax.swing.JFrame {
-
+    
+    
+    ArrayList<Usuario> listaU = new ArrayList<>();
+    ListaUsuario a1 = new ListaUsuario(listaU);
     
     public Login() {
         initComponents();
@@ -124,19 +127,41 @@ public class Login extends javax.swing.JFrame {
 
     private void cmdloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdloginActionPerformed
        //Codigo botão login
-       Dados clsdados = new Dados();
+      /* Dados clsdados = new Dados();
        if (!clsdados.validarUsuarios(txtusuario.getText(), new String(txtsenha.getPassword()))){
            JOptionPane.showMessageDialog(rootPane,"USUARIO OU SENHA INCORRETO");
            txtusuario.setText("");
            txtsenha.setText("");
            txtusuario.requestFocusInWindow();
            return;
-       }       
-       MenuFuncionario menufunc = new MenuFuncionario();
-       this.setVisible(false);
-       menufunc.setLocationRelativeTo(null);
-       menufunc.setVisible(true);
-       
+       }*/  
+        int indice;
+        char permissao = 'n';
+        a1.carregarUsuarios();
+        indice = a1.login(txtusuario.getText(), String.valueOf(txtsenha.getPassword()));
+        if(indice == -1){
+            JOptionPane.showMessageDialog(rootPane,"USUARIO OU SENHA INCORRETO");
+            txtusuario.setText("");
+            txtsenha.setText("");
+            txtusuario.requestFocusInWindow();
+        }
+        else{
+            permissao = a1.getLista().get(indice).getPermissao();
+        }
+        
+        if(permissao == 'f'){
+            MenuFuncionario menufunc = new MenuFuncionario();
+            this.setVisible(false);
+            menufunc.setLocationRelativeTo(null);
+            menufunc.setVisible(true);
+        }
+        else if(permissao == 'a' || permissao == 'p' || permissao == 'v'){
+            MenuUsuario menuUsr = new MenuUsuario();
+            this.setVisible(false);
+            menuUsr.setLocationRelativeTo(null);
+            menuUsr.setVisible(true);
+        }
+        
     }//GEN-LAST:event_cmdloginActionPerformed
 
     /**

@@ -18,8 +18,8 @@ public class CadastroUsuario extends javax.swing.JFrame {
     String nome, nomeUsuario, senha;
     char permissao;
     //apagar
-    ArrayList<Usuario> lista = new ArrayList<>();
-    ListaUsuario a1 = new ListaUsuario(lista);
+    ArrayList<Usuario> listaU = new ArrayList<>();
+    ListaUsuario a1 = new ListaUsuario(listaU);
     
     
     public void LimparCadastroUsuario(){
