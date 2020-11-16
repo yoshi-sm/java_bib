@@ -43,7 +43,7 @@ public class ListaLivro {
             Scanner leitor = new Scanner(arquivo);
             while (leitor.hasNextLine()) {
               temp = leitor.nextLine();
-              temp2 = temp.split("%", 2);
+              temp2 = temp.split("%##%", 2);
               a1 = new Livro(temp2[0], temp2[1]);
               this.addLivro(a1);
             }
@@ -60,7 +60,7 @@ public class ListaLivro {
     public void salvarLivros(){
         String temp = "";
         for(int i = 0; i < this.lista.size(); i++){
-            temp += this.lista.get(i).getTitulo()+"%"+
+            temp += this.lista.get(i).getTitulo()+"%##%"+
                     this.lista.get(i).getAutor()+"\n";
         
         }

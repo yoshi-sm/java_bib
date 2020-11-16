@@ -15,7 +15,8 @@ import java.util.ArrayList;
  */
 public class CadastroUsuario extends javax.swing.JFrame {
     
-    String nome, nomeUsuario, senha, permissao;
+    String nome, nomeUsuario, senha;
+    char permissao;
     //apagar
     ArrayList<Usuario> lista = new ArrayList<>();
     ListaUsuario a1 = new ListaUsuario(lista);
@@ -252,13 +253,13 @@ public class CadastroUsuario extends javax.swing.JFrame {
        nomeUsuario = this.txtlogin.getText();
        senha = String.valueOf(this.txtsenha.getPassword());
        if (this.cbprofessor.isSelected()){
-           permissao = "professor";
+           permissao = 'p';
        }
        else if(this.cbaluno.isSelected()){
-           permissao = "aluno";
+           permissao = 'a';
        }
        else if(this.cbvisitante.isSelected()){
-           permissao = "visitante";
+           permissao = 'v';
        }
        a1.cadastrar(new Usuario(nome, nomeUsuario, senha, permissao));
        ConfirmaCamposObrigatorios();       

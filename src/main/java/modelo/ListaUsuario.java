@@ -5,6 +5,11 @@
  */
 package modelo;
 import java.util.ArrayList;
+import java.io.File;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;   
+import java.io.IOException;
 /**
  *
  * @author xiuki
@@ -23,6 +28,53 @@ public class ListaUsuario {
 
     
 //Metodos
+    
+    //carrega a lista de usuarios de um arquivo "arquivos/usuarios.txt"
+    public void carregarUsuarios(){
+        String temp;
+        Scanner leitor;
+        Usuario a1;
+        String[] temp2;
+        try{
+            File arquivo = new File("arquivos/usuarios.txt");
+            leitor = new Scanner(arquivo);
+            while (leitor.hasNextLine()) {
+              temp = leitor.nextLine();
+              temp2 = temp.split("%##%", 4);
+              System.out.print(temp2[0]);
+              a1 = new Usuario(temp2[0], temp2[1], temp2[2], temp2[3].charAt(0));
+              this.lista.add(a1);
+            }
+            leitor.close();
+        }
+      
+        catch (FileNotFoundException e) {
+            System.out.println("Erro!");
+            e.printStackTrace();
+        }
+    }
+    
+    //salva os usuarios do objeto para o arquivo
+    public void salvarUsuarios(){
+        String temp = "";
+        for(int i = 0; i < this.lista.size(); i++){
+            temp += this.lista.get(i).getNome()+"%##%"+
+                    this.lista.get(i).getNomeUsuario()+"%##%"+
+                    this.lista.get(i).getSenha()+"%##%"+
+                    this.lista.get(i).getPermissao()+"\n";
+        
+        }
+        try {
+            FileWriter conteudo = new FileWriter("arquivos/usuarios.txt");
+            conteudo.write(temp);
+            conteudo.close();
+            System.out.println("Lista salva!");
+        } 
+        catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
     
     //realiza login, retorna -1 para falha, ou o indice do usuario para sucesso.
     public int login(String nomeUsuario, String senha){
@@ -61,7 +113,7 @@ public class ListaUsuario {
         }
     }
     
-//Get & Set & toString()
+    //Get & Set & toString()
     public ArrayList<Usuario> getLista() {
         return lista;
     }

@@ -8,13 +8,13 @@ public class Usuario {
     private String nome;
     private String nomeUsuario;
     private String senha;
-    private String permissao;
+    private char permissao;
     //private ArrayList<Integer> idLivro;
     
 
     public Usuario(){}
 
-    public Usuario(String n, String n_u, String s, String p){
+    public Usuario(String n, String n_u, String s, char p){
         this.nome = n;
         this.nomeUsuario = n_u;
         this.senha = s;
@@ -35,7 +35,7 @@ public class Usuario {
         return senha;
     }
 
-    public String getPermissao() {
+    public char getPermissao() {
         return permissao;
     }
 
@@ -51,13 +51,14 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public void setPermissao(String permissao) {
+    public void setPermissao(char permissao) {
         this.permissao = permissao;
     }
 
     @Override
     public String toString() {
-        return "Usuario :" + " nome=" + nome + ", nomeUsuario=" + nomeUsuario + ", senha=" + senha + ", permissao=" + permissao + "\n" ;
+        return "Usuario :" + " nome=" + nome + ", nomeUsuario=" + nomeUsuario + ", senha=" +
+                senha + ", permissao=" + permissao + "\n" ;
     }
     
 
