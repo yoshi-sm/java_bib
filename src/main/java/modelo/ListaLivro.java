@@ -5,6 +5,11 @@
  */
 package modelo;
 import java.util.ArrayList;
+import java.io.File;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;   
+import java.io.IOException;
 /**
  *
  * @author xiuki
@@ -20,13 +25,59 @@ public class ListaLivro {
     }
     //metodos
     
-        //adiciona livro à lista e adiciona um id único ao livro.
+    
+    
+    //adiciona livro à lista e adiciona um id único ao livro.
     public void addLivro(Livro livro){
         livro.setId(this.lista.size());
         this.lista.add(livro);
         }
     
-        //tenta reservar um livro settando atributos no objeto livro, retorna t ou f.
+    // carrega livros de um arquivo de texto em arquivos/livros.txt
+    public void carregarLivros(){
+        String temp;
+        Livro a1;
+        String[] temp2;
+        try{
+            File arquivo = new File("arquivos/livros.txt");
+            Scanner leitor = new Scanner(arquivo);
+            while (leitor.hasNextLine()) {
+              temp = leitor.nextLine();
+              temp2 = temp.split("%", 2);
+              a1 = new Livro(temp2[0], temp2[1]);
+              this.addLivro(a1);
+            }
+            leitor.close();
+        }
+      
+        catch (FileNotFoundException e) {
+            System.out.println("Erro!");
+            e.printStackTrace();
+        }
+    }
+        
+    // salva os livro do objeto para o arquivo
+    public void salvarLivros(){
+        String temp = "";
+        for(int i = 0; i < this.lista.size(); i++){
+            temp += this.lista.get(i).getTitulo()+"%"+
+                    this.lista.get(i).getAutor()+"\n";
+        
+        }
+        try {
+            FileWriter conteudo = new FileWriter("arquivos/livros.txt");
+            conteudo.write(temp);
+            conteudo.close();
+            System.out.println("Lista salva!");
+        } 
+        catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+    
+    
+    //tenta reservar um livro settando atributos no objeto livro, retorna t ou f.
     public boolean reservar(Livro livro, String nome_usuario){
         if (this.lista.contains(livro)){    
             if (livro.isAlugado() || livro.isReservado()){
