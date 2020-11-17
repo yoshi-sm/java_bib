@@ -5,12 +5,24 @@
  */
 package visao;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import modelo.ListaLivro;
+import modelo.ListaUsuario;
+import modelo.Livro;
+import modelo.Usuario;
+
 /**
  *
  * @author nando
  */
 public class ReservarLivro extends javax.swing.JFrame {
-
+    
+    Livro livro;
+    ArrayList<Livro> listaL = new ArrayList<>();
+    ArrayList<Usuario> listaU = new ArrayList<>();
+    ListaLivro obj_livro = new ListaLivro(listaL);
+    ListaUsuario obj_usr = new ListaUsuario(listaU);
     /**
      * Creates new form ReservarLivro
      */
@@ -64,6 +76,11 @@ public class ReservarLivro extends javax.swing.JFrame {
         jLabel6.setText("Usuário:");
 
         btconfirmar.setText("Confirmar");
+        btconfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btconfirmarActionPerformed(evt);
+            }
+        });
 
         btlimpar.setText("Limpar");
         btlimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -164,6 +181,39 @@ public class ReservarLivro extends javax.swing.JFrame {
         menuusuario.setLocationRelativeTo(null);
         menuusuario.setVisible(true);
     }//GEN-LAST:event_btvoltarActionPerformed
+
+    private void btconfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btconfirmarActionPerformed
+        String titulo, autor, usrname;
+        int id;
+        obj_usr.carregarUsuarios();
+        obj_livro.carregarLivros();
+        
+        titulo = txttitulo.getText();
+        autor = txtautor.getText();
+        id = Integer.parseInt(txtid.getText());
+        usrname = txtusuario.getText();
+        
+        
+        livro = new Livro(titulo, autor);
+        livro.setId(id);
+        System.out.print(livro);
+        // verificando se usuario existe e se livro esta disponivel e alugando
+        if(obj_usr.existe(usrname)){
+            if(obj_livro.reservar(livro, usrname)){
+                JOptionPane.showMessageDialog(rootPane,"Reserva realizada!");
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane,"Livro não disponível!");
+            }
+        }   
+        else{
+            JOptionPane.showMessageDialog(rootPane,"Usuario inexistente!");
+        }
+        
+        obj_usr.getLista().clear();
+        obj_livro.salvarLivros();
+        LimparReservarLivro();
+    }//GEN-LAST:event_btconfirmarActionPerformed
 
     /**
      * @param args the command line arguments

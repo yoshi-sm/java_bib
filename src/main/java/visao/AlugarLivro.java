@@ -210,7 +210,6 @@ public class AlugarLivro extends javax.swing.JFrame {
     private void btconfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btconfirmarActionPerformed
         String titulo, autor, usrname, devolucao;
         int id;
-        boolean temp;
         obj_usr.carregarUsuarios();
         obj_livro.carregarLivros();
         
