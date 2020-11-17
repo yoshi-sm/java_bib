@@ -59,6 +59,11 @@ public class MenuUsuario extends javax.swing.JFrame {
         btvisualizarficha.setText("Visualizar ficha catalográfica");
 
         btreservarsala.setText("Reservar Sala de estudo");
+        btreservarsala.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btreservarsalaActionPerformed(evt);
+            }
+        });
 
         btlogout.setText("Logout");
         btlogout.addActionListener(new java.awt.event.ActionListener() {
@@ -125,6 +130,13 @@ public class MenuUsuario extends javax.swing.JFrame {
         Login.setLocationRelativeTo(null);
         Login.setVisible(true);
     }//GEN-LAST:event_btlogoutActionPerformed
+
+    private void btreservarsalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btreservarsalaActionPerformed
+        AlugarSala alugarsala = new AlugarSala();
+        this.setVisible(false);
+        alugarsala.setLocationRelativeTo(null);
+        alugarsala.setVisible(true);      
+    }//GEN-LAST:event_btreservarsalaActionPerformed
 
     /**
      * @param args the command line arguments
