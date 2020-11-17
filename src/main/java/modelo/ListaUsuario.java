@@ -33,17 +33,17 @@ public class ListaUsuario {
     public void carregarUsuarios(){
         String temp;
         Scanner leitor;
-        Usuario a1;
+        Usuario usr;
         String[] temp2;
         try{
             File arquivo = new File("arquivos/usuarios.txt");
             leitor = new Scanner(arquivo);
             while (leitor.hasNextLine()) {
-              temp = leitor.nextLine();
-              temp2 = temp.split("%##%", 4);
-              System.out.print(temp2[0]);
-              a1 = new Usuario(temp2[0], temp2[1], temp2[2], temp2[3].charAt(0));
-              this.lista.add(a1);
+                temp = leitor.nextLine();
+                temp2 = temp.split("%##%", 4);
+                System.out.print(temp2[0]);
+                usr = new Usuario(temp2[0], temp2[1], temp2[2], temp2[3].charAt(0));
+                this.lista.add(usr);
             }
             leitor.close();
         }
