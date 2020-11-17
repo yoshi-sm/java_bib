@@ -16,9 +16,8 @@ public class BuscarLivro extends javax.swing.JFrame {
     
     String titulo, temp_string;
     ArrayList<Livro> temp = new ArrayList<>();
-    //apagar
-    ArrayList<Livro> lista = new ArrayList<>();
-    ListaLivro a1 = new ListaLivro(lista);
+    ArrayList<Livro> listaL = new ArrayList<>();
+    ListaLivro a1 = new ListaLivro(listaL);
     
     /**
      * Creates new form BuscarLivro
@@ -157,16 +156,16 @@ public class BuscarLivro extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfirmarActionPerformed
-
-    titulo = this.txttitulo.getText();
-    temp = a1.buscaLivro(titulo);
-    temp_string = "";
-    for(int i = 0; i < temp.size(); i++){
-        temp_string += temp.get(i) +",\n";
-    }
-    this.txtResultado.setText(temp_string);
-    
-    LimparBuscarLivro2();
+        a1.carregarLivros();
+        titulo = this.txttitulo.getText();
+        temp = a1.buscaLivro(titulo);
+        temp_string = "";
+        for(int i = 0; i < temp.size(); i++){
+            temp_string += temp.get(i);
+        }
+        this.txtResultado.setText(temp_string);
+        a1.getLista().clear();
+        LimparBuscarLivro2();
     }//GEN-LAST:event_btConfirmarActionPerformed
 
     private void txttituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttituloActionPerformed

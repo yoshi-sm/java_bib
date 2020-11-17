@@ -161,7 +161,7 @@ public class Login extends javax.swing.JFrame {
             menuUsr.setLocationRelativeTo(null);
             menuUsr.setVisible(true);
         }
-        a1 = new ListaUsuario(listaU);
+        a1.getLista().clear();
     }//GEN-LAST:event_cmdloginActionPerformed
 
     /**

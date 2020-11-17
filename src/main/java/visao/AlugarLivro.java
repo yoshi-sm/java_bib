@@ -5,19 +5,27 @@
  */
 package visao;
 
+import modelo.*;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author nando
  */
 public class AlugarLivro extends javax.swing.JFrame {
-
+    
+    Livro livro;
+    ArrayList<Livro> listaL = new ArrayList<>();
+    ArrayList<Usuario> listaU = new ArrayList<>();
+    ListaLivro obj_livro = new ListaLivro(listaL);
+    ListaUsuario obj_usr = new ListaUsuario(listaU);
     /**
      * Creates new form AlugarLivro
      */
     public AlugarLivro() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,12 +42,14 @@ public class AlugarLivro extends javax.swing.JFrame {
         lbano = new javax.swing.JLabel();
         txttitulo = new javax.swing.JTextField();
         txtautor = new javax.swing.JTextField();
-        txtano = new javax.swing.JTextField();
+        txtUsuario = new javax.swing.JTextField();
         btconfirmar = new javax.swing.JButton();
         btlimpar = new javax.swing.JButton();
         btvoltar = new javax.swing.JButton();
-        txtano1 = new javax.swing.JTextField();
+        txtDevolucao = new javax.swing.JTextField();
         lbano1 = new javax.swing.JLabel();
+        txtId = new javax.swing.JTextField();
+        lbtitulo1 = new javax.swing.JLabel();
 
         jButton2.setText("jButton2");
 
@@ -64,6 +74,11 @@ public class AlugarLivro extends javax.swing.JFrame {
         });
 
         btconfirmar.setText("Confirmar");
+        btconfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btconfirmarActionPerformed(evt);
+            }
+        });
 
         btlimpar.setText("Limpar");
         btlimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -82,6 +97,15 @@ public class AlugarLivro extends javax.swing.JFrame {
         lbano1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lbano1.setText("Data Devolução:");
 
+        txtId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdActionPerformed(evt);
+            }
+        });
+
+        lbtitulo1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lbtitulo1.setText("ID:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,48 +118,66 @@ public class AlugarLivro extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbano)
-                            .addComponent(lbautor)
-                            .addComponent(lbtitulo)
-                            .addComponent(lbano1))
+                            .addComponent(lbano1)
+                            .addComponent(lbautor, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lbano, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txttitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtautor, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtano, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtano1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtautor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btconfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(btlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btvoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btconfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(btlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btvoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbtitulo1)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(lbtitulo)
+                                .addGap(18, 18, 18)
+                                .addComponent(txttitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbalugarlivro)
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbtitulo)
-                    .addComponent(txttitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbautor)
-                    .addComponent(txtautor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbano)
-                    .addComponent(txtano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txttitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbtitulo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtano1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbano1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbtitulo1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtautor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbautor))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbano))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbano1)
+                    .addComponent(txtDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btconfirmar)
                     .addComponent(btlimpar)
@@ -160,10 +202,50 @@ public class AlugarLivro extends javax.swing.JFrame {
     private void txttituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttituloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txttituloActionPerformed
+
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdActionPerformed
+
+    private void btconfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btconfirmarActionPerformed
+        String titulo, autor, usrname, devolucao;
+        int id;
+        boolean temp;
+        obj_usr.carregarUsuarios();
+        obj_livro.carregarLivros();
+        
+        titulo = txttitulo.getText();
+        autor = txtautor.getText();
+        id = Integer.parseInt(txtId.getText());
+        usrname = txtUsuario.getText();
+        devolucao = txtDevolucao.getText();
+        
+        livro = new Livro(titulo, autor);
+        livro.setId(id);
+        System.out.print(livro);
+        // verificando se usuario existe e se livro esta disponivel e alugando
+        if(obj_usr.existe(usrname)){
+            if(obj_livro.alugar(livro, devolucao, usrname)){
+                JOptionPane.showMessageDialog(rootPane,"Aluguel realizado!");
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane,"Livro não disponível!");
+            }
+        }   
+        else{
+            JOptionPane.showMessageDialog(rootPane,"Usuario inexistente!");
+        }
+        
+        obj_usr.getLista().clear();
+        obj_livro.salvarLivros();
+        LimparAlugarLivro();
+    }//GEN-LAST:event_btconfirmarActionPerformed
     private void LimparAlugarLivro(){
         txttitulo.setText("");
         txtautor.setText("");
-        txtano.setText("");
+        txtId.setText("");
+        txtUsuario.setText("");
+        txtDevolucao.setText("");
         txttitulo.requestFocusInWindow();
     }
     public static void main(String args[]) {
@@ -208,8 +290,10 @@ public class AlugarLivro extends javax.swing.JFrame {
     private javax.swing.JLabel lbano1;
     private javax.swing.JLabel lbautor;
     private javax.swing.JLabel lbtitulo;
-    private javax.swing.JTextField txtano;
-    private javax.swing.JTextField txtano1;
+    private javax.swing.JLabel lbtitulo1;
+    private javax.swing.JTextField txtDevolucao;
+    private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtUsuario;
     private javax.swing.JTextField txtautor;
     private javax.swing.JTextField txttitulo;
     // End of variables declaration//GEN-END:variables

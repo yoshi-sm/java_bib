@@ -29,12 +29,47 @@ public class Livro {
     this.autor = a;
     this.id = 0;
     this.alugado = false;
-    this.devolucao = "";
+    this.devolucao = "---";
     this.reservado = false;
-    this.nomeUsuario = "";
+    this.nomeUsuario = "---";
+    }
+    
+    public Livro(String t, 
+            String a, 
+            boolean alg, 
+            String devol, 
+            boolean res, 
+            String usr){
+    
+    this.titulo = t;
+    this.autor = a;
+    this.id = 0;
+    this.alugado = alg;
+    this.devolucao = devol;
+    this.reservado = res;
+    this.nomeUsuario = usr;
     }
 
     
+
+    //metodos
+    
+    
+    //verifica igualdade entre 2 livros
+    public boolean igual(Livro livro){
+        if( this.titulo.equals(livro.getTitulo()) &&
+            this.autor.equals(livro.getAutor()) &&
+            this.id == livro.getId()&&
+            this.alugado == livro.isAlugado() &&
+            this.devolucao.equals(livro.getDevolucao()) &&
+            this.reservado == livro.isReservado() &&
+            this.nomeUsuario.equals(livro.getNomeUsuario())){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     //get & set & toString
 
     public String getTitulo() {
@@ -93,12 +128,31 @@ public class Livro {
         this.nomeUsuario = nomeUsuario;
     }
 
+   
+        //return "Livro{" + "titulo=" + titulo + ", autor=" + autor + ", id=" + id + ", 
+        //alugado=" + alugado + ", devolucao=" + devolucao + ", reservado=" + reservado + ", 
+        //nomeUsuario=" + nomeUsuario + '}';
+    
     @Override
     public String toString() {
-        return "Livro{" + "titulo=" + titulo + ", autor=" + autor + ", id=" + id + ", alugado=" + alugado + ", devolucao=" + devolucao + ", reservado=" + reservado + ", nomeUsuario=" + nomeUsuario + '}';
+        if(alugado){
+        return "Titulo: " + titulo + ", Autor: " + autor + ", ID: " + id + 
+                ", Alugado: Sim, Devolucao: " + devolucao + ", Reservado: -, Usuario: " 
+                + nomeUsuario+"\n";
+        }
+        else{
+            if(reservado){
+                return "Titulo: " + titulo + ", Autor: " + autor + ", ID: " + id + 
+                ", Alugado: Não, Devolucao: " + devolucao + ", Reservado: Sim, Usuario: " + nomeUsuario+"\n";
+            }
+            else{
+                return "Titulo: " + titulo + ", Autor: " + autor + ", ID: " + id + 
+                ", Alugado: Não, Devolucao: " + devolucao + ", Reservado: Não, Usuario: "+ nomeUsuario+"\n";
+            }
+        }
     }
-    
  
+   
     }
 
     

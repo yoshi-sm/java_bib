@@ -15,11 +15,16 @@ import java.util.Scanner;
  */
 public class Teste {
     public static void main(String[] args){
-    ArrayList<Usuario> a1 = new ArrayList<>();
-    ListaUsuario b1 = new ListaUsuario(a1);
-    b1.carregarUsuarios();
-    System.out.print(b1);
-    b1.cadastrar(new Usuario("jobson", "moab", "password", 'f'));
-    b1.salvarUsuarios();
+        Livro livro = new Livro("harry potter", "tolkien");
+        Livro livro2 = new Livro("harry potter", "tolkien");
+        //livro.setId(10);
+        ArrayList<Livro> a1 = new ArrayList<>();
+        a1.add(livro);
+        
+        //ListaLivro b1 = new ListaLivro(a1);
+        //b1.carregarLivros();
+        //System.out.print(livro);
+        System.out.print(livro.igual(livro2));
+    
     }
 }

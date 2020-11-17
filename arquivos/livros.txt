@@ -1,5 +1,11 @@
-joca%##%joao
-renato%##%alberto
-lucas O leão%##%fagundes
-joao e maria%##%antonio fagundes
-manoel e o chocolate%##%Carlos Drummond
+joca%##%antonio jose%##%false%##%---%##%false%##%---
+lula e a baleia%##%luis augusto%##%true%##%10-09-1989%##%false%##%yoshi
+joca%##%joao%##%false%##%---%##%false%##%---
+lula e a baleia%##%luis augusto%##%true%##%qualquer%##%false%##%yoshi
+lula e a baleia%##%luis augusto%##%false%##%---%##%false%##%---
+joao e maria%##%Drummond%##%false%##%---%##%false%##%---
+lula e a baleia%##%luis augusto%##%false%##%---%##%false%##%---
+lula e a baleia%##%luis augusto%##%false%##%---%##%false%##%---
+joao e maria%##%Drummond%##%false%##%---%##%false%##%---
+joao e maria%##%Drummond%##%false%##%---%##%false%##%---
+harry potter%##%tolkien%##%true%##%lolol%##%false%##%yoshi

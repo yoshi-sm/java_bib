@@ -29,6 +29,17 @@ public class ListaUsuario {
     
 //Metodos
     
+    //verifica se o usuario existe 
+        public boolean existe(String usrName){
+        boolean temp = false;
+        for(int i = 0; i < this.lista.size(); i++){
+            if (this.lista.get(i).getNomeUsuario().equals(usrName)){
+                temp = true;
+            }
+        }
+        return temp;
+    }
+    
     //carrega a lista de usuarios de um arquivo "arquivos/usuarios.txt"
     public void carregarUsuarios(){
         String temp;
@@ -54,9 +65,10 @@ public class ListaUsuario {
         }
     }
     
-    //salva os usuarios do objeto para o arquivo
+    //salva os usuarios do objeto para o arquivo, objeto é esvaziado depois
     public void salvarUsuarios(){
         String temp = "";
+        FileWriter conteudo;
         for(int i = 0; i < this.lista.size(); i++){
             temp += this.lista.get(i).getNome()+"%##%"+
                     this.lista.get(i).getNomeUsuario()+"%##%"+
@@ -65,10 +77,11 @@ public class ListaUsuario {
         
         }
         try {
-            FileWriter conteudo = new FileWriter("arquivos/usuarios.txt");
+            conteudo = new FileWriter("arquivos/usuarios.txt");
             conteudo.write(temp);
             conteudo.close();
             System.out.println("Lista salva!");
+            this.lista.clear();
         } 
         catch (IOException e) {
             System.out.println("An error occurred.");

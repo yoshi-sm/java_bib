@@ -274,7 +274,6 @@ public class CadastroUsuario extends javax.swing.JFrame {
             }
             a1.cadastrar(new Usuario(nome, nomeUsuario, senha, permissao));
             a1.salvarUsuarios();
-            a1 = new ListaUsuario(listaU);
             JOptionPane.showMessageDialog(rootPane,"Cadastro realizado!");
         }
         LimparCadastroUsuario();

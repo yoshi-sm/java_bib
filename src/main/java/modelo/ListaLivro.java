@@ -43,25 +43,33 @@ public class ListaLivro {
             Scanner leitor = new Scanner(arquivo);
             while (leitor.hasNextLine()) {
               temp = leitor.nextLine();
-              temp2 = temp.split("%##%", 2);
-              a1 = new Livro(temp2[0], temp2[1]);
+              temp2 = temp.split("%##%", 6);
+              a1 = new Livro(temp2[0], temp2[1], Boolean.parseBoolean(temp2[2]),
+                      temp2[3], Boolean.parseBoolean(temp2[4]), temp2[5]);
+              //System.out.println(a1);
               this.addLivro(a1);
             }
             leitor.close();
+            
         }
       
         catch (FileNotFoundException e) {
             System.out.println("Erro!");
             e.printStackTrace();
         }
+        //System.out.print(this);
     }
         
-    // salva os livro do objeto para o arquivo
+    // salva os livro do objeto para o arquivo, objeto é esvaziado depois.
     public void salvarLivros(){
         String temp = "";
         for(int i = 0; i < this.lista.size(); i++){
             temp += this.lista.get(i).getTitulo()+"%##%"+
-                    this.lista.get(i).getAutor()+"\n";
+                    this.lista.get(i).getAutor()+"%##%"+
+                    this.lista.get(i).isAlugado()+"%##%"+
+                    this.lista.get(i).getDevolucao()+"%##%"+
+                    this.lista.get(i).isReservado()+"%##%"+                   
+                    this.lista.get(i).getNomeUsuario()+"\n";
         
         }
         try {
@@ -69,6 +77,7 @@ public class ListaLivro {
             conteudo.write(temp);
             conteudo.close();
             System.out.println("Lista salva!");
+            this.lista.clear();
         } 
         catch (IOException e) {
             System.out.println("An error occurred.");
@@ -96,8 +105,21 @@ public class ListaLivro {
     
     
     
-        //tenta alugar um livro settando atributos no objeto livro, retorna t ou f.
+    //tenta alugar um livro settando atributos no objeto livro, retorna t ou f.
     public boolean alugar(Livro livro, String dataDevolucao, String nome_usuario){    
+        boolean temp = false;
+        for(int i = 0; i < this.lista.size(); i++){    
+            if (this.lista.get(i).igual(livro)){
+                this.lista.get(i).setAlugado(true);
+                this.lista.get(i).setNomeUsuario(nome_usuario);
+                this.lista.get(i).setDevolucao(dataDevolucao);
+                temp = true;
+                
+            }
+        }
+        return temp;
+    }
+    /*public boolean alugar(Livro livro, String dataDevolucao, String nome_usuario){    
         if (this.lista.contains(livro)){    
             if (livro.isAlugado() || livro.isReservado()){
                 return false;
@@ -114,7 +136,7 @@ public class ListaLivro {
         else{
             return false;
         }
-    }
+    }*/
     
         //tenta retornar um livro alugado ou reservad. Retorna t ou f.
     public boolean retornarLivro(Livro livro){
@@ -123,8 +145,8 @@ public class ListaLivro {
                 //int temp = this.lista.indexOf(livro);
                 livro.setAlugado(false);
                 livro.setReservado(false);
-                livro.setNomeUsuario("");
-                livro.setDevolucao("");
+                livro.setNomeUsuario("---");
+                livro.setDevolucao("---");
                 //this.lista.set(temp, livro);
                 return true;
             }
@@ -136,19 +158,21 @@ public class ListaLivro {
             return false;
         }
     }
-        //Funcao auxiliadora do metodo de busca.
+    
+    //Funcao auxiliadora do metodo de busca.
     public void aux(Livro t1, String t2, ArrayList<Livro> t3){
         if (t1.getTitulo().equals(t2)){
         t3.add(t1);
         }
     }
     
-        //Metodo de busca de livros por titulo. Retorna um arraylist.
+    //Metodo de busca de livros por titulo. Retorna um arraylist.
     public ArrayList<Livro> buscaLivro(String titulo){
         ArrayList<Livro> temp = new ArrayList<>();
         this.lista.forEach((n) -> aux(n, titulo, temp));
         return temp;
     }
+    
     
     //get & set & toString
 
