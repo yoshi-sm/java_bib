@@ -17,7 +17,6 @@ public class CadastroUsuario extends javax.swing.JFrame {
     
     String nome, nomeUsuario, senha;
     char permissao;
-    //apagar
     ArrayList<Usuario> listaU = new ArrayList<>();
     ListaUsuario a1 = new ListaUsuario(listaU);
     
@@ -32,16 +31,25 @@ public class CadastroUsuario extends javax.swing.JFrame {
            txtnome.requestFocusInWindow();
     }
     
-    public void ConfirmaCamposObrigatorios(){
+    public boolean ConfirmaCamposObrigatorios(){
         if(txtnome.getText().equals("")){
             JOptionPane.showMessageDialog(rootPane,"Campo Nome Obrigatório","Aviso",JOptionPane.WARNING_MESSAGE);
-            return;
-        }if( txtlogin.getText().equals("")){
+            return false;
+        }
+        else if( txtlogin.getText().equals("")){
             JOptionPane.showMessageDialog(rootPane,"Campo Login Obrigatório","Aviso",JOptionPane.WARNING_MESSAGE);
-            return;
-        }if(txtsenha.getPassword().equals("")){
+            return false;
+        }
+        else if(String.valueOf(txtsenha.getPassword()).equals("")){
             JOptionPane.showMessageDialog(rootPane,"Campo Senha Obrigatório","Aviso",JOptionPane.WARNING_MESSAGE);
-            return;
+            return false;
+        }
+        else if(!(this.cbprofessor.isSelected() || this.cbaluno.isSelected() || this.cbvisitante.isSelected())){
+            JOptionPane.showMessageDialog(rootPane,"Selecione uma permissão!","Aviso",JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+        else{
+            return true;
         }
     }
     
@@ -249,24 +257,27 @@ public class CadastroUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btvoltarActionPerformed
 
     private void btconfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btconfirmarActionPerformed
-        a1.carregarUsuarios();
-        nome = this.txtnome.getText();
-        nomeUsuario = this.txtlogin.getText();
-        senha = String.valueOf(this.txtsenha.getPassword());
-        if (this.cbprofessor.isSelected()){
-            permissao = 'p';
+        boolean temp = ConfirmaCamposObrigatorios();
+        if(temp == true){
+            a1.carregarUsuarios();
+            nome = this.txtnome.getText();
+            nomeUsuario = this.txtlogin.getText();
+            senha = String.valueOf(this.txtsenha.getPassword());
+            if (this.cbprofessor.isSelected()){
+                permissao = 'p';
+            }
+            else if(this.cbaluno.isSelected()){
+                permissao = 'a';
+            }
+            else if(this.cbvisitante.isSelected()){
+                permissao = 'v';
+            }
+            a1.cadastrar(new Usuario(nome, nomeUsuario, senha, permissao));
+            a1.salvarUsuarios();
+            a1 = new ListaUsuario(listaU);
+            JOptionPane.showMessageDialog(rootPane,"Cadastro realizado!");
         }
-        else if(this.cbaluno.isSelected()){
-            permissao = 'a';
-        }
-        else if(this.cbvisitante.isSelected()){
-            permissao = 'v';
-        }
-        a1.cadastrar(new Usuario(nome, nomeUsuario, senha, permissao));
-        a1.salvarUsuarios();
-        ConfirmaCamposObrigatorios();       
         LimparCadastroUsuario();
-        System.out.println(a1);
        
     }//GEN-LAST:event_btconfirmarActionPerformed
 

@@ -5,12 +5,21 @@
  */
 package visao;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import modelo.*;
+
+
 /**
  *
  * @author nando
  */
 public class RemoverUsuario extends javax.swing.JFrame {
-
+    
+    String nome, nomeUsuario, senha;
+    char permissao;
+    ArrayList<Usuario> listaU = new ArrayList<>();
+    ListaUsuario a1 = new ListaUsuario(listaU);
     /**
      * Creates new form RemoverUsuario
      */
@@ -29,11 +38,7 @@ public class RemoverUsuario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         lbremoverusuario = new javax.swing.JLabel();
-        lbnome = new javax.swing.JLabel();
         lblogin = new javax.swing.JLabel();
-        lbsenha = new javax.swing.JLabel();
-        txtsenha = new javax.swing.JPasswordField();
-        txtnome = new javax.swing.JTextField();
         txtlogin = new javax.swing.JTextField();
         btconfirmar = new javax.swing.JButton();
         btlimpar = new javax.swing.JButton();
@@ -44,14 +49,8 @@ public class RemoverUsuario extends javax.swing.JFrame {
         lbremoverusuario.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lbremoverusuario.setText("Remover Usuário");
 
-        lbnome.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lbnome.setText("Nome:");
-
         lblogin.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblogin.setText("Login:");
-
-        lbsenha.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lbsenha.setText("Senha:");
 
         btconfirmar.setText("Confirmar");
         btconfirmar.addActionListener(new java.awt.event.ActionListener() {
@@ -80,19 +79,9 @@ public class RemoverUsuario extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbnome)
-                            .addComponent(lblogin))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lbsenha)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtsenha)))
+                .addComponent(lblogin)
+                .addGap(19, 19, 19)
+                .addComponent(txtlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
@@ -112,19 +101,11 @@ public class RemoverUsuario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbremoverusuario)
-                .addGap(54, 54, 54)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbnome)
-                    .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                .addGap(107, 107, 107)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtlogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblogin))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbsenha)
-                    .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btconfirmar)
                     .addComponent(btlimpar)
@@ -163,14 +144,25 @@ public class RemoverUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btlimparActionPerformed
 
     private void btconfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btconfirmarActionPerformed
+        boolean temp;
+        a1.carregarUsuarios();
+        nomeUsuario = this.txtlogin.getText();
+        temp = a1.remover(nomeUsuario);
+        if(temp){
+            JOptionPane.showMessageDialog(rootPane,"Usuario" +nomeUsuario+" removido com sucesso!");
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane,"Usuario inexistente!");        
+        }
+        
+        a1.salvarUsuarios();
+        
         LimparRemoverUsuario();
     }//GEN-LAST:event_btconfirmarActionPerformed
 
     private void LimparRemoverUsuario(){
-        txtnome.setText("");
         txtlogin.setText("");
-        txtsenha.setText("");
-        txtnome.requestFocusInWindow();
+        txtlogin.requestFocusInWindow();
     }
     
     public static void main(String args[]) {
@@ -211,11 +203,7 @@ public class RemoverUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btvoltar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblogin;
-    private javax.swing.JLabel lbnome;
     private javax.swing.JLabel lbremoverusuario;
-    private javax.swing.JLabel lbsenha;
     private javax.swing.JTextField txtlogin;
-    private javax.swing.JTextField txtnome;
-    private javax.swing.JPasswordField txtsenha;
     // End of variables declaration//GEN-END:variables
 }

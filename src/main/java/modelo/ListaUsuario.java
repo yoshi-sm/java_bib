@@ -105,12 +105,15 @@ public class ListaUsuario {
     }
    
     //removendo usuario à lista
-    public void remover(String nomeUsuario){
+    public boolean remover(String nomeUsuario){
+        boolean temp = false;
         for (int i = 0; i < this.lista.size(); i++){
             if (this.lista.get(i).getNomeUsuario().equals(nomeUsuario)){
                 this.lista.remove(i);
+                temp = true;
             }
         }
+        return temp;
     }
     
     //Get & Set & toString()
