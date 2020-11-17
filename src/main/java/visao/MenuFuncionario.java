@@ -89,6 +89,11 @@ public class MenuFuncionario extends javax.swing.JFrame {
         });
 
         btreservarsala.setText("Reservar sala de estudo");
+        btreservarsala.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btreservarsalaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -200,6 +205,13 @@ public class MenuFuncionario extends javax.swing.JFrame {
         cadastrarevento.setVisible(true);
 
     }//GEN-LAST:event_btcadastrareventoActionPerformed
+
+    private void btreservarsalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btreservarsalaActionPerformed
+        AlugarSala alugarsala = new AlugarSala();
+        this.setVisible(false);
+        alugarsala.setLocationRelativeTo(null);
+        alugarsala.setVisible(true);
+    }//GEN-LAST:event_btreservarsalaActionPerformed
 
     /**
      * @param args the command line arguments
