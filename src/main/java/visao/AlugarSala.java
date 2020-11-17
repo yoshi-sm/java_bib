@@ -31,6 +31,7 @@ public class AlugarSala extends javax.swing.JFrame {
         lbsala2 = new javax.swing.JLabel();
         lbsala3 = new javax.swing.JLabel();
         lbsala4 = new javax.swing.JLabel();
+        btvoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Morais Library ");
@@ -74,6 +75,13 @@ public class AlugarSala extends javax.swing.JFrame {
 
         lbsala4.setText("Não Reservado");
 
+        btvoltar.setText("Voltar");
+        btvoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btvoltarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,8 +102,13 @@ public class AlugarSala extends javax.swing.JFrame {
                 .addContainerGap(97, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbtitulo)
-                .addGap(54, 54, 54))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lbtitulo)
+                        .addGap(54, 54, 54))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btvoltar)
+                        .addGap(117, 117, 117))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,7 +131,9 @@ public class AlugarSala extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btsala4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbsala4))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btvoltar)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
@@ -140,6 +155,13 @@ public class AlugarSala extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btsala3ActionPerformed
 
+    private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed
+        MenuUsuario menuusuario = new MenuUsuario();
+        this.setVisible(false);
+        menuusuario.setLocationRelativeTo(null);
+        menuusuario.setVisible(true);
+    }//GEN-LAST:event_btvoltarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -159,6 +181,7 @@ public class AlugarSala extends javax.swing.JFrame {
     private javax.swing.JButton btsala2;
     private javax.swing.JButton btsala3;
     private javax.swing.JButton btsala4;
+    private javax.swing.JButton btvoltar;
     private javax.swing.JLabel lbsala1;
     private javax.swing.JLabel lbsala2;
     private javax.swing.JLabel lbsala3;
