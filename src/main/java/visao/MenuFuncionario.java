@@ -66,6 +66,11 @@ public class MenuFuncionario extends javax.swing.JFrame {
         btrelatorios.setText("Gerar Relatórios");
 
         btcatalografica.setText("Gerar Ficha Catalografica");
+        btcatalografica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btcatalograficaActionPerformed(evt);
+            }
+        });
 
         btalugar.setText("Alugar Livro");
         btalugar.addActionListener(new java.awt.event.ActionListener() {
@@ -212,6 +217,13 @@ public class MenuFuncionario extends javax.swing.JFrame {
         alugarsala.setLocationRelativeTo(null);
         alugarsala.setVisible(true);
     }//GEN-LAST:event_btreservarsalaActionPerformed
+
+    private void btcatalograficaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcatalograficaActionPerformed
+        GerarFichaCatalogo gerarficha = new GerarFichaCatalogo();
+        this.setVisible(false);
+        gerarficha.setLocationRelativeTo(null);
+        gerarficha.setVisible(true);
+    }//GEN-LAST:event_btcatalograficaActionPerformed
 
     /**
      * @param args the command line arguments
