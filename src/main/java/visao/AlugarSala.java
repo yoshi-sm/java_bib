@@ -14,7 +14,7 @@ public class AlugarSala extends javax.swing.JFrame {
     
     public AlugarSala() {
         initComponents();
-        lbsala1.setVisible(false);
+        
     }
 
     
@@ -140,19 +140,35 @@ public class AlugarSala extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btsala4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsala4ActionPerformed
-        // TODO add your handling code here:
+        if (lbsala4.getText().equals("Não Reservado")){
+          lbsala4.setText("Reservado");
+        }else{
+            lbsala4.setText("Não Reservado");
+        }
     }//GEN-LAST:event_btsala4ActionPerformed
 
     private void btsala1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsala1ActionPerformed
-        lbsala1.setVisible(true);
+        if (lbsala1.getText().equals("Não Reservado")){
+          lbsala1.setText("Reservado");
+        }else{
+            lbsala1.setText("Não Reservado");
+        }
     }//GEN-LAST:event_btsala1ActionPerformed
 
     private void btsala2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsala2ActionPerformed
-        // TODO add your handling code here:
+        if (lbsala2.getText().equals("Não Reservado")){
+          lbsala2.setText("Reservado");
+        }else{
+            lbsala2.setText("Não Reservado");
+        }
     }//GEN-LAST:event_btsala2ActionPerformed
 
     private void btsala3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsala3ActionPerformed
-        // TODO add your handling code here:
+        if (lbsala3.getText().equals("Não Reservado")){
+          lbsala3.setText("Reservado");
+        }else{
+            lbsala3.setText("Não Reservado");
+        }
     }//GEN-LAST:event_btsala3ActionPerformed
 
     private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed

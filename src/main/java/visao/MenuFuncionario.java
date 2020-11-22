@@ -5,17 +5,32 @@
  */
 package visao;
 
-/**
- *
- * @author nando
- */
-public class MenuFuncionario extends javax.swing.JFrame {
+import java.util.ArrayList;
+import java.io.File;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import modelo.ListaLivro;
+import modelo.ListaUsuario;
+import modelo.Livro;
+import modelo.Usuario;
 
-    /**
-     * Creates new form frmMenu
-     */
+
+public class MenuFuncionario extends javax.swing.JFrame {
+    
+    String temp_string;
+        
+    ArrayList<Usuario> listaU = new ArrayList<>();
+    ListaUsuario listusu = new ListaUsuario(listaU);
+    
+    ArrayList<Livro> listaL = new ArrayList<>();
+    ListaLivro a1 = new ListaLivro(listaL);
+    
+    
     public MenuFuncionario() {
         initComponents();
+        
     }
 
     /**
@@ -65,6 +80,11 @@ public class MenuFuncionario extends javax.swing.JFrame {
         });
 
         btrelatoriolivro.setText("Gerar Relatórios de Acervo");
+        btrelatoriolivro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btrelatoriolivroActionPerformed(evt);
+            }
+        });
 
         btcatalografica.setText("Gerar Ficha Catalografica");
         btcatalografica.addActionListener(new java.awt.event.ActionListener() {
@@ -102,6 +122,11 @@ public class MenuFuncionario extends javax.swing.JFrame {
         });
 
         btrelatoriousuario.setText("Gerar Relatório de usuário");
+        btrelatoriousuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btrelatoriousuarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -231,6 +256,65 @@ public class MenuFuncionario extends javax.swing.JFrame {
         gerarficha.setLocationRelativeTo(null);
         gerarficha.setVisible(true);
     }//GEN-LAST:event_btcatalograficaActionPerformed
+
+    private void btrelatoriousuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btrelatoriousuarioActionPerformed
+    
+        listusu.carregarUsuarios();        
+        temp_string = "";        
+        for(int i = 0; i < listaU.size(); i++){
+                String nome = listaU.get(i).getNome();
+                String nomeUsuario = listaU.get(i).getNomeUsuario();
+                String senha = listaU.get(i).getSenha();
+                char permissao = listaU.get(i).getPermissao();
+
+                temp_string += "------------------------" + "\n" + 
+                                "|  Nome: " + nome + "\n" +
+                                "|  Nome de Usuário: " + nomeUsuario + "\n" +
+                                "|  Senha: " + senha + "\n" +
+                                "|  Permissão: " + permissao + "\n" +
+                                "------------------------" + "\n";
+                             
+               try {
+               
+                FileWriter escritor = new FileWriter("arquivos/Relatorio_de_Usuários.txt");
+                escritor.write(temp_string);
+                escritor.close();
+               } catch (IOException e) {
+                    System.out.println("Erro!");
+                    e.printStackTrace();
+               }catch(Exception e){
+                   e.printStackTrace();
+            }
+        }    
+    }//GEN-LAST:event_btrelatoriousuarioActionPerformed
+
+    private void btrelatoriolivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btrelatoriolivroActionPerformed
+        
+        a1.carregarLivros();       
+        temp_string = "";
+        
+        for(int i = 0; i < listaL.size(); i++){
+                String titulo = listaL.get(i).getTitulo();
+                String autor = listaL.get(i).getAutor();
+                int id = listaL.get(i).getId();
+
+                temp_string += "------------------------" + "\n" + 
+                                "|  Título: " + titulo + "\n" +
+                                "|  Autor: " + autor + "\n" +
+                                "|  ID: " + id + "\n" + 
+                                "------------------------" + "\n";
+                                        
+               try {
+                FileWriter escritor = new FileWriter("arquivos/Relatório_de_Acervo.txt");
+                escritor.write(temp_string);
+                escritor.close();
+               } catch (IOException e) {
+                System.out.println("Erro!");
+                e.printStackTrace();
+               }
+               System.out.println(listaL);
+            }
+    }//GEN-LAST:event_btrelatoriolivroActionPerformed
 
     /**
      * @param args the command line arguments

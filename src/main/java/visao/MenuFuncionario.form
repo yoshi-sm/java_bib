@@ -140,6 +140,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Gerar Relat&#xf3;rios de Acervo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btrelatoriolivroActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btcatalografica">
           <Properties>
@@ -185,6 +188,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Gerar Relat&#xf3;rio de usu&#xe1;rio"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btrelatoriousuarioActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
