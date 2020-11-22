@@ -88,19 +88,17 @@ public class ListaLivro {
     
     //tenta reservar um livro settando atributos no objeto livro, retorna t ou f.
     public boolean reservar(Livro livro, String nome_usuario){
-        if (this.lista.contains(livro)){    
-            if (livro.isAlugado() || livro.isReservado()){
-                return false;
-            }
-            else{
-                livro.setReservado(true);
-                livro.setNomeUsuario(nome_usuario);
-                return true;
+        boolean temp = false;
+        for(int i = 0; i < this.lista.size(); i++){    
+            if (this.lista.get(i).igual(livro)){
+                this.lista.get(i).setReservado(true);
+                this.lista.get(i).setNomeUsuario(nome_usuario);
+                
+                temp = true;
+                
             }
         }
-        else{
-            return false;
-        }
+        return temp;
     }
     
     
