@@ -57,8 +57,8 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario :" + " nome=" + nome + ", nomeUsuario=" + nomeUsuario + ", senha=" +
-                senha + ", permissao=" + permissao + "\n" ;
+        return "Usuario: " + " nome= " + nome + ", nome do usuario= " + nomeUsuario + ", senha= " +
+                senha + ", permissao= " + permissao + "\n" ;
     }
     
 

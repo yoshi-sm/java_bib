@@ -5,15 +5,12 @@
  */
 package visao;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Scanner;
-import modelo.ListaLivro;
-import modelo.Livro;
-
 import java.io.FileWriter;
 import java.io.IOException;
+
+import modelo.ListaLivro;
+import modelo.Livro;
 
 /**
  *
@@ -25,12 +22,6 @@ public class GerarFichaCatalogo extends javax.swing.JFrame {
     ArrayList<Livro> temp = new ArrayList<>();
     ArrayList<Livro> listaL = new ArrayList<>();
     ListaLivro a1 = new ListaLivro(listaL);
-    
-    //    Pedir título -> Gerar ficha
-    //    1 - Conectar com a base de dados (x)
-    //    2 - Resgatar os valores (x)
-    //    3 - Imprimir valores na tela
-    //    4 - Criar arquivo com a ficha catalográfica
 
     /**
      * Creates new form GerarFichaCatalogo

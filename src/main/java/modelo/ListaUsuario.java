@@ -84,7 +84,7 @@ public class ListaUsuario {
             this.lista.clear();
         } 
         catch (IOException e) {
-            System.out.println("An error occurred.");
+            System.out.println("Erro!");
             e.printStackTrace();
         }
     }

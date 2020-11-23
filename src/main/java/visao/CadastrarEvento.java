@@ -5,12 +5,24 @@
  */
 package visao;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import modelo.ListaUsuario;
+import modelo.Usuario;
+
 /**
  *
  * @author nando
  */
 public class CadastrarEvento extends javax.swing.JFrame {
 
+    String titulo, temp_string;
+    ArrayList<Usuario> temp = new ArrayList<>();
+    ArrayList<Usuario> listaU = new ArrayList<>();
+    ListaUsuario a1 = new ListaUsuario(listaU);
+    
     /**
      * Creates new form CadastrarEvento
      */
@@ -53,6 +65,11 @@ public class CadastrarEvento extends javax.swing.JFrame {
         lbassunto.setText("Assunto:");
 
         btconfirmar.setText("Confirmar");
+        btconfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btconfirmarActionPerformed(evt);
+            }
+        });
 
         btlimpar.setText("Limpar");
         btlimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -141,6 +158,36 @@ public class CadastrarEvento extends javax.swing.JFrame {
         LimparCadastrarEvento();
         
     }//GEN-LAST:event_btlimparActionPerformed
+
+    private void btconfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btconfirmarActionPerformed
+//        a1.carregarUsuarios();
+//        titulo = this.txtTitulo.getText();
+//        temp = a1.buscaLivro(titulo);
+//        temp_string = "";
+//        
+//        for(int i = 0; i < temp.size(); i++){
+//                String titulo = temp.get(i).getTitulo();
+//                String autor = temp.get(i).getAutor();
+//                int id = temp.get(i).getId();
+//
+//                temp_string += "------------------------" + "\n" + 
+//                                "|  Título: " + titulo + "\n" +
+//                                "|  Autor: " + autor + "\n" +
+//                                "|  ID: " + id + "\n" + 
+//                                "------------------------" + "\n";
+//                                
+//                lstTitulos.setText(temp_string);
+//               try {
+//                FileWriter escritor = new FileWriter("arquivos/ficha_livro_"+titulo+".txt");
+//                escritor.write(temp_string);
+//                escritor.close();
+//               } catch (IOException e) {
+//                System.out.println("Erro!");
+//                e.printStackTrace();
+//               }
+//               System.out.println(temp);
+//            }
+    }//GEN-LAST:event_btconfirmarActionPerformed
     
     private void LimparCadastrarEvento(){
         txtnome.setText("");
