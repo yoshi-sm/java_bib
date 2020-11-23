@@ -5,17 +5,32 @@
  */
 package visao;
 
-/**
- *
- * @author nando
- */
-public class MenuFuncionario extends javax.swing.JFrame {
+import java.util.ArrayList;
+import java.io.File;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import modelo.ListaLivro;
+import modelo.ListaUsuario;
+import modelo.Livro;
+import modelo.Usuario;
 
-    /**
-     * Creates new form frmMenu
-     */
+
+public class MenuFuncionario extends javax.swing.JFrame {
+    
+    String temp_string;
+        
+    ArrayList<Usuario> listaU = new ArrayList<>();
+    ListaUsuario listusu = new ListaUsuario(listaU);
+    
+    ArrayList<Livro> listaL = new ArrayList<>();
+    ListaLivro a1 = new ListaLivro(listaL);
+    
+    
     public MenuFuncionario() {
         initComponents();
+        
     }
 
     /**
@@ -31,12 +46,13 @@ public class MenuFuncionario extends javax.swing.JFrame {
         btcadastrarusuario = new javax.swing.JButton();
         btbuscar = new javax.swing.JButton();
         btcadastrarevento = new javax.swing.JButton();
-        btrelatorios = new javax.swing.JButton();
+        btrelatoriolivro = new javax.swing.JButton();
         btcatalografica = new javax.swing.JButton();
         btalugar = new javax.swing.JButton();
         btremoverusuario = new javax.swing.JButton();
         btlogout = new javax.swing.JButton();
         btreservarsala = new javax.swing.JButton();
+        btrelatoriousuario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Morais Library ");
@@ -63,7 +79,12 @@ public class MenuFuncionario extends javax.swing.JFrame {
             }
         });
 
-        btrelatorios.setText("Gerar Relatórios");
+        btrelatoriolivro.setText("Gerar Relatórios de Acervo");
+        btrelatoriolivro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btrelatoriolivroActionPerformed(evt);
+            }
+        });
 
         btcatalografica.setText("Gerar Ficha Catalografica");
         btcatalografica.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +121,13 @@ public class MenuFuncionario extends javax.swing.JFrame {
             }
         });
 
+        btrelatoriousuario.setText("Gerar Relatório de usuário");
+        btrelatoriousuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btrelatoriousuarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -116,15 +144,16 @@ public class MenuFuncionario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btcadastrarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btrelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btreservarsala, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btreservarsala, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btrelatoriolivro, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btcatalografica, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btremoverusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
+                        .addComponent(btrelatoriousuario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btlogout, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -142,13 +171,15 @@ public class MenuFuncionario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btremoverusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btrelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btreservarsala, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btcatalografica, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btreservarsala, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btrelatoriolivro, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btlogout)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btrelatoriousuario, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                    .addComponent(btlogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -160,9 +191,10 @@ public class MenuFuncionario extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
 
         pack();
@@ -225,6 +257,65 @@ public class MenuFuncionario extends javax.swing.JFrame {
         gerarficha.setVisible(true);
     }//GEN-LAST:event_btcatalograficaActionPerformed
 
+    private void btrelatoriousuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btrelatoriousuarioActionPerformed
+    
+        listusu.carregarUsuarios();        
+        temp_string = "";        
+        for(int i = 0; i < listaU.size(); i++){
+                String nome = listaU.get(i).getNome();
+                String nomeUsuario = listaU.get(i).getNomeUsuario();
+                String senha = listaU.get(i).getSenha();
+                char permissao = listaU.get(i).getPermissao();
+
+                temp_string += "------------------------" + "\n" + 
+                                "|  Nome: " + nome + "\n" +
+                                "|  Nome de Usuário: " + nomeUsuario + "\n" +
+                                "|  Senha: " + senha + "\n" +
+                                "|  Permissão: " + permissao + "\n" +
+                                "------------------------" + "\n";
+                             
+               try {
+               
+                FileWriter escritor = new FileWriter("arquivos/Relatorio_de_Usuários.txt");
+                escritor.write(temp_string);
+                escritor.close();
+               } catch (IOException e) {
+                    System.out.println("Erro!");
+                    e.printStackTrace();
+               }catch(Exception e){
+                   e.printStackTrace();
+            }
+        }    
+    }//GEN-LAST:event_btrelatoriousuarioActionPerformed
+
+    private void btrelatoriolivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btrelatoriolivroActionPerformed
+        
+        a1.carregarLivros();       
+        temp_string = "";
+        
+        for(int i = 0; i < listaL.size(); i++){
+                String titulo = listaL.get(i).getTitulo();
+                String autor = listaL.get(i).getAutor();
+                int id = listaL.get(i).getId();
+
+                temp_string += "------------------------" + "\n" + 
+                                "|  Título: " + titulo + "\n" +
+                                "|  Autor: " + autor + "\n" +
+                                "|  ID: " + id + "\n" + 
+                                "------------------------" + "\n";
+                                        
+               try {
+                FileWriter escritor = new FileWriter("arquivos/Relatório_de_Acervo.txt");
+                escritor.write(temp_string);
+                escritor.close();
+               } catch (IOException e) {
+                System.out.println("Erro!");
+                e.printStackTrace();
+               }
+               System.out.println(listaL);
+            }
+    }//GEN-LAST:event_btrelatoriolivroActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -268,7 +359,8 @@ public class MenuFuncionario extends javax.swing.JFrame {
     private javax.swing.JButton btcadastrarusuario;
     private javax.swing.JButton btcatalografica;
     private javax.swing.JButton btlogout;
-    private javax.swing.JButton btrelatorios;
+    private javax.swing.JButton btrelatoriolivro;
+    private javax.swing.JButton btrelatoriousuario;
     private javax.swing.JButton btremoverusuario;
     private javax.swing.JButton btreservarsala;
     private javax.swing.JPanel jPanel1;
