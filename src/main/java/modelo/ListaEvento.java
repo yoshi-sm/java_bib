@@ -38,7 +38,7 @@ public class ListaEvento {
     }
     
     //carrega a lista de eventos de um arquivo "arquivos/eventos.txt"
-    public void carregarUsuarios(){
+    public void carregarEventos(){
         String temp;
         Scanner leitor;
         Evento evento;
@@ -50,7 +50,7 @@ public class ListaEvento {
                 temp = leitor.nextLine();
                 temp2 = temp.split("%##%", 4);
                 System.out.print(temp2[0]);
-                evento = new Evento(temp2[0], temp2[1], temp2[2]);
+                evento = new Evento(temp2[0], temp2[1], temp2[2], temp2[3]);
                 this.lista.add(evento);
             }
             leitor.close();
@@ -63,13 +63,14 @@ public class ListaEvento {
     }
     
     //salva os eventos do objeto para o arquivo, objeto é esvaziado depois
-    public void salvarUsuarios(){
+    public void salvarEvento(){
         String temp = "";
         FileWriter conteudo;
         for(int i = 0; i < this.lista.size(); i++){
             temp += this.lista.get(i).getNome()+"%##%"+
                     this.lista.get(i).getLocal()+"%##%"+
-                    this.lista.get(i).getData()+"%##%";
+                    this.lista.get(i).getData()+"%##%"+
+                    this.lista.get(i).getAssunto()+"\n";
         
         }
         try {
@@ -121,7 +122,7 @@ public class ListaEvento {
 
     @Override
     public String toString() {
-        return "ListaEvento: " + "lista= " + lista;
+        return "Lista de eventos= " + lista;
     }
     
 }

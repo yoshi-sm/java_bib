@@ -1,13 +1,8 @@
 
 package visao;
-import java.util.ArrayList;
-import java.io.FileWriter;   // Import the FileWriter class
-import java.io.IOException;  // Import the IOException class to handle errors
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import modelo.*;
-import java.util.Scanner;
 
 /**
  *
@@ -15,16 +10,32 @@ import java.util.Scanner;
  */
 public class Teste {
     public static void main(String[] args){
-        Livro livro = new Livro("harry potter", "tolkien");
-        Livro livro2 = new Livro("harry potter", "tolkien");
-        //livro.setId(10);
-        ArrayList<Livro> a1 = new ArrayList<>();
-        a1.add(livro);
-        
-        //ListaLivro b1 = new ListaLivro(a1);
-        //b1.carregarLivros();
-        //System.out.print(livro);
-        System.out.print(livro.igual(livro2));
+       
+//    Evento e1 = new Evento("Meu aniversário", "Sala 1", "03/02/2021", "Meu aniversário pô");
+//    Evento e2 = new Evento("Aniversário dela", "Sala 2", "03/11/2021", "É o aniversário dela");
+//    
+    ArrayList<Evento> lista = new ArrayList<Evento>();
     
+//    lista.add(e1);
+//    
+//    ListaEvento le1 = new ListaEvento(lista);
+//    
+//    le1.cadastrar(e2);
+//        
+//    le1.remover("Meu aniversário");
+//    
+//    le1.salvarEvento();
+    
+    ListaEvento bd = new ListaEvento(lista);
+    
+    bd.carregarEventos();
+    
+//    ArrayList<Usuario> lista = new ArrayList<Usuario>();
+//    
+//    ListaUsuario bd = new ListaUsuario(lista);
+//    
+//    bd.carregarUsuarios();
+//    
+    System.out.println(bd.toString());
     }
 }

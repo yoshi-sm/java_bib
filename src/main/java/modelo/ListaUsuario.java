@@ -140,7 +140,7 @@ public class ListaUsuario {
 
     @Override
     public String toString() {
-        return "ListaUsuario{" + "lista=" + lista + '}';
+        return "ListaUsuarios: " + "lista=" + lista;
     }
     
 }

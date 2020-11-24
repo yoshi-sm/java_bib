@@ -14,16 +14,18 @@ public class Evento {
     private String nome;
     private String local;
     private String data;
+    private String assunto;
     
     public Evento() {}
     
-    public Evento(String nome, String local, String data) {
+    public Evento(String nome, String local, String data, String assunto) {
         this.nome = nome;
         this.local = local;
         this.data = data;
+        this.assunto = assunto;
     }
     
-
+    
     public String getNome() {
         return nome;
     }
@@ -47,11 +49,21 @@ public class Evento {
     public void setData(String data) {
         this.data = data;
     }
+    
+    public String getAssunto() {
+        return assunto;
+    }
+
+    public void setAssunto(String assunto) {
+        this.assunto = assunto;
+    }
 
     @Override
     public String toString() {
-        return "Evento: " + "Nome do evento= " + nome + ", Local do evento= " + local + ", Data do evento= " + data;
+        return "Evento: " + "Nome do Evento= " + nome + ", local= " + local + 
+                ", data= " + data + ", assunto= " + assunto + "\n";
     }
-    
+
+
     
 }

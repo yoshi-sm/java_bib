@@ -5,11 +5,11 @@
  */
 package visao;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import modelo.Evento;
 
-import modelo.ListaUsuario;
+import modelo.ListaEvento;
 import modelo.Usuario;
 
 /**
@@ -18,16 +18,45 @@ import modelo.Usuario;
  */
 public class CadastrarEvento extends javax.swing.JFrame {
 
-    String titulo, temp_string;
-    ArrayList<Usuario> temp = new ArrayList<>();
-    ArrayList<Usuario> listaU = new ArrayList<>();
-    ListaUsuario a1 = new ListaUsuario(listaU);
+    String nome, local, data, assunto, temp_string;
+    ArrayList<Evento> temp = new ArrayList<>();
+    ListaEvento a1 = new ListaEvento(temp);
     
     /**
      * Creates new form CadastrarEvento
      */
     public CadastrarEvento() {
         initComponents();
+    }
+    
+    public boolean ConfirmaCamposObrigatorios(){
+        if(txtnome.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"Campo Nome Obrigatório","Aviso",JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+        else if(txtdata.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"Campo Data Obrigatório","Aviso",JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+        else if(txtlocal.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"Campo Local Obrigatório","Aviso",JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+        else if(txtassunto.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"Campo Assunto Obrigatório","Aviso",JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    
+        private void LimparCadastroEvento(){
+        txtnome.setText("");
+        txtdata.setText("");
+        txtassunto.setText("");
+        txtlocal.setText("");
+        txtnome.requestFocusInWindow();
     }
 
     /**
@@ -49,6 +78,8 @@ public class CadastrarEvento extends javax.swing.JFrame {
         btconfirmar = new javax.swing.JButton();
         btlimpar = new javax.swing.JButton();
         btvoltar = new javax.swing.JButton();
+        lbassunto1 = new javax.swing.JLabel();
+        txtlocal = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,39 +116,46 @@ public class CadastrarEvento extends javax.swing.JFrame {
             }
         });
 
+        lbassunto1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lbassunto1.setText("Local do evento:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(101, 101, 101)
-                            .addComponent(lbcadastrarevento))
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(lbnome)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(lbdata)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtdata, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(lbassunto)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtassunto)))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(btconfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addComponent(btlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(btvoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                        .addComponent(btvoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbdata)
+                            .addComponent(lbassunto))
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtdata, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                            .addComponent(txtassunto, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lbassunto1)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtlocal, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(lbcadastrarevento))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbnome)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,15 +166,19 @@ public class CadastrarEvento extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbnome)
                     .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbassunto1)
+                    .addComponent(txtlocal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbdata)
                     .addComponent(txtdata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbassunto)
                     .addComponent(txtassunto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btconfirmar)
                     .addComponent(btlimpar)
@@ -155,46 +197,27 @@ public class CadastrarEvento extends javax.swing.JFrame {
     }//GEN-LAST:event_btvoltarActionPerformed
 
     private void btlimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlimparActionPerformed
-        LimparCadastrarEvento();
+        LimparCadastroEvento();
         
     }//GEN-LAST:event_btlimparActionPerformed
 
     private void btconfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btconfirmarActionPerformed
-//        a1.carregarUsuarios();
-//        titulo = this.txtTitulo.getText();
-//        temp = a1.buscaLivro(titulo);
-//        temp_string = "";
-//        
-//        for(int i = 0; i < temp.size(); i++){
-//                String titulo = temp.get(i).getTitulo();
-//                String autor = temp.get(i).getAutor();
-//                int id = temp.get(i).getId();
-//
-//                temp_string += "------------------------" + "\n" + 
-//                                "|  Título: " + titulo + "\n" +
-//                                "|  Autor: " + autor + "\n" +
-//                                "|  ID: " + id + "\n" + 
-//                                "------------------------" + "\n";
-//                                
-//                lstTitulos.setText(temp_string);
-//               try {
-//                FileWriter escritor = new FileWriter("arquivos/ficha_livro_"+titulo+".txt");
-//                escritor.write(temp_string);
-//                escritor.close();
-//               } catch (IOException e) {
-//                System.out.println("Erro!");
-//                e.printStackTrace();
-//               }
-//               System.out.println(temp);
-//            }
+        boolean temp = ConfirmaCamposObrigatorios();
+        if(temp == true){
+            a1.carregarEventos();
+            nome = this.txtnome.getText();
+            local = this.txtlocal.getText();
+            data = this.txtdata.getText();
+            assunto = this.txtassunto.getText();
+            
+            a1.cadastrar(new Evento(nome, local, data, assunto));
+            a1.salvarEvento();
+            JOptionPane.showMessageDialog(rootPane,"Cadastro de evento realizado!");
+        }
+        LimparCadastroEvento();
+       
     }//GEN-LAST:event_btconfirmarActionPerformed
-    
-    private void LimparCadastrarEvento(){
-        txtnome.setText("");
-        txtdata.setText("");
-        txtassunto.setText("");
-        txtnome.requestFocusInWindow();
-    }
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -233,11 +256,13 @@ public class CadastrarEvento extends javax.swing.JFrame {
     private javax.swing.JButton btlimpar;
     private javax.swing.JButton btvoltar;
     private javax.swing.JLabel lbassunto;
+    private javax.swing.JLabel lbassunto1;
     private javax.swing.JLabel lbcadastrarevento;
     private javax.swing.JLabel lbdata;
     private javax.swing.JLabel lbnome;
     private javax.swing.JTextField txtassunto;
     private javax.swing.JTextField txtdata;
+    private javax.swing.JTextField txtlocal;
     private javax.swing.JTextField txtnome;
     // End of variables declaration//GEN-END:variables
 }
