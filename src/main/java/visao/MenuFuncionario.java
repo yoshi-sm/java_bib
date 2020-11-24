@@ -32,6 +32,11 @@ public class MenuFuncionario extends javax.swing.JFrame {
         initComponents();
         
     }
+    
+    public MenuFuncionario(Usuario dados) {
+        initComponents();
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -10,11 +10,12 @@ public class Login extends javax.swing.JFrame {
     
     ArrayList<Usuario> listaU = new ArrayList<>();
     ListaUsuario a1 = new ListaUsuario(listaU);
+    //  Mantém usuário logado até o fim da seção ou logout
+    public Usuario currentUser = new Usuario();
     
     public Login() {
         initComponents();
     }
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -137,16 +138,29 @@ public class Login extends javax.swing.JFrame {
        }*/  
         int indice;
         char permissao = 'n';
+        String nome, nomeUsuario;
+        
         a1.carregarUsuarios();
-        indice = a1.login(txtusuario.getText(), String.valueOf(txtsenha.getPassword()));
+        indice = a1.login(txtusuario.getText(), String.valueOf(txtsenha.getPassword()));        
+        
+        //  Checar se o usuário existe
         if(indice == -1){
             JOptionPane.showMessageDialog(rootPane,"USUARIO OU SENHA INCORRETO");
             txtusuario.setText("");
             txtsenha.setText("");
             txtusuario.requestFocusInWindow();
         }
+        // Se o usuário existir...
         else{
             permissao = a1.getLista().get(indice).getPermissao();
+            nome = a1.getLista().get(indice).getNome();
+            nomeUsuario = a1.getLista().get(indice).getNomeUsuario();
+             
+            currentUser.setNome(nome);
+            currentUser.setNome_usuario(nomeUsuario);
+            currentUser.setPermissao(permissao);
+            //   Checar usuário no print, tirar depois
+            System.out.println(currentUser.toString());
         }
         
         if(permissao == 'f'){
@@ -156,7 +170,7 @@ public class Login extends javax.swing.JFrame {
             menufunc.setVisible(true);
         }
         else if(permissao == 'a' || permissao == 'p' || permissao == 'v'){
-            MenuUsuario menuUsr = new MenuUsuario();
+            MenuUsuario menuUsr = new MenuUsuario(currentUser);
             this.setVisible(false);
             menuUsr.setLocationRelativeTo(null);
             menuUsr.setVisible(true);

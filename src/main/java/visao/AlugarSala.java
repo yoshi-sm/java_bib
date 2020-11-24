@@ -5,16 +5,27 @@
  */
 package visao;
 
+import modelo.Usuario;
+
 /**
  *
  * @author nando
  */
 public class AlugarSala extends javax.swing.JFrame {
 
-    
+    Usuario currentUser = new Usuario();
+
     public AlugarSala() {
         initComponents();
         
+    }
+    
+    public AlugarSala(Usuario dados) {
+        initComponents();
+          
+        currentUser.setNome(dados.getNome());
+        currentUser.setNome_usuario(dados.getNomeUsuario());
+        currentUser.setPermissao(dados.getPermissao());
     }
 
     
@@ -172,10 +183,20 @@ public class AlugarSala extends javax.swing.JFrame {
     }//GEN-LAST:event_btsala3ActionPerformed
 
     private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed
-        MenuUsuario menuusuario = new MenuUsuario();
-        this.setVisible(false);
-        menuusuario.setLocationRelativeTo(null);
-        menuusuario.setVisible(true);
+        
+        if (currentUser.getPermissao() == 'f') {
+            MenuFuncionario menu = new MenuFuncionario(currentUser);
+            this.setVisible(false);
+            menu.setLocationRelativeTo(null);
+            menu.setVisible(true);
+        }
+        else {
+            MenuUsuario menu = new MenuUsuario(currentUser);
+            this.setVisible(false);
+            menu.setLocationRelativeTo(null);
+            menu.setVisible(true);
+        }
+
     }//GEN-LAST:event_btvoltarActionPerformed
 
     /**

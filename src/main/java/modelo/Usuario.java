@@ -22,7 +22,7 @@ public class Usuario {
         //this.idLivro = new ArrayList<>();
     }
     
-    
+
     public String getNome() {
         return nome;
     }

@@ -198,7 +198,6 @@ public class CadastrarEvento extends javax.swing.JFrame {
 
     private void btlimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlimparActionPerformed
         LimparCadastroEvento();
-        
     }//GEN-LAST:event_btlimparActionPerformed
 
     private void btconfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btconfirmarActionPerformed
@@ -213,8 +212,8 @@ public class CadastrarEvento extends javax.swing.JFrame {
             a1.cadastrar(new Evento(nome, local, data, assunto));
             a1.salvarEvento();
             JOptionPane.showMessageDialog(rootPane,"Cadastro de evento realizado!");
+            LimparCadastroEvento();
         }
-        LimparCadastroEvento();
        
     }//GEN-LAST:event_btconfirmarActionPerformed
 

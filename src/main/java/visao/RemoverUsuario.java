@@ -149,7 +149,7 @@ public class RemoverUsuario extends javax.swing.JFrame {
         nomeUsuario = this.txtlogin.getText();
         temp = a1.remover(nomeUsuario);
         if(temp){
-            JOptionPane.showMessageDialog(rootPane,"Usuario" +nomeUsuario+" removido com sucesso!");
+            JOptionPane.showMessageDialog(rootPane,"Usuario " +nomeUsuario+" removido com sucesso!");
         }
         else{
             JOptionPane.showMessageDialog(rootPane,"Usuario inexistente!");        
