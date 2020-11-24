@@ -51,8 +51,18 @@ public class MenuUsuario extends javax.swing.JFrame {
         );
 
         btbuscar.setText("Buscar Livro");
+        btbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btbuscarActionPerformed(evt);
+            }
+        });
 
         btreservar.setText("Reservar Livro");
+        btreservar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btreservarActionPerformed(evt);
+            }
+        });
 
         btsolicitarficha.setText("Solicitar Ficha catalográfica");
 
@@ -94,7 +104,7 @@ public class MenuUsuario extends javax.swing.JFrame {
                             .addComponent(btbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(btreservar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,7 +125,7 @@ public class MenuUsuario extends javax.swing.JFrame {
                             .addComponent(btvisualizarficha, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btsolicitarficha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btsolicitarficha, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
                             .addComponent(btlogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
@@ -136,6 +146,20 @@ public class MenuUsuario extends javax.swing.JFrame {
         alugarsala.setLocationRelativeTo(null);
         alugarsala.setVisible(true);      
     }//GEN-LAST:event_btreservarsalaActionPerformed
+
+    private void btbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbuscarActionPerformed
+        BuscarLivro buscarlivro = new BuscarLivro();
+        this.setVisible(false);
+        buscarlivro.setLocationRelativeTo(null);
+        buscarlivro.setVisible(true);
+    }//GEN-LAST:event_btbuscarActionPerformed
+
+    private void btreservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btreservarActionPerformed
+        ReservarLivro reservarlivro = new ReservarLivro();
+        this.setVisible(false);
+        reservarlivro.setLocationRelativeTo(null);
+        reservarlivro.setVisible(true);
+    }//GEN-LAST:event_btreservarActionPerformed
 
     /**
      * @param args the command line arguments

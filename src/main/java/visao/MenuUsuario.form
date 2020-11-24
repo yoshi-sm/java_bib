@@ -50,7 +50,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -76,7 +76,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btsolicitarficha" max="32767" attributes="0"/>
+                          <Component id="btsolicitarficha" pref="80" max="32767" attributes="0"/>
                           <Component id="btlogout" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -106,11 +106,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar Livro"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btbuscarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btreservar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Reservar Livro"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btreservarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btsolicitarficha">
       <Properties>
