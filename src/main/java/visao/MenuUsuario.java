@@ -49,11 +49,12 @@ public class MenuUsuario extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         btbuscar = new javax.swing.JButton();
         btreservar = new javax.swing.JButton();
-        btsolicitarficha = new javax.swing.JButton();
         btvisualizarficha = new javax.swing.JButton();
         btreservarsala = new javax.swing.JButton();
+        btsolicitarficha = new javax.swing.JButton();
         btlogout = new javax.swing.JButton();
         lblwelcome = new javax.swing.JLabel();
         lblcargo = new javax.swing.JLabel();
@@ -61,6 +62,7 @@ public class MenuUsuario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Morais Library");
         setPreferredSize(new java.awt.Dimension(318, 431));
+        setResizable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -102,6 +104,8 @@ public class MenuUsuario extends javax.swing.JFrame {
                 btreservarsalaActionPerformed(evt);
             }
         });
+
+        btsolicitarficha.setText("Solicitar Ficha catalográfica");
 
         btlogout.setText("Logout");
         btlogout.addActionListener(new java.awt.event.ActionListener() {
@@ -170,6 +174,8 @@ public class MenuUsuario extends javax.swing.JFrame {
                     .addComponent(btsolicitarficha, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -251,5 +257,6 @@ public class MenuUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblcargo;
     private javax.swing.JLabel lblwelcome;
+
     // End of variables declaration//GEN-END:variables
 }
