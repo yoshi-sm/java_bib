@@ -16,6 +16,8 @@ import modelo.*;
  */
 public class RemoverUsuario extends javax.swing.JFrame {
     
+    Usuario currentUser = new Usuario();
+    
     String nome, nomeUsuario, senha;
     char permissao;
     ArrayList<Usuario> listaU = new ArrayList<>();
@@ -25,6 +27,15 @@ public class RemoverUsuario extends javax.swing.JFrame {
      */
     public RemoverUsuario() {
         initComponents();
+    }
+    
+    public RemoverUsuario(Usuario dados) {
+        initComponents();
+        
+        //  Passar dados para o Usuario currentUser
+        currentUser.setNome(dados.getNome());
+        currentUser.setNome_usuario(dados.getNomeUsuario());
+        currentUser.setPermissao(dados.getPermissao());
     }
 
     /**
@@ -133,7 +144,7 @@ public class RemoverUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed
-        MenuFuncionario menufunc = new MenuFuncionario();
+        MenuFuncionario menufunc = new MenuFuncionario(currentUser);
         this.setVisible(false);
         menufunc.setLocationRelativeTo(null);
         menufunc.setVisible(true);

@@ -164,7 +164,7 @@ public class Login extends javax.swing.JFrame {
         }
         
         if(permissao == 'f'){
-            MenuFuncionario menufunc = new MenuFuncionario();
+            MenuFuncionario menufunc = new MenuFuncionario(currentUser);
             this.setVisible(false);
             menufunc.setLocationRelativeTo(null);
             menufunc.setVisible(true);

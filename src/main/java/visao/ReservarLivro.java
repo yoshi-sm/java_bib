@@ -18,6 +18,8 @@ import modelo.Usuario;
  */
 public class ReservarLivro extends javax.swing.JFrame {
     
+    Usuario currentUser = new Usuario();
+    
     Livro livro;
     ArrayList<Livro> listaL = new ArrayList<>();
     ArrayList<Usuario> listaU = new ArrayList<>();
@@ -28,6 +30,15 @@ public class ReservarLivro extends javax.swing.JFrame {
      */
     public ReservarLivro() {
         initComponents();
+    }
+    
+    public ReservarLivro(Usuario dados) {
+        initComponents();
+        
+        //  Passar dados para o Usuario currentUser
+        currentUser.setNome(dados.getNome());
+        currentUser.setNome_usuario(dados.getNomeUsuario());
+        currentUser.setPermissao(dados.getPermissao());
     }
 
     public void LimparReservarLivro(){
@@ -176,7 +187,7 @@ public class ReservarLivro extends javax.swing.JFrame {
     }//GEN-LAST:event_btlimparActionPerformed
 
     private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed
-        MenuUsuario menuusuario = new MenuUsuario();
+        MenuUsuario menuusuario = new MenuUsuario(currentUser);
         this.setVisible(false);
         menuusuario.setLocationRelativeTo(null);
         menuusuario.setVisible(true);

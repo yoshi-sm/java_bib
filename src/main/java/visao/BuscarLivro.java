@@ -13,17 +13,37 @@ import java.util.ArrayList;
  */
 public class BuscarLivro extends javax.swing.JFrame {
     
-    
+    Usuario currentUser = new Usuario();
+
     String titulo, temp_string;
     ArrayList<Livro> temp = new ArrayList<>();
     ArrayList<Livro> listaL = new ArrayList<>();
     ListaLivro a1 = new ListaLivro(listaL);
-    
+        
     /**
      * Creates new form BuscarLivro
      */
     public BuscarLivro() {
         initComponents();
+    }
+    
+    public BuscarLivro(Usuario dados) {
+        initComponents();
+        
+        //  Passar dados para o Usuario currentUser
+        currentUser.setNome(dados.getNome());
+        currentUser.setNome_usuario(dados.getNomeUsuario());
+        currentUser.setPermissao(dados.getPermissao());
+    }
+    
+    public void LimparBuscarLivro(){
+        txttitulo.setText("");
+        txtResultado.setText("");           
+        txttitulo.requestFocusInWindow();
+    }
+    public void LimparBuscarLivro2(){
+        txttitulo.setText("");           
+        txttitulo.requestFocusInWindow();
     }
 
     /**
@@ -41,8 +61,8 @@ public class BuscarLivro extends javax.swing.JFrame {
         lbtitulo = new javax.swing.JLabel();
         txttitulo = new javax.swing.JTextField();
         btConfirmar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btLimpar = new javax.swing.JButton();
+        btVoltar = new javax.swing.JButton();
         txtResultado = new java.awt.TextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,12 +73,6 @@ public class BuscarLivro extends javax.swing.JFrame {
         lbtitulo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lbtitulo.setText("Título do livro:");
 
-        txttitulo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txttituloActionPerformed(evt);
-            }
-        });
-
         btConfirmar.setText("Confirmar");
         btConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,17 +80,17 @@ public class BuscarLivro extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Limpar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btLimpar.setText("Limpar");
+        btLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btLimparActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Voltar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btVoltar.setText("Voltar");
+        btVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btVoltarActionPerformed(evt);
             }
         });
 
@@ -99,9 +113,9 @@ public class BuscarLivro extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(btConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(txtResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -120,8 +134,8 @@ public class BuscarLivro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btConfirmar)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)))
+                    .addComponent(btLimpar)
+                    .addComponent(btVoltar)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -144,16 +158,24 @@ public class BuscarLivro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         LimparBuscarLivro();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btLimparActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       MenuFuncionario menufunc = new MenuFuncionario();
-       this.setVisible(false);
-       menufunc.setLocationRelativeTo(null);
-       menufunc.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+        if (currentUser.getPermissao() == 'f') {
+            MenuFuncionario menu = new MenuFuncionario(currentUser);
+            this.setVisible(false);
+            menu.setLocationRelativeTo(null);
+            menu.setVisible(true);
+        } else {
+            MenuUsuario menu = new MenuUsuario(currentUser);
+            this.setVisible(false);
+            menu.setLocationRelativeTo(null);
+            menu.setVisible(true);
+        }
+       
+    }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfirmarActionPerformed
         a1.carregarLivros();
@@ -167,19 +189,6 @@ public class BuscarLivro extends javax.swing.JFrame {
         a1.getLista().clear();
         LimparBuscarLivro2();
     }//GEN-LAST:event_btConfirmarActionPerformed
-
-    private void txttituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttituloActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txttituloActionPerformed
-    public void LimparBuscarLivro(){
-           txttitulo.setText("");
-           txtResultado.setText("");           
-           txttitulo.requestFocusInWindow();
-    }
-    public void LimparBuscarLivro2(){
-           txttitulo.setText("");           
-           txttitulo.requestFocusInWindow();
-    }
     
     /**
      * @param args the command line arguments
@@ -220,8 +229,8 @@ public class BuscarLivro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btConfirmar;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btLimpar;
+    private javax.swing.JButton btVoltar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbtitulo;
     private javax.swing.JLabel lbtitulogrande;

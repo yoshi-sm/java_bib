@@ -18,6 +18,8 @@ import modelo.Usuario;
  */
 public class CadastrarEvento extends javax.swing.JFrame {
 
+    Usuario currentUser = new Usuario();
+    
     String nome, local, data, assunto, temp_string;
     ArrayList<Evento> temp = new ArrayList<>();
     ListaEvento a1 = new ListaEvento(temp);
@@ -27,6 +29,15 @@ public class CadastrarEvento extends javax.swing.JFrame {
      */
     public CadastrarEvento() {
         initComponents();
+    }
+    
+    public CadastrarEvento(Usuario dados) {
+        initComponents();
+        
+        //  Passar dados para o Usuario currentUser
+        currentUser.setNome(dados.getNome());
+        currentUser.setNome_usuario(dados.getNomeUsuario());
+        currentUser.setPermissao(dados.getPermissao());
     }
     
     public boolean ConfirmaCamposObrigatorios(){
@@ -190,7 +201,7 @@ public class CadastrarEvento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed
-        MenuFuncionario menufunc = new MenuFuncionario();
+        MenuFuncionario menufunc = new MenuFuncionario(currentUser);
         this.setVisible(false);
         menufunc.setLocationRelativeTo(null);
         menufunc.setVisible(true);

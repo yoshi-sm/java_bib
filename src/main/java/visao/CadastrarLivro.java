@@ -5,17 +5,30 @@
  */
 package visao;
 
+import modelo.Usuario;
+
 /**
  *
  * @author nando
  */
 public class CadastrarLivro extends javax.swing.JFrame {
 
+    Usuario currentUser = new Usuario();
+
     /**
      * Creates new form CadastrarLivro
      */
     public CadastrarLivro() {
         initComponents();
+    }
+    
+    public CadastrarLivro(Usuario dados) {
+        initComponents();
+        
+        //  Passar dados para o Usuario currentUser
+        currentUser.setNome(dados.getNome());
+        currentUser.setNome_usuario(dados.getNomeUsuario());
+        currentUser.setPermissao(dados.getPermissao());
     }
 
     /**
@@ -139,7 +152,10 @@ public class CadastrarLivro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lbvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbvoltarActionPerformed
-        
+        MenuFuncionario menu = new MenuFuncionario(currentUser);
+        this.setVisible(false);
+        menu.setLocationRelativeTo(null);
+        menu.setVisible(true);
     }//GEN-LAST:event_lbvoltarActionPerformed
 
     private void btlimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlimparActionPerformed

@@ -11,16 +11,16 @@ import modelo.Usuario;
  *
  * @author nando
  */
-public class AlugarSala extends javax.swing.JFrame {
+public class ReservarSala extends javax.swing.JFrame {
 
     Usuario currentUser = new Usuario();
 
-    public AlugarSala() {
+    public ReservarSala() {
         initComponents();
         
     }
     
-    public AlugarSala(Usuario dados) {
+    public ReservarSala(Usuario dados) {
         initComponents();
           
         currentUser.setNome(dados.getNome());
@@ -183,14 +183,12 @@ public class AlugarSala extends javax.swing.JFrame {
     }//GEN-LAST:event_btsala3ActionPerformed
 
     private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed
-        
         if (currentUser.getPermissao() == 'f') {
             MenuFuncionario menu = new MenuFuncionario(currentUser);
             this.setVisible(false);
             menu.setLocationRelativeTo(null);
             menu.setVisible(true);
-        }
-        else {
+        } else {
             MenuUsuario menu = new MenuUsuario(currentUser);
             this.setVisible(false);
             menu.setLocationRelativeTo(null);
@@ -208,7 +206,7 @@ public class AlugarSala extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AlugarSala().setVisible(true);
+                new ReservarSala().setVisible(true);
             }
         });
     }

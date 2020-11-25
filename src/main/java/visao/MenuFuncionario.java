@@ -19,11 +19,11 @@ import modelo.Usuario;
 
 public class MenuFuncionario extends javax.swing.JFrame {
     
+    Usuario currentUser = new Usuario();
+    
     String temp_string;
-        
     ArrayList<Usuario> listaU = new ArrayList<>();
     ListaUsuario listusu = new ListaUsuario(listaU);
-    
     ArrayList<Livro> listaL = new ArrayList<>();
     ListaLivro a1 = new ListaLivro(listaL);
     
@@ -36,6 +36,12 @@ public class MenuFuncionario extends javax.swing.JFrame {
     public MenuFuncionario(Usuario dados) {
         initComponents();
         
+        lblwelcome.setText("Bem vindo " + dados.getNome());
+        lblcargo.setText("Logado como Funcionário");
+        //  Passar dados para o Usuario currentUser
+        currentUser.setNome(dados.getNome());
+        currentUser.setNome_usuario(dados.getNomeUsuario());
+        currentUser.setPermissao(dados.getPermissao());
     }
 
     /**
@@ -58,6 +64,8 @@ public class MenuFuncionario extends javax.swing.JFrame {
         btlogout = new javax.swing.JButton();
         btreservarsala = new javax.swing.JButton();
         btrelatoriousuario = new javax.swing.JButton();
+        lblwelcome = new javax.swing.JLabel();
+        lblcargo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Morais Library ");
@@ -188,16 +196,38 @@ public class MenuFuncionario extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        lblwelcome.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lblwelcome.setText("Bem vindo ");
+
+        lblcargo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblcargo.setText("Logado como:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblwelcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(143, 143, 143))
+                            .addComponent(lblcargo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(lblwelcome)
+                .addGap(7, 7, 7)
+                .addComponent(lblcargo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
@@ -206,14 +236,14 @@ public class MenuFuncionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btcadastrarusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcadastrarusuarioActionPerformed
-       CadastroUsuario cadastrousuario = new CadastroUsuario();       
+       CadastroUsuario cadastrousuario = new CadastroUsuario(currentUser);       
        this.setVisible(false);
        cadastrousuario.setLocationRelativeTo(null);
        cadastrousuario.setVisible(true);
     }//GEN-LAST:event_btcadastrarusuarioActionPerformed
 
     private void btbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbuscarActionPerformed
-        BuscarLivro buscarlivro = new BuscarLivro();
+        BuscarLivro buscarlivro = new BuscarLivro(currentUser);
         this.setVisible(false);
         buscarlivro.setLocationRelativeTo(null);
         buscarlivro.setVisible(true);
@@ -227,21 +257,21 @@ public class MenuFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_btlogoutActionPerformed
 
     private void btalugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btalugarActionPerformed
-        AlugarLivro alugarlivro = new AlugarLivro();
+        AlugarLivro alugarlivro = new AlugarLivro(currentUser);
         this.setVisible(false);
         alugarlivro.setLocationRelativeTo(null);
         alugarlivro.setVisible(true);
     }//GEN-LAST:event_btalugarActionPerformed
 
     private void btremoverusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btremoverusuarioActionPerformed
-        RemoverUsuario removerusuario = new RemoverUsuario();
+        RemoverUsuario removerusuario = new RemoverUsuario(currentUser);
         this.setVisible(false);
         removerusuario.setLocationRelativeTo(null);
         removerusuario.setVisible(true);
     }//GEN-LAST:event_btremoverusuarioActionPerformed
                                                    
     private void btcadastrareventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcadastrareventoActionPerformed
-        CadastrarEvento cadastrarevento = new CadastrarEvento();
+        CadastrarEvento cadastrarevento = new CadastrarEvento(currentUser);
         this.setVisible(false);
         cadastrarevento.setLocationRelativeTo(null);
         cadastrarevento.setVisible(true);
@@ -249,14 +279,14 @@ public class MenuFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_btcadastrareventoActionPerformed
 
     private void btreservarsalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btreservarsalaActionPerformed
-        AlugarSala alugarsala = new AlugarSala();
+        ReservarSala alugarsala = new ReservarSala(currentUser);
         this.setVisible(false);
         alugarsala.setLocationRelativeTo(null);
         alugarsala.setVisible(true);
     }//GEN-LAST:event_btreservarsalaActionPerformed
 
     private void btcatalograficaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcatalograficaActionPerformed
-        GerarFichaCatalogo gerarficha = new GerarFichaCatalogo();
+        GerarFichaCatalogo gerarficha = new GerarFichaCatalogo(currentUser);
         this.setVisible(false);
         gerarficha.setLocationRelativeTo(null);
         gerarficha.setVisible(true);
@@ -369,5 +399,7 @@ public class MenuFuncionario extends javax.swing.JFrame {
     private javax.swing.JButton btremoverusuario;
     private javax.swing.JButton btreservarsala;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblcargo;
+    private javax.swing.JLabel lblwelcome;
     // End of variables declaration//GEN-END:variables
 }

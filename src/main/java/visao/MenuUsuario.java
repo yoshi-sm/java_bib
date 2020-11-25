@@ -25,6 +25,14 @@ public class MenuUsuario extends javax.swing.JFrame {
         initComponents();
         lblwelcome.setText("Bem vindo " + dados.getNome());
         
+        if (dados.getPermissao() == 'a') {
+            lblcargo.setText("Logado como: Aluno");
+        } else if (dados.getPermissao() == 'p') {
+            lblcargo.setText("Logado como: Professor");
+        } else if(dados.getPermissao() == 'v') {
+            lblcargo.setText("Logado como: Visitante");
+        }
+        
         //  Passar dados para o Usuario currentUser
         currentUser.setNome(dados.getNome());
         currentUser.setNome_usuario(dados.getNomeUsuario());
@@ -48,6 +56,7 @@ public class MenuUsuario extends javax.swing.JFrame {
         btreservarsala = new javax.swing.JButton();
         btlogout = new javax.swing.JButton();
         lblwelcome = new javax.swing.JLabel();
+        lblcargo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Morais Library");
@@ -65,12 +74,27 @@ public class MenuUsuario extends javax.swing.JFrame {
         );
 
         btbuscar.setText("Buscar Livro");
+        btbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btbuscarActionPerformed(evt);
+            }
+        });
 
         btreservar.setText("Reservar Livro");
+        btreservar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btreservarActionPerformed(evt);
+            }
+        });
 
         btsolicitarficha.setText("Solicitar Ficha catalográfica");
 
         btvisualizarficha.setText("Visualizar ficha catalográfica");
+        btvisualizarficha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btvisualizarfichaActionPerformed(evt);
+            }
+        });
 
         btreservarsala.setText("Reservar Sala de estudo");
         btreservarsala.addActionListener(new java.awt.event.ActionListener() {
@@ -89,6 +113,9 @@ public class MenuUsuario extends javax.swing.JFrame {
         lblwelcome.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblwelcome.setText("Bem vindo ");
 
+        lblcargo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblcargo.setText("Logado como:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -98,7 +125,7 @@ public class MenuUsuario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblwelcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
+                        .addGap(143, 143, 143))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -115,7 +142,8 @@ public class MenuUsuario extends javax.swing.JFrame {
                                 .addComponent(btlogout, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(lblcargo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,9 +152,11 @@ public class MenuUsuario extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap()
                 .addComponent(lblwelcome)
-                .addGap(18, 18, 18)
+                .addGap(7, 7, 7)
+                .addComponent(lblcargo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btreservar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -152,11 +182,29 @@ public class MenuUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btlogoutActionPerformed
 
     private void btreservarsalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btreservarsalaActionPerformed
-        AlugarSala alugarsala = new AlugarSala(currentUser);
+        ReservarSala alugarSala = new ReservarSala(currentUser);
         this.setVisible(false);
-        alugarsala.setLocationRelativeTo(null);
-        alugarsala.setVisible(true);
+        alugarSala.setLocationRelativeTo(null);
+        alugarSala.setVisible(true);
     }//GEN-LAST:event_btreservarsalaActionPerformed
+
+    private void btbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbuscarActionPerformed
+        BuscarLivro buscarLivro = new BuscarLivro(currentUser);
+        this.setVisible(false);
+        buscarLivro.setLocationRelativeTo(null);
+        buscarLivro.setVisible(true);
+    }//GEN-LAST:event_btbuscarActionPerformed
+
+    private void btreservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btreservarActionPerformed
+        ReservarLivro reservaLivro = new ReservarLivro(currentUser);
+        this.setVisible(false);
+        reservaLivro.setLocationRelativeTo(null);
+        reservaLivro.setVisible(true);
+    }//GEN-LAST:event_btreservarActionPerformed
+
+    private void btvisualizarfichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvisualizarfichaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btvisualizarfichaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,6 +249,7 @@ public class MenuUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btsolicitarficha;
     private javax.swing.JButton btvisualizarficha;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblcargo;
     private javax.swing.JLabel lblwelcome;
     // End of variables declaration//GEN-END:variables
 }

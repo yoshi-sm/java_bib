@@ -11,12 +11,15 @@ import java.io.IOException;
 
 import modelo.ListaLivro;
 import modelo.Livro;
+import modelo.Usuario;
 
 /**
  *
- * @author Pedro
+ * @author pedro
  */
 public class GerarFichaCatalogo extends javax.swing.JFrame {
+    
+    Usuario currentUser = new Usuario();
     
     String titulo, temp_string;
     ArrayList<Livro> temp = new ArrayList<>();
@@ -28,6 +31,15 @@ public class GerarFichaCatalogo extends javax.swing.JFrame {
      */
     public GerarFichaCatalogo() {
         initComponents();
+    }
+    
+    public GerarFichaCatalogo(Usuario dados) {
+        initComponents();
+        
+        //  Passar dados para o Usuario currentUser
+        currentUser.setNome(dados.getNome());
+        currentUser.setNome_usuario(dados.getNomeUsuario());
+        currentUser.setPermissao(dados.getPermissao());
     }
     
     private void limparTitulo() {
@@ -162,7 +174,7 @@ public class GerarFichaCatalogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btconfirmarActionPerformed
 
     private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed
-        MenuFuncionario menuFuncionario = new MenuFuncionario();
+        MenuFuncionario menuFuncionario = new MenuFuncionario(currentUser);
         this.setVisible(false);
         menuFuncionario.setLocationRelativeTo(null);
         menuFuncionario.setVisible(true);

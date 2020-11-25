@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
  */
 public class AlugarLivro extends javax.swing.JFrame {
     
+    Usuario currentUser = new Usuario();
+    
     Livro livro;
     ArrayList<Livro> listaL = new ArrayList<>();
     ArrayList<Usuario> listaU = new ArrayList<>();
@@ -24,6 +26,15 @@ public class AlugarLivro extends javax.swing.JFrame {
      */
     public AlugarLivro() {
         initComponents();
+    }
+    
+        public AlugarLivro(Usuario dados) {
+        initComponents();
+        
+        //  Passar dados para o Usuario currentUser
+        currentUser.setNome(dados.getNome());
+        currentUser.setNome_usuario(dados.getNomeUsuario());
+        currentUser.setPermissao(dados.getPermissao());
     }
     
     /**
@@ -189,7 +200,7 @@ public class AlugarLivro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed
-        MenuFuncionario menufunc = new MenuFuncionario();
+        MenuFuncionario menufunc = new MenuFuncionario(currentUser);
         this.setVisible(false);
         menufunc.setLocationRelativeTo(null);
         menufunc.setVisible(true);

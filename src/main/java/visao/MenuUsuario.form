@@ -27,12 +27,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="lblwelcome" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -56,6 +56,7 @@
                       <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
+                  <Component id="lblcargo" alignment="0" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -68,9 +69,11 @@
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="lblwelcome" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+              <Component id="lblcargo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btbuscar" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
                   <Component id="btreservar" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
@@ -110,11 +113,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar Livro"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btbuscarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btreservar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Reservar Livro"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btreservarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btsolicitarficha">
       <Properties>
@@ -125,6 +134,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Visualizar ficha catalogr&#xe1;fica"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btvisualizarfichaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btreservarsala">
       <Properties>
@@ -148,6 +160,14 @@
           <Font name="Arial" size="24" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Bem vindo "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblcargo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Logado como:"/>
       </Properties>
     </Component>
   </SubComponents>

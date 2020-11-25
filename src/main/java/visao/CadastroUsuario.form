@@ -117,7 +117,7 @@
                       <Component id="cbprofessor" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lbpermissao" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="6" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btconfirmar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btlimpar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -143,9 +143,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Professor"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbprofessorActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lbpermissao">
           <Properties>
