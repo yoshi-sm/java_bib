@@ -14,7 +14,7 @@ import modelo.Usuario;
 public class ReservarSala extends javax.swing.JFrame {
 
     Usuario currentUser = new Usuario();
-
+    
     public ReservarSala() {
         initComponents();
         
@@ -22,7 +22,7 @@ public class ReservarSala extends javax.swing.JFrame {
     
     public ReservarSala(Usuario dados) {
         initComponents();
-          
+        
         currentUser.setNome(dados.getNome());
         currentUser.setNome_usuario(dados.getNomeUsuario());
         currentUser.setPermissao(dados.getPermissao());
