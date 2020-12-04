@@ -73,6 +73,12 @@ public class BuscarLivro extends javax.swing.JFrame {
         lbtitulo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lbtitulo.setText("Título do livro:");
 
+        txttitulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txttituloActionPerformed(evt);
+            }
+        });
+
         btConfirmar.setText("Confirmar");
         btConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,6 +195,10 @@ public class BuscarLivro extends javax.swing.JFrame {
         a1.getLista().clear();
         LimparBuscarLivro2();
     }//GEN-LAST:event_btConfirmarActionPerformed
+
+    private void txttituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttituloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txttituloActionPerformed
     
     /**
      * @param args the command line arguments

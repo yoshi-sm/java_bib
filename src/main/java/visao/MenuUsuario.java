@@ -88,6 +88,11 @@ public class MenuUsuario extends javax.swing.JFrame {
         });
 
         btsolicitarficha.setText("Solicitar Ficha catalográfica");
+        btsolicitarficha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btsolicitarfichaActionPerformed(evt);
+            }
+        });
 
         btvisualizarficha.setText("Visualizar ficha catalográfica");
         btvisualizarficha.addActionListener(new java.awt.event.ActionListener() {
@@ -204,7 +209,19 @@ public class MenuUsuario extends javax.swing.JFrame {
 
     private void btvisualizarfichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvisualizarfichaActionPerformed
         // TODO add your handling code here:
+        VisualizarFicha visFicha = new VisualizarFicha(currentUser);
+        this.setVisible(false);
+        visFicha.setLocationRelativeTo(null);
+        visFicha.setVisible(true);
     }//GEN-LAST:event_btvisualizarfichaActionPerformed
+
+    private void btsolicitarfichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsolicitarfichaActionPerformed
+        CataloPedido pedido = new CataloPedido(currentUser);
+        this.setVisible(false);
+        pedido.setLocationRelativeTo(null);
+        pedido.setVisible(true);
+                                         
+    }//GEN-LAST:event_btsolicitarfichaActionPerformed
 
     /**
      * @param args the command line arguments
