@@ -4,8 +4,8 @@ joca%##%joao%##%false%##%---%##%false%##%---
 lula e a baleia%##%luis augusto%##%true%##%qualquer%##%false%##%yoshi
 lula e a baleia%##%luis augusto%##%false%##%---%##%true%##%fernando
 joao e maria%##%Drummond%##%false%##%---%##%false%##%---
-lula e a baleia%##%luis augusto%##%false%##%---%##%false%##%---
-lula e a baleia%##%luis augusto%##%false%##%---%##%false%##%---
+lula e a baleia%##%luis augusto%##%false%##%---%##%true%##%fernando
+lula e a baleia%##%luis augusto%##%true%##%30-01-2021%##%false%##%fernando
 joao e maria%##%Drummond%##%false%##%---%##%false%##%---
 joao e maria%##%Drummond%##%false%##%---%##%false%##%---
 harry potter%##%tolkien%##%true%##%lolol%##%false%##%yoshi

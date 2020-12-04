@@ -81,7 +81,7 @@
                       <Component id="btremoverusuario" min="-2" pref="150" max="-2" attributes="0"/>
                       <Component id="btcadastrarevento" min="-2" pref="150" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="9" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -146,7 +146,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btrelatoriolivro">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Gerar Relat&#xf3;rios de Acervo"/>
+            <Property name="text" type="java.lang.String" value="Gerar Relat&#xf3;rios de Eventos"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btrelatoriolivroActionPerformed"/>

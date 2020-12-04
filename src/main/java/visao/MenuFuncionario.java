@@ -8,6 +8,9 @@ package visao;
 import java.util.ArrayList;
 import java.io.FileWriter;
 import java.io.IOException;
+import modelo.EspacoEvento;
+import modelo.Evento;
+import modelo.ListaEvento;
 import modelo.ListaLivro;
 import modelo.ListaUsuario;
 import modelo.Livro;
@@ -21,8 +24,10 @@ public class MenuFuncionario extends javax.swing.JFrame {
     String temp_string;
     ArrayList<Usuario> listaU = new ArrayList<>();
     ListaUsuario listusu = new ListaUsuario(listaU);
-    ArrayList<Livro> listaL = new ArrayList<>();
-    ListaLivro a1 = new ListaLivro(listaL);
+    ArrayList<Evento> listaE = new ArrayList<>();
+    //ArrayList<> listaE = new ArrayList<>();
+    ListaEvento a1 = new ListaEvento(listaE);
+    
     
     
     public MenuFuncionario() {
@@ -90,7 +95,7 @@ public class MenuFuncionario extends javax.swing.JFrame {
             }
         });
 
-        btrelatoriolivro.setText("Gerar Relatórios de Acervo");
+        btrelatoriolivro.setText("Gerar Relatórios de Eventos");
         btrelatoriolivro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btrelatoriolivroActionPerformed(evt);
@@ -169,7 +174,7 @@ public class MenuFuncionario extends javax.swing.JFrame {
                     .addComponent(btlogout, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btremoverusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btcadastrarevento, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -323,29 +328,32 @@ public class MenuFuncionario extends javax.swing.JFrame {
 
     private void btrelatoriolivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btrelatoriolivroActionPerformed
         
-        a1.carregarLivros();       
+        a1.carregarEventos();       
         temp_string = "";
         
-        for(int i = 0; i < listaL.size(); i++){
-                String titulo = listaL.get(i).getTitulo();
-                String autor = listaL.get(i).getAutor();
-                int id = listaL.get(i).getId();
+        for(int i = 0; i < listaE.size(); i++){
+                String nome = listaE.get(i).getNome();
+                EspacoEvento espacoEvento = listaE.get(i).getEspacoEvento();
+                String dataEvento = listaE.get(i).getData();
+                String assunto = listaE.get(i).getAssunto();
+                
 
                 temp_string += "------------------------" + "\n" + 
-                                "|  Título: " + titulo + "\n" +
-                                "|  Autor: " + autor + "\n" +
-                                "|  ID: " + id + "\n" + 
+                                "|  Nome: " + nome + "\n" +
+                                "|  Local do Evento: " + espacoEvento + "\n" +
+                                "|  Data do Evento: " + dataEvento + "\n" +
+                                "|  Assunto: " + assunto + "\n" +                        
                                 "------------------------" + "\n";
                                         
                try {
-                FileWriter escritor = new FileWriter("arquivos/Relatório_de_Acervo.txt");
+                FileWriter escritor = new FileWriter("arquivos/Relatório_de_Eventos.txt");
                 escritor.write(temp_string);
                 escritor.close();
                } catch (IOException e) {
                 System.out.println("Erro!");
                 e.printStackTrace();
                }
-               System.out.println(listaL);
+               System.out.println(listaE);
             }
     }//GEN-LAST:event_btrelatoriolivroActionPerformed
 

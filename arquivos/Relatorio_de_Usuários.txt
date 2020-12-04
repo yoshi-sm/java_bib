@@ -1,18 +1,18 @@
 ------------------------
 |  Nome: Yoshiyuki
-|  Nome de Usu√°rio: yoshi
+|  Nome de Usu·rio: yoshi
 |  Senha: pass
-|  Permiss√£o: f
+|  Permiss„o: f
 ------------------------
 ------------------------
 |  Nome: Fernando
-|  Nome de Usu√°rio: fernando
+|  Nome de Usu·rio: fernando
 |  Senha: 123
-|  Permiss√£o: p
+|  Permiss„o: p
 ------------------------
 ------------------------
 |  Nome: Pedro
-|  Nome de Usu√°rio: pdk
+|  Nome de Usu·rio: pdk
 |  Senha: 4321
-|  Permiss√£o: a
+|  Permiss„o: a
 ------------------------

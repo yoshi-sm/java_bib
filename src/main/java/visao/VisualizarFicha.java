@@ -227,7 +227,7 @@ public class VisualizarFicha extends javax.swing.JFrame {
     }//GEN-LAST:event_txt1ActionPerformed
 
     private void visualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visualizarActionPerformed
-        temp = b1.visualizar(currentUser.getNome(), txt1.getText());
+        temp = b1.visualizar(currentUser.getNomeUsuario(), txt1.getText());
         
         if (temp){
         jFrame1.setVisible(true);

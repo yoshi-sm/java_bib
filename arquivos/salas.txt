@@ -1,3 +1,19 @@
+Sala 1%##%true%##%Pedro%##%bruh%##%Noite
+Sala 1%##%true%##%Pedro%##%a%##%Tarde
+Sala 1%##%true%##%Pedro%##%a%##%Tarde
+Sala 2%##%true%##%Pedro%##%a%##%Tarde
+Sala 3%##%true%##%Pedro%##%03-02-2021%##%Tarde
+Sala 4%##%true%##%Pedro%##%03-02-2022%##%Tarde
+Sala 1%##%true%##%Pedro%##%a%##%Tarde
+Sala 1%##%true%##%Pedro%##%bruh%##%Noite
+Sala 1%##%true%##%Pedro%##%a%##%Tarde
+Sala 1%##%true%##%Pedro%##%a%##%Tarde
+Sala 1%##%true%##%Pedro%##%bruh%##%Noite
+Sala 1%##%true%##%Pedro%##%a%##%Tarde
+Sala 2%##%true%##%Pedro%##%a%##%Tarde
+Sala 3%##%true%##%Pedro%##%03-02-2021%##%Tarde
+Sala 4%##%true%##%Pedro%##%03-02-2022%##%Tarde
+Sala 4%##%true%##%Pedro%##%bruh%##%Noite
 Sala 1%##%true%##%Pedro%##%a%##%Tarde
 Sala 1%##%true%##%Pedro%##%bruh%##%Noite
 Sala 1%##%true%##%Pedro%##%a%##%Tarde
@@ -23,3 +39,6 @@ Sala 2%##%true%##%Pedro%##%a%##%Tarde
 Sala 3%##%true%##%Pedro%##%03-02-2021%##%Tarde
 Sala 4%##%true%##%Pedro%##%03-02-2022%##%Tarde
 Sala 4%##%true%##%Pedro%##%bruh%##%Noite
+Sala 1%##%true%##%Yoshiyuki%##%30-01-2021%##%Manhã
+Sala 1%##%true%##%Yoshiyuki%##%30-01-2021%##%Noite
+Sala 1%##%true%##%Yoshiyuki%##%30-01-2021%##%Tarde
