@@ -54,7 +54,7 @@ public class CadastrarLivro extends javax.swing.JFrame {
         setTitle("Morais Library");
 
         lbcadastrodeusuario.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        lbcadastrodeusuario.setText("Cadastro de Livro");
+        lbcadastrodeusuario.setText("Cadastro de usuário");
 
         lbtitulo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lbtitulo.setText("Título:");
@@ -105,10 +105,10 @@ public class CadastrarLivro extends javax.swing.JFrame {
                             .addComponent(txttitulo)
                             .addComponent(txtautor))))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(109, 109, 109)
                 .addComponent(lbcadastrodeusuario)
-                .addGap(110, 110, 110))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

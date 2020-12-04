@@ -7,11 +7,7 @@
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[318, 431]"/>
     </Property>
-    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
-  <AccessibilityProperties>
-    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
-  </AccessibilityProperties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
@@ -32,11 +28,6 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-<<<<<<< HEAD
-              <Component id="jPanel2" max="32767" attributes="0"/>
-              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-=======
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -67,22 +58,12 @@
                   </Group>
                   <Component id="lblcargo" alignment="0" max="32767" attributes="0"/>
               </Group>
->>>>>>> f7053c2caf15fb4d7823cd1ecfb01d54ba0e6b06
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-<<<<<<< HEAD
-              <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
-              <Component id="jPanel1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel2" max="32767" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-=======
               <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
               <Component id="jPanel1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -108,7 +89,6 @@
                   <Component id="btsolicitarficha" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
->>>>>>> f7053c2caf15fb4d7823cd1ecfb01d54ba0e6b06
           </Group>
       </Group>
     </DimensionLayout>
@@ -129,102 +109,6 @@
         </DimensionLayout>
       </Layout>
     </Container>
-<<<<<<< HEAD
-    <Container class="javax.swing.JPanel" name="jPanel2">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="btbuscar" min="-2" pref="150" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                          <Component id="btreservar" min="-2" pref="150" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="btvisualizarficha" min="-2" pref="150" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btreservarsala" min="-2" pref="150" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="btsolicitarficha" min="-2" pref="150" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btlogout" min="-2" pref="150" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btbuscar" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="btreservar" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btvisualizarficha" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="btreservarsala" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btlogout" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="btsolicitarficha" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JButton" name="btbuscar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Buscar Livro"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btbuscarActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btreservar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Reservar Livro"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btreservarActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btvisualizarficha">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Visualizar ficha catalogr&#xe1;fica"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btreservarsala">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Reservar Sala de estudo"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btreservarsalaActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btsolicitarficha">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Solicitar Ficha catalogr&#xe1;fica"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btlogout">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Logout"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btlogoutActionPerformed"/>
-          </Events>
-        </Component>
-      </SubComponents>
-    </Container>
-=======
     <Component class="javax.swing.JButton" name="btbuscar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar Livro"/>
@@ -286,6 +170,5 @@
         <Property name="text" type="java.lang.String" value="Logado como:"/>
       </Properties>
     </Component>
->>>>>>> f7053c2caf15fb4d7823cd1ecfb01d54ba0e6b06
   </SubComponents>
 </Form>

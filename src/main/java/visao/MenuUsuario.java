@@ -49,12 +49,11 @@ public class MenuUsuario extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         btbuscar = new javax.swing.JButton();
         btreservar = new javax.swing.JButton();
+        btsolicitarficha = new javax.swing.JButton();
         btvisualizarficha = new javax.swing.JButton();
         btreservarsala = new javax.swing.JButton();
-        btsolicitarficha = new javax.swing.JButton();
         btlogout = new javax.swing.JButton();
         lblwelcome = new javax.swing.JLabel();
         lblcargo = new javax.swing.JLabel();
@@ -62,7 +61,6 @@ public class MenuUsuario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Morais Library");
         setPreferredSize(new java.awt.Dimension(318, 431));
-        setResizable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -88,11 +86,8 @@ public class MenuUsuario extends javax.swing.JFrame {
                 btreservarActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-=======
 
         btsolicitarficha.setText("Solicitar Ficha catalográfica");
->>>>>>> f7053c2caf15fb4d7823cd1ecfb01d54ba0e6b06
 
         btvisualizarficha.setText("Visualizar ficha catalográfica");
         btvisualizarficha.addActionListener(new java.awt.event.ActionListener() {
@@ -108,8 +103,6 @@ public class MenuUsuario extends javax.swing.JFrame {
             }
         });
 
-        btsolicitarficha.setText("Solicitar Ficha catalográfica");
-
         btlogout.setText("Logout");
         btlogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,61 +110,17 @@ public class MenuUsuario extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btreservar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btvisualizarficha, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btreservarsala, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btsolicitarficha, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btlogout, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btreservar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btvisualizarficha, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btreservarsala, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btlogout, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btsolicitarficha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-=======
         lblwelcome.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblwelcome.setText("Bem vindo ");
 
         lblcargo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblcargo.setText("Logado como:");
->>>>>>> f7053c2caf15fb4d7823cd1ecfb01d54ba0e6b06
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-=======
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -195,19 +144,10 @@ public class MenuUsuario extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(lblcargo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
->>>>>>> f7053c2caf15fb4d7823cd1ecfb01d54ba0e6b06
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addGap(131, 131, 131)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, Short.MAX_VALUE))
-=======
                 .addGap(126, 126, 126)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -229,10 +169,7 @@ public class MenuUsuario extends javax.swing.JFrame {
                     .addComponent(btlogout, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btsolicitarficha, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
->>>>>>> f7053c2caf15fb4d7823cd1ecfb01d54ba0e6b06
         );
-
-        getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -252,21 +189,6 @@ public class MenuUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btreservarsalaActionPerformed
 
     private void btbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbuscarActionPerformed
-<<<<<<< HEAD
-        BuscarLivro buscarlivro = new BuscarLivro();
-        this.setVisible(false);
-        buscarlivro.setLocationRelativeTo(null);
-        buscarlivro.setVisible(true);
-    }//GEN-LAST:event_btbuscarActionPerformed
-
-    private void btreservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btreservarActionPerformed
-        ReservarLivro reservarlivro = new ReservarLivro();
-        this.setVisible(false);
-        reservarlivro.setLocationRelativeTo(null);
-        reservarlivro.setVisible(true);
-    }//GEN-LAST:event_btreservarActionPerformed
-
-=======
         BuscarLivro buscarLivro = new BuscarLivro(currentUser);
         this.setVisible(false);
         buscarLivro.setLocationRelativeTo(null);
@@ -284,7 +206,6 @@ public class MenuUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btvisualizarfichaActionPerformed
 
->>>>>>> f7053c2caf15fb4d7823cd1ecfb01d54ba0e6b06
     /**
      * @param args the command line arguments
      */
@@ -328,11 +249,7 @@ public class MenuUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btsolicitarficha;
     private javax.swing.JButton btvisualizarficha;
     private javax.swing.JPanel jPanel1;
-<<<<<<< HEAD
-    private javax.swing.JPanel jPanel2;
-=======
     private javax.swing.JLabel lblcargo;
     private javax.swing.JLabel lblwelcome;
->>>>>>> f7053c2caf15fb4d7823cd1ecfb01d54ba0e6b06
     // End of variables declaration//GEN-END:variables
 }

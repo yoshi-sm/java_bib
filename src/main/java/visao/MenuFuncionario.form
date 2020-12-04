@@ -55,7 +55,7 @@
               <Component id="lblcargo" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -93,15 +93,10 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="btrelatoriousuario" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btrelatorioeventos" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="btlogout" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btlogout" min="-2" pref="150" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -129,13 +124,11 @@
                       <Component id="btrelatoriolivro" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btrelatoriousuario" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="btrelatorioeventos" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="btrelatoriousuario" pref="79" max="32767" attributes="0"/>
+                      <Component id="btlogout" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btlogout" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -219,14 +212,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btrelatoriousuarioActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btrelatorioeventos">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Gerar Relat&#xf3;rio de eventos"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btrelatorioeventosActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
