@@ -24,66 +24,160 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btsala1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="btsala2" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="btsala3" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="btsala4" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lbsala1" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbsala2" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbsala3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbsala4" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="97" max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="lbtitulo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="lbsala1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="cbmanha1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                                      <Component id="cbtarde1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cbnoite1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btsala1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="lbsala4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="cbmanha4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                                      <Component id="cbtarde4" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cbnoite4" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="18" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="lbdata1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txtdata1" min="-2" pref="88" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="lbdata4" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txtdata4" min="-2" pref="88" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="lbdata2" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txtdata2" min="-2" pref="88" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="lbdata3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txtdata3" min="-2" pref="88" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                      <Component id="btsala4" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="btvoltar" alignment="1" min="-2" pref="77" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="lbsala2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="cbmanha2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                                      <Component id="cbtarde2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cbnoite2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btsala2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="lbsala3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="cbmanha3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                                      <Component id="cbtarde3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cbnoite3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btsala3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="btvoltar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
+                      <Component id="lbtitulo" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Component id="lbtitulo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btsala1" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="lbsala1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbmanha1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbtarde1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbnoite1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbdata1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtdata1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btsala2" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="lbsala2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbmanha2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbtarde2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbnoite2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbdata2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtdata2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btsala3" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="lbsala3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbmanha3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbtarde3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbnoite3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbdata3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtdata3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btsala4" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="lbsala4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbmanha4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbtarde4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbnoite4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbdata4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtdata4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btvoltar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btvoltar" min="-2" pref="44" max="-2" attributes="0"/>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -91,7 +185,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="btsala1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Sala 1"/>
+        <Property name="text" type="java.lang.String" value="Reservar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btsala1ActionPerformed"/>
@@ -99,7 +193,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btsala2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Sala 2"/>
+        <Property name="text" type="java.lang.String" value="Reservar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btsala2ActionPerformed"/>
@@ -107,7 +201,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btsala3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Sala 3"/>
+        <Property name="text" type="java.lang.String" value="Reservar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btsala3ActionPerformed"/>
@@ -115,7 +209,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btsala4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Sala 4"/>
+        <Property name="text" type="java.lang.String" value="Reservar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btsala4ActionPerformed"/>
@@ -131,22 +225,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbsala1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="N&#xe3;o Reservado"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lbsala2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="N&#xe3;o Reservado"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lbsala3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="N&#xe3;o Reservado"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lbsala4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="N&#xe3;o Reservado"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Sala 1"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btvoltar">
@@ -156,6 +238,130 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btvoltarActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbsala2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Sala 2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbsala3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Sala 3"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbsala4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Sala 4"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cbmanha1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Manha"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cbtarde1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tarde"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cbnoite1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Noite"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbdata1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Data:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtdata1">
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cbmanha2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Manha"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cbtarde2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tarde"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cbnoite2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Noite"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbdata2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Data:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtdata2">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbdata3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Data:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtdata3">
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cbtarde3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tarde"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cbmanha3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Manha"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cbnoite3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Noite"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbdata4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Data:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtdata4">
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cbtarde4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tarde"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cbmanha4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Manha"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cbnoite4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Noite"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
