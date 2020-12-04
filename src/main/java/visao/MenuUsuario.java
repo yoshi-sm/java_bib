@@ -206,7 +206,6 @@ public class MenuUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btreservarActionPerformed
 
     private void btvisualizarfichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvisualizarfichaActionPerformed
-        // TODO add your handling code here:
         VisualizarFicha visFicha = new VisualizarFicha(currentUser);
         this.setVisible(false);
         visFicha.setLocationRelativeTo(null);
@@ -217,8 +216,7 @@ public class MenuUsuario extends javax.swing.JFrame {
         CatalogoPedido pedido = new CatalogoPedido(currentUser);
         this.setVisible(false);
         pedido.setLocationRelativeTo(null);
-        pedido.setVisible(true);
-                                         
+        pedido.setVisible(true);         
     }//GEN-LAST:event_btsolicitarfichaActionPerformed
 
     /**

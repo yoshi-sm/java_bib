@@ -28,7 +28,7 @@ public class VisualizarFicha extends javax.swing.JFrame {
     public VisualizarFicha(Usuario dados) {
         initComponents();
         txt1.setText("");
-        jLabel1.setText("Digite o Titulo");
+        lbtitulo.setText("Digite o Titulo");
         //  Passar dados para o Usuario currentUser
         currentUser.setNome(dados.getNome());
         currentUser.setNome_usuario(dados.getNomeUsuario());
@@ -61,7 +61,7 @@ public class VisualizarFicha extends javax.swing.JFrame {
         txt1 = new java.awt.TextField();
         visualizar = new javax.swing.JButton();
         voltar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lbtitulo = new javax.swing.JLabel();
 
         jButton3.setText("Voltar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +165,6 @@ public class VisualizarFicha extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txt1.setText("textField1");
         txt1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt1ActionPerformed(evt);
@@ -186,34 +185,34 @@ public class VisualizarFicha extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("jLabel1");
+        lbtitulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbtitulo.setText("Visualizar Ficha");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(111, 111, 111)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(visualizar)
-                            .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(voltar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(152, 152, 152)
-                        .addComponent(jLabel1)))
-                .addContainerGap(43, Short.MAX_VALUE))
+                    .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbtitulo))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(visualizar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
+                .addComponent(voltar)
+                .addGap(83, 83, 83))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1)
-                .addGap(41, 41, 41)
+                .addGap(19, 19, 19)
+                .addComponent(lbtitulo)
+                .addGap(44, 44, 44)
                 .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(visualizar)
                     .addComponent(voltar))
@@ -312,8 +311,8 @@ public class VisualizarFicha extends javax.swing.JFrame {
     private javax.swing.JLabel isbn;
     private javax.swing.JButton jButton3;
     private javax.swing.JFrame jFrame1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JOptionPane jOptionPane1;
+    private javax.swing.JLabel lbtitulo;
     private javax.swing.JLabel local;
     private javax.swing.JLabel paginas;
     private javax.swing.JLabel subtitulo;
