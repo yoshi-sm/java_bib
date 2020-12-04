@@ -11,38 +11,37 @@ import modelo.*;
 public class Teste {
     public static void main(String[] args){
         
-        EspacoEvento quadra = new EspacoEvento("Quadra", "Uniesp");
-        EspacoEvento sala1 = new EspacoEvento("Sala 1", "Biblioteca");
-        EspacoEvento sala2 = new EspacoEvento("Sala 2", "Biblioteca");
-        EspacoEvento lanchonete = new EspacoEvento("Lanchonete", "Praça Uniesp");
-
-        ArrayList<EspacoEvento> lista= new ArrayList<EspacoEvento>();
-//        lista.add(quadra);
-//        lista.add(sala1);
-//        lista.add(sala2);
-//        lista.add(lanchonete);
-
-        ListaEspacoEvento bd = new ListaEspacoEvento(lista);
+        Sala sala1 = new Sala("Sala 1");
+        Sala sala2 = new Sala("Sala 2");
+        Sala sala3 = new Sala("Sala 3");
+        Sala sala4 = new Sala("Sala 4");
         
-        bd.carregarEspacoEventos();
-//        bd.cadastrar(sala1);
-//        bd.cadastrar(sala2);
-//        bd.cadastrar(lanchonete);
-//        bd.remover("Quadra");
-//        bd.salvarEspacoEvento();
+        ArrayList<Sala> lista = new ArrayList<Sala>();
+        
+        ListaSala bd = new ListaSala(lista);
 
-//        if (bd.existe("Sala 1")){
-//            System.out.println("Sala 1 existe!");
-//        } else {
-//            System.out.println("Sala 1 não existe!");
-//        }
+        bd.carregarSalas();
 
-//        Evento evento1 = new Evento();
-//        evento1.setAssunto("Computação");
-//        evento1.setData("04-05-2021");
-//        evento1.setEspacoEvento(sala1);
-//        evento1.setNome("Semana de computação UNIESP");
+        sala3.setAlugador("pedro");
+        sala3.setAlugado(true);
+        sala3.setData("03-04-2021");
+        sala3.setHorario("Tarde");
+        
+        sala4.setAlugador("fernando");
+        sala4.setAlugado(true);
+        sala4.setData("03-04-2021");
+        sala4.setHorario("Manha");
+        
+        bd.cadastrar(sala1);
+        bd.cadastrar(sala2);
+        bd.cadastrar(sala3);
+        bd.cadastrar(sala4);
+        
+        System.out.println(bd.toString());
+        System.out.println(bd.isSalaAlugada("Sala 1", "03-04-2021", "Tarde"));
+        System.out.println(bd.isSalaAlugada("Sala 3", "03-04-2021", "Tarde"));
+        
+        bd.salvarSalas();
 
-//        System.out.println(evento1.toString());
     }
 }

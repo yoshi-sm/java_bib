@@ -6,7 +6,6 @@
 package modelo;
 
 
-//ERRADO
 /**
  *
  * @author pedro
@@ -14,7 +13,7 @@ package modelo;
 public class Sala {
     private String nome;
     private boolean alugado;
-    private Usuario alugador;
+    private String alugador;
     private String data;
     private String horario;
 
@@ -41,11 +40,11 @@ public class Sala {
         this.alugado = alugado;
     }
     
-    public Usuario getAlugador() {
+    public String getAlugador() {
         return alugador;
     }
 
-    public void setAlugador(Usuario usuario) {
+    public void setAlugador(String usuario) {
         this.alugador = usuario;
     }
 

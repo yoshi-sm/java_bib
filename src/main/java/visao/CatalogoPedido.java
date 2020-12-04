@@ -21,7 +21,7 @@ public class CatalogoPedido extends javax.swing.JFrame {
     
     Catalografica a1 = new Catalografica();
     ArrayList<Catalografica> lista = new ArrayList<>();
-    ListaCatal b1 = new ListaCatal(lista);
+    ListaCatalogo b1 = new ListaCatalogo(lista);
     
     /**
      * Creates new form CataloPedido

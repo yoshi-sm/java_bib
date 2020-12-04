@@ -1,0 +1,4 @@
+Sala 1%##%false%##%null%##%null%##%null
+Sala 2%##%false%##%null%##%null%##%null
+Sala 3%##%true%##%pedro%##%03-04-2021%##%Tarde
+Sala 4%##%true%##%fernando%##%03-04-2021%##%Manha

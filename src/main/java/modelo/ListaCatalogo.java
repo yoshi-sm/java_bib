@@ -14,13 +14,13 @@ import java.io.IOException;
  *
  * @author xiuki
  */
-public class ListaCatal {
+public class ListaCatalogo {
     
     private ArrayList<Catalografica> lista;
     
-    public ListaCatal(){}
+    public ListaCatalogo(){}
     
-    public ListaCatal(ArrayList<Catalografica> lista){
+    public ListaCatalogo(ArrayList<Catalografica> lista){
     this.lista = lista;
     }
     

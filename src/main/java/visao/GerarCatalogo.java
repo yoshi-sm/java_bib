@@ -17,7 +17,7 @@ public class GerarCatalogo extends javax.swing.JFrame {
     Usuario currentUser = new Usuario();
     Catalografica a1 = new Catalografica();
     ArrayList<Catalografica> lista = new ArrayList<>();
-    ListaCatal b1 = new ListaCatal(lista);/**
+    ListaCatalogo b1 = new ListaCatalogo(lista);/**
      * Creates new form GerarCatalo
      */
     

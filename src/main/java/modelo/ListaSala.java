@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-//ERRADO
 /**
  *
  * @author pedro
@@ -28,18 +27,22 @@ public class ListaSala {
         this.lista = lista;
     }
     
-    // Checa se a sala em questão está alugada
-    public boolean isSalaAlugada(int numeroSala) {
+    // Checa se a sala em questão está alugada na data e horário pedido
+    public boolean isSalaAlugada(String nome, String data, String horario) {
         boolean temp = false;
         for(int i = 0; i < this.lista.size(); i++){
-            if (this.lista.get(i).getAlugado()){
+            if (
+                    this.lista.get(i).getNome().equals(nome)
+                    && this.lista.get(i).getData().equals(data)
+                    && this.lista.get(i).getHorario().equals(horario)
+                ){
                 temp = true;
             }
         }
         return temp;
     }
     
-    //carrega a lista de salas de um arquivo "arquivos/eventos.txt"
+    //carrega a lista de salas de um arquivo "arquivos/salas.txt"
     public void carregarSalas(){
         String temp;
         Scanner leitor;
@@ -50,9 +53,13 @@ public class ListaSala {
             leitor = new Scanner(arquivo);
             while (leitor.hasNextLine()) {
                 temp = leitor.nextLine();
-                temp2 = temp.split("%##%", 4);
+                temp2 = temp.split("%##%", 5);
                 System.out.print(temp2[0]);
                 sala = new Sala(temp2[0]);
+                sala.setAlugado(Boolean.parseBoolean(temp2[1]));
+                sala.setAlugador(temp2[2]);
+                sala.setData(temp2[3]);
+                sala.setHorario(temp2[4]);
                 this.lista.add(sala);
             }
             leitor.close();
@@ -65,11 +72,15 @@ public class ListaSala {
     }
     
     //salva as salas do objeto para o arquivo, objeto é esvaziado depois
-    public void salvarSala(){
+    public void salvarSalas(){
         String temp = "";
         FileWriter conteudo;
         for(int i = 0; i < this.lista.size(); i++){
-            temp += this.lista.get(i).getNome()+"%##%";
+            temp += this.lista.get(i).getNome()+"%##%"+
+                    this.lista.get(i).getAlugado()+"%##%"+
+                    this.lista.get(i).getAlugador()+"%##%"+
+                    this.lista.get(i).getData()+"%##%"+
+                    this.lista.get(i).getHorario()+"\n";
         
         }
         try {
@@ -110,4 +121,18 @@ public class ListaSala {
         }
         return temp;
     }
+
+    public ArrayList<Sala> getLista() {
+        return lista;
+    }
+
+    public void setLista(ArrayList<Sala> lista) {
+        this.lista = lista;
+    }
+
+    @Override
+    public String toString() {
+        return "ListaSala{" + "lista=" + lista + '}';
+    }
+    
 }
