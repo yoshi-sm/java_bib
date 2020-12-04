@@ -5,7 +5,10 @@
  */
 package visao;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import modelo.ListaSala;
+import modelo.Sala;
 import modelo.Usuario;
 
 /**
@@ -15,7 +18,14 @@ import modelo.Usuario;
 public class ReservarSala extends javax.swing.JFrame {
 
     Usuario currentUser = new Usuario();
-
+    ArrayList<Sala> lista = new ArrayList<Sala>();
+    ListaSala bd = new ListaSala(lista);
+    String nome;
+    String alugador;
+    String data;
+    String horario;
+    Sala sala = new Sala();
+    
     public ReservarSala() {
         initComponents();
         
@@ -288,19 +298,137 @@ public class ReservarSala extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btsala4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsala4ActionPerformed
-        JOptionPane.showMessageDialog(null,"Sala 4 Reservada com sucesso!");
+        nome = "Sala 4";
+        alugador = currentUser.getNome();
+        data = txtdata4.getText();
+        if (cbmanha4.isSelected()) {
+            horario = "Manhã";
+        } else if (cbtarde4.isSelected()) {
+            horario = "Tarde";
+        } else if (cbnoite4.isSelected()) {
+            horario = "Noite";
+        }
+        // conectar com base de dados
+        bd.carregarSalas();
+            
+        // criar novo objeto sala
+        sala.setNome(nome);
+        sala.setAlugado(true);
+        sala.setAlugador(alugador);
+        sala.setData(data);
+        sala.setHorario(horario);
+        
+        if (bd.cadastrar(sala)) {
+            // adicionar a lista
+            bd.salvarSalas();
+            // Mensagem de confirmação
+            JOptionPane.showMessageDialog(null,"Sala 4 Reservada com sucesso!");
+        } else {
+            bd.remover(nome);
+            // Dar erro se existir
+            JOptionPane.showMessageDialog(null,"A Sala 4 já está alugada nesse dia/horário!");
+        }
     }//GEN-LAST:event_btsala4ActionPerformed
 
     private void btsala1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsala1ActionPerformed
-        JOptionPane.showMessageDialog(null,"Sala 1 Reservada com sucesso!");
+        nome = "Sala 1";
+        alugador = currentUser.getNome();
+        data = txtdata1.getText();
+        if (cbmanha1.isSelected()) {
+            horario = "Manhã";
+        } else if (cbtarde1.isSelected()) {
+            horario = "Tarde";
+        } else if (cbnoite1.isSelected()) {
+            horario = "Noite";
+        }
+        // conectar com base de dados
+        bd.carregarSalas();
+            
+        // criar novo objeto sala
+        sala.setNome(nome);
+        sala.setAlugado(true);
+        sala.setAlugador(alugador);
+        sala.setData(data);
+        sala.setHorario(horario);
+        
+        if (bd.cadastrar(sala)) {
+            // adicionar a lista
+            bd.salvarSalas();
+            // Mensagem de confirmação
+            JOptionPane.showMessageDialog(null,"Sala 1 Reservada com sucesso!");
+        } else {
+            bd.remover(nome);
+            // Dar erro se existir
+            JOptionPane.showMessageDialog(null,"A Sala 1 já está alugada nesse dia/horário!");
+        }
+      
     }//GEN-LAST:event_btsala1ActionPerformed
 
     private void btsala2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsala2ActionPerformed
-        JOptionPane.showMessageDialog(null,"Sala 2 Reservada com sucesso!");
+        nome = "Sala 2";
+        alugador = currentUser.getNome();
+        data = txtdata2.getText();
+        if (cbmanha2.isSelected()) {
+            horario = "Manhã";
+        } else if (cbtarde2.isSelected()) {
+            horario = "Tarde";
+        } else if (cbnoite2.isSelected()) {
+            horario = "Noite";
+        }
+        // conectar com base de dados
+        bd.carregarSalas();
+            
+        // criar novo objeto sala
+        sala.setNome(nome);
+        sala.setAlugado(true);
+        sala.setAlugador(alugador);
+        sala.setData(data);
+        sala.setHorario(horario);
+        
+        if (bd.cadastrar(sala)) {
+            // adicionar a lista
+            bd.salvarSalas();
+            // Mensagem de confirmação
+            JOptionPane.showMessageDialog(null,"Sala 2 Reservada com sucesso!");
+        } else {
+            bd.remover(nome);
+            // Dar erro se existir
+            JOptionPane.showMessageDialog(null,"A Sala 2 já está alugada nesse dia/horário!");
+        }
+      
     }//GEN-LAST:event_btsala2ActionPerformed
 
     private void btsala3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsala3ActionPerformed
-       JOptionPane.showMessageDialog(null,"Sala 3 Reservada com sucesso!");
+        nome = "Sala 3";
+        alugador = currentUser.getNome();
+        data = txtdata3.getText();
+        if (cbmanha3.isSelected()) {
+            horario = "Manhã";
+        } else if (cbtarde3.isSelected()) {
+            horario = "Tarde";
+        } else if (cbnoite3.isSelected()) {
+            horario = "Noite";
+        }
+        // conectar com base de dados
+        bd.carregarSalas();
+            
+        // criar novo objeto sala
+        sala.setNome(nome);
+        sala.setAlugado(true);
+        sala.setAlugador(alugador);
+        sala.setData(data);
+        sala.setHorario(horario);
+        
+        if (bd.cadastrar(sala)) {
+            // adicionar a lista
+            bd.salvarSalas();
+            // Mensagem de confirmação
+            JOptionPane.showMessageDialog(null,"Sala 3 Reservada com sucesso!");
+        } else {
+            bd.remover(nome);
+            // Dar erro se existir
+            JOptionPane.showMessageDialog(null,"A Sala 3 já está alugada nesse dia/horário!");
+        }
     }//GEN-LAST:event_btsala3ActionPerformed
 
     private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed

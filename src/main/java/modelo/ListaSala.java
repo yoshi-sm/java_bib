@@ -27,21 +27,6 @@ public class ListaSala {
         this.lista = lista;
     }
     
-    // Checa se a sala em questão está alugada na data e horário pedido
-    public boolean isSalaAlugada(String nome, String data, String horario) {
-        boolean temp = false;
-        for(int i = 0; i < this.lista.size(); i++){
-            if (
-                    this.lista.get(i).getNome().equals(nome)
-                    && this.lista.get(i).getData().equals(data)
-                    && this.lista.get(i).getHorario().equals(horario)
-                ){
-                temp = true;
-            }
-        }
-        return temp;
-    }
-    
     //carrega a lista de salas de um arquivo "arquivos/salas.txt"
     public void carregarSalas(){
         String temp;
@@ -54,7 +39,6 @@ public class ListaSala {
             while (leitor.hasNextLine()) {
                 temp = leitor.nextLine();
                 temp2 = temp.split("%##%", 5);
-                System.out.print(temp2[0]);
                 sala = new Sala(temp2[0]);
                 sala.setAlugado(Boolean.parseBoolean(temp2[1]));
                 sala.setAlugador(temp2[2]);
@@ -99,8 +83,16 @@ public class ListaSala {
     //adiciona sala à lista. Se a sala ja existe retorna falso
     public boolean cadastrar(Sala sala){
         boolean bool = true;
+        String nome, data, horario;
+        nome = sala.getNome();
+        data = sala.getData();
+        horario = sala.getHorario();
         for (int i = 0; i < this.lista.size(); i++){
-            if (this.lista.get(i).getNome().equals(sala.getNome())){
+            if (    
+                    this.lista.get(i).getNome().equals(nome)
+                    && this.lista.get(i).getData().equals(data)
+                    && this.lista.get(i).getHorario().equals(horario)
+                ){
                 bool = false;
             }
         }

@@ -20,27 +20,25 @@ public class Teste {
         
         ListaSala bd = new ListaSala(lista);
 
-        bd.carregarSalas();
-
-        sala3.setAlugador("pedro");
-        sala3.setAlugado(true);
-        sala3.setData("03-04-2021");
-        sala3.setHorario("Tarde");
-        
-        sala4.setAlugador("fernando");
-        sala4.setAlugado(true);
-        sala4.setData("03-04-2021");
-        sala4.setHorario("Manha");
-        
-        bd.cadastrar(sala1);
-        bd.cadastrar(sala2);
-        bd.cadastrar(sala3);
-        bd.cadastrar(sala4);
-        
-        System.out.println(bd.toString());
-        System.out.println(bd.isSalaAlugada("Sala 1", "03-04-2021", "Tarde"));
-        System.out.println(bd.isSalaAlugada("Sala 3", "03-04-2021", "Tarde"));
-        
+//        bd.carregarSalas();
+//
+//        sala3.setAlugador("pedro");
+//        sala3.setAlugado(true);
+//        sala3.setData("03-04-2021");
+//        sala3.setHorario("Tarde");
+//        
+//        sala4.setAlugador("fernando");
+//        sala4.setAlugado(true);
+//        sala4.setData("03-04-2021");
+//        sala4.setHorario("Manha");
+//        
+//        bd.cadastrar(sala1);
+//        bd.cadastrar(sala2);
+//        bd.cadastrar(sala3);
+//        bd.cadastrar(sala4);
+//        
+//        System.out.println(bd.toString());
+//        
         bd.salvarSalas();
 
     }

@@ -69,7 +69,7 @@
                           <Component id="btbuscar" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
                           <Component id="btreservar" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btvisualizarficha" min="-2" pref="79" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btsolicitarficha" min="-2" pref="75" max="-2" attributes="0"/>

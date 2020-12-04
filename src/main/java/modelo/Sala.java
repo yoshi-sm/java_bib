@@ -66,7 +66,8 @@ public class Sala {
 
     @Override
     public String toString() {
-        return "Sala:" + "nome= " + nome + "\nalugado= " + alugado + "\nalugador= " + alugador + "\nhorario=" + horario;
+        return "Sala{" + "nome=" + nome + ", alugado=" + alugado + ", alugador=" + alugador + ", data=" + data + ", horario=" + horario + '}';
     }
+
     
 }
