@@ -1,55 +1,55 @@
 ------------------------
-|  TÃ­tulo: joca
+|  Título: joca
 |  Autor: antonio jose
 |  ID: 0
 ------------------------
 ------------------------
-|  TÃ­tulo: lula e a baleia
+|  Título: lula e a baleia
 |  Autor: luis augusto
 |  ID: 1
 ------------------------
 ------------------------
-|  TÃ­tulo: joca
+|  Título: joca
 |  Autor: joao
 |  ID: 2
 ------------------------
 ------------------------
-|  TÃ­tulo: lula e a baleia
+|  Título: lula e a baleia
 |  Autor: luis augusto
 |  ID: 3
 ------------------------
 ------------------------
-|  TÃ­tulo: lula e a baleia
+|  Título: lula e a baleia
 |  Autor: luis augusto
 |  ID: 4
 ------------------------
 ------------------------
-|  TÃ­tulo: joao e maria
+|  Título: joao e maria
 |  Autor: Drummond
 |  ID: 5
 ------------------------
 ------------------------
-|  TÃ­tulo: lula e a baleia
+|  Título: lula e a baleia
 |  Autor: luis augusto
 |  ID: 6
 ------------------------
 ------------------------
-|  TÃ­tulo: lula e a baleia
+|  Título: lula e a baleia
 |  Autor: luis augusto
 |  ID: 7
 ------------------------
 ------------------------
-|  TÃ­tulo: joao e maria
+|  Título: joao e maria
 |  Autor: Drummond
 |  ID: 8
 ------------------------
 ------------------------
-|  TÃ­tulo: joao e maria
+|  Título: joao e maria
 |  Autor: Drummond
 |  ID: 9
 ------------------------
 ------------------------
-|  TÃ­tulo: harry potter
+|  Título: harry potter
 |  Autor: tolkien
 |  ID: 10
 ------------------------

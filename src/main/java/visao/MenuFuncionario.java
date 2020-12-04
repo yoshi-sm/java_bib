@@ -283,7 +283,7 @@ public class MenuFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_btreservarsalaActionPerformed
 
     private void btcatalograficaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcatalograficaActionPerformed
-        GerarFichaCatalogo gerarficha = new GerarFichaCatalogo(currentUser);
+        GerarCatalo gerarficha = new GerarCatalo(currentUser);
         this.setVisible(false);
         gerarficha.setLocationRelativeTo(null);
         gerarficha.setVisible(true);
