@@ -1,0 +1,90 @@
+------------------------
+|  Nome: Yoshiyuki
+|  Nome de Usuário: yoshi
+|  Senha: pass
+|  Permissão: f
+------------------------
+------------------------
+|  Nome: Fernando
+|  Nome de Usuário: fernando
+|  Senha: 123
+|  Permissão: p
+------------------------
+------------------------
+|  Nome: Pedro
+|  Nome de Usuário: pdk
+|  Senha: 4321
+|  Permissão: a
+------------------------
+------------------------
+|  Nome: Yoshiyuki
+|  Nome de Usuário: yoshi
+|  Senha: pass
+|  Permissão: f
+------------------------
+------------------------
+|  Nome: Fernando
+|  Nome de Usuário: fernando
+|  Senha: 123
+|  Permissão: p
+------------------------
+------------------------
+|  Nome: Pedro
+|  Nome de Usuário: pdk
+|  Senha: 4321
+|  Permissão: a
+------------------------
+------------------------
+|  Nome: Yoshiyuki
+|  Nome de Usuário: yoshi
+|  Senha: pass
+|  Permissão: f
+------------------------
+------------------------
+|  Nome: Fernando
+|  Nome de Usuário: fernando
+|  Senha: 123
+|  Permissão: p
+------------------------
+------------------------
+|  Nome: Pedro
+|  Nome de Usuário: pdk
+|  Senha: 4321
+|  Permissão: a
+------------------------
+------------------------
+|  Nome: Yoshiyuki
+|  Nome de Usuário: yoshi
+|  Senha: pass
+|  Permissão: f
+------------------------
+------------------------
+|  Nome: Fernando
+|  Nome de Usuário: fernando
+|  Senha: 123
+|  Permissão: p
+------------------------
+------------------------
+|  Nome: Pedro
+|  Nome de Usuário: pdk
+|  Senha: 4321
+|  Permissão: a
+------------------------
+------------------------
+|  Nome: Yoshiyuki
+|  Nome de Usuário: yoshi
+|  Senha: pass
+|  Permissão: f
+------------------------
+------------------------
+|  Nome: Fernando
+|  Nome de Usuário: fernando
+|  Senha: 123
+|  Permissão: p
+------------------------
+------------------------
+|  Nome: Pedro
+|  Nome de Usuário: pdk
+|  Senha: 4321
+|  Permissão: a
+------------------------

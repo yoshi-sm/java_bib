@@ -26,7 +26,7 @@ public class ListaEspacoEvento {
         this.lista = lista;
     }
     
-    //verifica se o usuario existe 
+    //verifica se o Espaco existe existe 
     public boolean existe(String nome){
         boolean temp = false;
         for(int i = 0; i < this.lista.size(); i++){

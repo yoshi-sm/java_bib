@@ -42,9 +42,6 @@ public class GerarFichaCatalogo extends javax.swing.JFrame {
         currentUser.setPermissao(dados.getPermissao());
     }
     
-    private void limparTitulo() {
-        txtTitulo.setText("");
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
