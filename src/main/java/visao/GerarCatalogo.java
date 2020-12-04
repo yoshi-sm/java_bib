@@ -12,7 +12,7 @@ import modelo.*;
  *
  * @author xiuki
  */
-public class GerarCatalo extends javax.swing.JFrame {
+public class GerarCatalogo extends javax.swing.JFrame {
     String[] elementos;
     Usuario currentUser = new Usuario();
     Catalografica a1 = new Catalografica();
@@ -21,7 +21,7 @@ public class GerarCatalo extends javax.swing.JFrame {
      * Creates new form GerarCatalo
      */
     
-    public GerarCatalo() {
+    public GerarCatalogo() {
         initComponents();
         b1.carregarPedidos();
         elementos = new String[b1.getLista().size()];
@@ -34,7 +34,7 @@ public class GerarCatalo extends javax.swing.JFrame {
         });
     }
     
-    public GerarCatalo(Usuario dados) {
+    public GerarCatalogo(Usuario dados) {
         initComponents();
         
         //  Passar dados para o Usuario currentUser
@@ -185,20 +185,21 @@ public class GerarCatalo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GerarCatalo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GerarCatalogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GerarCatalo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GerarCatalogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GerarCatalo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GerarCatalogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GerarCatalo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GerarCatalogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GerarCatalo().setVisible(true);
+                new GerarCatalogo().setVisible(true);
             }
         });
     }

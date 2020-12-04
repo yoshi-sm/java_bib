@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author xiuki
  */
-public class CataloPedido extends javax.swing.JFrame {
+public class CatalogoPedido extends javax.swing.JFrame {
     
     
     Usuario currentUser = new Usuario();
@@ -26,11 +26,11 @@ public class CataloPedido extends javax.swing.JFrame {
     /**
      * Creates new form CataloPedido
      */
-    public CataloPedido() {
+    public CatalogoPedido() {
         initComponents();
     }
     
-    public CataloPedido(Usuario dados) {
+    public CatalogoPedido(Usuario dados) {
         initComponents();
         
         //  Passar dados para o Usuario currentUser
@@ -411,20 +411,21 @@ public class CataloPedido extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CataloPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatalogoPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CataloPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatalogoPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CataloPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatalogoPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CataloPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatalogoPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CataloPedido().setVisible(true);
+                new CatalogoPedido().setVisible(true);
             }
         });
     }
