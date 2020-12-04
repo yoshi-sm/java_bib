@@ -47,7 +47,6 @@ public class CadastrarLivro extends javax.swing.JFrame {
         txttitulo = new javax.swing.JTextField();
         txtautor = new javax.swing.JTextField();
         btconfirmar = new javax.swing.JButton();
-        btlimpar = new javax.swing.JButton();
         lbvoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,13 +68,6 @@ public class CadastrarLivro extends javax.swing.JFrame {
             }
         });
 
-        btlimpar.setText("Limpar");
-        btlimpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btlimparActionPerformed(evt);
-            }
-        });
-
         lbvoltar.setText("Voltar");
         lbvoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,9 +84,7 @@ public class CadastrarLivro extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btconfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(btlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lbvoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,7 +98,7 @@ public class CadastrarLivro extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(109, 109, 109)
                 .addComponent(lbcadastrodeusuario)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +116,6 @@ public class CadastrarLivro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btconfirmar)
-                    .addComponent(btlimpar)
                     .addComponent(lbvoltar))
                 .addContainerGap())
         );
@@ -157,10 +146,6 @@ public class CadastrarLivro extends javax.swing.JFrame {
         menu.setLocationRelativeTo(null);
         menu.setVisible(true);
     }//GEN-LAST:event_lbvoltarActionPerformed
-
-    private void btlimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlimparActionPerformed
-        //LimparCadastroLivro();
-    }//GEN-LAST:event_btlimparActionPerformed
 
     private void btconfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btconfirmarActionPerformed
         // TODO add your handling code here:
@@ -211,7 +196,6 @@ public class CadastrarLivro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btconfirmar;
-    private javax.swing.JButton btlimpar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbautor;
     private javax.swing.JLabel lbcadastrodeusuario;
