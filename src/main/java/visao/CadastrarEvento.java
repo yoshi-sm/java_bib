@@ -7,7 +7,9 @@ package visao;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import modelo.EspacoEvento;
 import modelo.Evento;
+import modelo.ListaEspacoEvento;
 
 import modelo.ListaEvento;
 import modelo.Usuario;
@@ -220,12 +222,26 @@ public class CadastrarEvento extends javax.swing.JFrame {
             data = this.txtdata.getText();
             assunto = this.txtassunto.getText();
             
-            a1.cadastrar(new Evento(nome, local, data, assunto));
-            a1.salvarEvento();
-            JOptionPane.showMessageDialog(rootPane,"Cadastro de evento realizado!");
-            LimparCadastroEvento();
+            // Conectar com base de dados de EspacoEventos
+            ArrayList<EspacoEvento> lista = new ArrayList<EspacoEvento>();
+            ListaEspacoEvento bdEspacoEventos = new ListaEspacoEvento(lista);
+            bdEspacoEventos.carregarEspacoEventos();
+            // Checar se o lugar existe
+            if (bdEspacoEventos.existe(local)) {
+                // Se existir, recuperar o objeto
+                // Criar o Objeto Evento        
+                Evento evento = new Evento(nome, data, assunto);
+                evento.setEspacoEvento(bdEspacoEventos.carregarEspacoEvento(local));
+                a1.cadastrar(evento);
+                a1.salvarEvento();
+                JOptionPane.showMessageDialog(rootPane,"Cadastro de evento realizado!");
+                LimparCadastroEvento();
+            } else {
+                // Se não existir, erro
+                JOptionPane.showMessageDialog(rootPane,"O local do evento não existe!");
+                this.txtlocal.setText("");
+            }
         }
-       
     }//GEN-LAST:event_btconfirmarActionPerformed
 
     

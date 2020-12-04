@@ -14,44 +14,55 @@ import java.util.Scanner;
 
 /**
  *
- * @author pedro
+ * @author mac
  */
-public class ListaEvento {
+public class ListaEspacoEvento {
     
-    private ArrayList<Evento> lista;
+    private ArrayList<EspacoEvento> lista;
     
-    public ListaEvento(){}
+    public ListaEspacoEvento(){}
     
-    public ListaEvento(ArrayList<Evento> lista) {
+    public ListaEspacoEvento(ArrayList<EspacoEvento> lista) {
         this.lista = lista;
     }
     
-//    // Talvez checar por data e local, ao invés de nome
-//    public boolean eventoExiste(String nomeEvento) {
-//        boolean temp = false;
-//        for(int i = 0; i < this.lista.size(); i++){
-//            if (this.lista.get(i).getNome().equals(nomeEvento)){
-//                temp = true;
-//            }
-//        }
-//        return temp;
-//    }
+    //verifica se o usuario existe 
+    public boolean existe(String nome){
+        boolean temp = false;
+        for(int i = 0; i < this.lista.size(); i++){
+            if (this.lista.get(i).getNome().equals(nome)){
+                temp = true;
+            }
+        }
+        return temp;
+    }
     
-    //carrega a lista de eventos de um arquivo "arquivos/eventos.txt"
-    public void carregarEventos(){
+    //verifica se o usuario existe 
+    public EspacoEvento carregarEspacoEvento(String nome){
+        EspacoEvento temp = new EspacoEvento();
+        for(int i = 0; i < this.lista.size(); i++){
+            if (this.lista.get(i).getNome().equals(nome)){
+               temp.setNome(this.lista.get(i).getNome());
+               temp.setLocal(this.lista.get(i).getLocal());
+            }
+        }
+        return temp;
+    }
+    
+    public void carregarEspacoEventos(){
         String temp;
         Scanner leitor;
-        Evento evento;
+        EspacoEvento espacoEvento;
         String[] temp2;
         try{
-            File arquivo = new File("arquivos/eventos.txt");
+            File arquivo = new File("arquivos/espacoEventos.txt");
             leitor = new Scanner(arquivo);
             while (leitor.hasNextLine()) {
                 temp = leitor.nextLine();
                 temp2 = temp.split("%##%", 4);
                 System.out.print(temp2[0]);
-                evento = new Evento(temp2[0], temp2[1], temp2[2]);
-                this.lista.add(evento);
+                espacoEvento = new EspacoEvento(temp2[0], temp2[1]);
+                this.lista.add(espacoEvento);
             }
             leitor.close();
         }
@@ -62,19 +73,17 @@ public class ListaEvento {
         }
     }
     
-    //salva os eventos do objeto para o arquivo, objeto é esvaziado depois
-    public void salvarEvento(){
+    //carrega a lista de eventos de um arquivo "arquivos/eventos.txt"
+    public void salvarEspacoEvento(){
         String temp = "";
         FileWriter conteudo;
         for(int i = 0; i < this.lista.size(); i++){
             temp += this.lista.get(i).getNome()+"%##%"+
-                    this.lista.get(i).getEspacoEvento()+"%##%"+
-                    this.lista.get(i).getData()+"%##%"+
-                    this.lista.get(i).getAssunto()+"\n";
+                    this.lista.get(i).getLocal()+"%##%\n";
         
         }
         try {
-            conteudo = new FileWriter("arquivos/eventos.txt");
+            conteudo = new FileWriter("arquivos/espacoEventos.txt");
             conteudo.write(temp);
             conteudo.close();
             System.out.println("Lista salva!");
@@ -87,24 +96,24 @@ public class ListaEvento {
     }
     
     //adiciona evento à lista. Se o evento ja existe retorna falso
-    public boolean cadastrar(Evento evento){
+    public boolean cadastrar(EspacoEvento espacoEvento){
         boolean bool = true;
         for (int i = 0; i < this.lista.size(); i++){
-            if (this.lista.get(i).getNome().equals(evento.getNome())){
+            if (this.lista.get(i).getNome().equals(espacoEvento.getNome())){
                 bool = false;
             }
         }
         if (bool){
-            this.lista.add(evento);
+            this.lista.add(espacoEvento);
         }
         return bool;
     }
    
     //removendo evento à lista
-    public boolean remover(String nomeEvento){
+    public boolean remover(String nomeEspacoEvento){
         boolean temp = false;
         for (int i = 0; i < this.lista.size(); i++){
-            if (this.lista.get(i).getNome().equals(nomeEvento)){
+            if (this.lista.get(i).getNome().equals(nomeEspacoEvento)){
                 this.lista.remove(i);
                 temp = true;
             }
@@ -112,17 +121,18 @@ public class ListaEvento {
         return temp;
     }
 
-    public ArrayList<Evento> getLista() {
+    public ArrayList<EspacoEvento> getLista() {
         return lista;
     }
 
-    public void setLista(ArrayList<Evento> lista) {
+    public void setLista(ArrayList<EspacoEvento> lista) {
         this.lista = lista;
     }
 
     @Override
     public String toString() {
-        return "Lista de eventos= " + lista;
+        return "ListaEspacoEvento{" + "lista=" + lista + '}';
     }
+    
     
 }

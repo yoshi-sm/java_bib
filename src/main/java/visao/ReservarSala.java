@@ -23,7 +23,7 @@ public class ReservarSala extends javax.swing.JFrame {
     
     public ReservarSala(Usuario dados) {
         initComponents();
-          
+
         currentUser.setNome(dados.getNome());
         currentUser.setNome_usuario(dados.getNomeUsuario());
         currentUser.setPermissao(dados.getPermissao());

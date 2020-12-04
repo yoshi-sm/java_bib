@@ -12,16 +12,16 @@ package modelo;
 public class Evento {
     
     private String nome;
-    private String local;
+    private EspacoEvento espacoEvento;
     private String data;
     private String assunto;
     
     public Evento() {}
     
-    public Evento(String nome, String local, String data, String assunto) {
+    public Evento(String nome, String data, String assunto) {
         this.nome = nome;
-        this.local = local;
         this.data = data;
+        this.espacoEvento = espacoEvento;
         this.assunto = assunto;
     }
     
@@ -34,12 +34,12 @@ public class Evento {
         this.nome = nome;
     }
 
-    public String getLocal() {
-        return local;
+    public EspacoEvento getEspacoEvento() {
+        return espacoEvento;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
+    public void setEspacoEvento(EspacoEvento espacoEvento) {
+        this.espacoEvento = espacoEvento;
     }
 
     public String getData() {
@@ -60,10 +60,7 @@ public class Evento {
 
     @Override
     public String toString() {
-        return "Evento: " + "Nome do Evento= " + nome + ", local= " + local + 
-                ", data= " + data + ", assunto= " + assunto + "\n";
-    }
-
-
-    
+        return "Evento{" + "nome=" + nome + ", espacoEvento=" + espacoEvento + ", data=" + data + ", assunto=" + assunto + '}';
+    }    
+  
 }
