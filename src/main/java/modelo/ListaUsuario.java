@@ -30,7 +30,7 @@ public class ListaUsuario {
 //Metodos
     
     //verifica se o usuario existe 
-        public boolean existe(String usrName){
+    public boolean existe(String usrName){
         boolean temp = false;
         for(int i = 0; i < this.lista.size(); i++){
             if (this.lista.get(i).getNomeUsuario().equals(usrName)){

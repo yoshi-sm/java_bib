@@ -5,6 +5,8 @@
  */
 package modelo;
 
+
+//ERRADO
 /**
  *
  * @author pedro
@@ -54,8 +56,6 @@ public class Sala {
     public void setData(String data) {
         this.data = data;
     }
-    
-    
     
     public String getHorario() {
         return horario;

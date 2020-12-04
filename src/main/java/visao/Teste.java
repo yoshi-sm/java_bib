@@ -10,32 +10,39 @@ import modelo.*;
  */
 public class Teste {
     public static void main(String[] args){
-       
-//    Evento e1 = new Evento("Meu aniversário", "Sala 1", "03/02/2021", "Meu aniversário pô");
-//    Evento e2 = new Evento("Aniversário dela", "Sala 2", "03/11/2021", "É o aniversário dela");
-//    
-    ArrayList<Evento> lista = new ArrayList<Evento>();
-    
-//    lista.add(e1);
-//    
-//    ListaEvento le1 = new ListaEvento(lista);
-//    
-//    le1.cadastrar(e2);
-//        
-//    le1.remover("Meu aniversário");
-//    
-//    le1.salvarEvento();
-    
-    ListaEvento bd = new ListaEvento(lista);
-    
-    bd.carregarEventos();
-    
-//    ArrayList<Usuario> lista = new ArrayList<Usuario>();
-//    
-//    ListaUsuario bd = new ListaUsuario(lista);
-//    
-//    bd.carregarUsuarios();
-//    
-    System.out.println(bd.toString());
+        
+        EspacoEvento quadra = new EspacoEvento("Quadra", "Uniesp");
+        EspacoEvento sala1 = new EspacoEvento("Sala 1", "Biblioteca");
+        EspacoEvento sala2 = new EspacoEvento("Sala 2", "Biblioteca");
+        EspacoEvento lanchonete = new EspacoEvento("Lanchonete", "Praça Uniesp");
+
+        ArrayList<EspacoEvento> lista= new ArrayList<EspacoEvento>();
+//        lista.add(quadra);
+//        lista.add(sala1);
+//        lista.add(sala2);
+//        lista.add(lanchonete);
+
+        ListaEspacoEvento bd = new ListaEspacoEvento(lista);
+        
+        bd.carregarEspacoEventos();
+//        bd.cadastrar(sala1);
+//        bd.cadastrar(sala2);
+//        bd.cadastrar(lanchonete);
+//        bd.remover("Quadra");
+//        bd.salvarEspacoEvento();
+
+//        if (bd.existe("Sala 1")){
+//            System.out.println("Sala 1 existe!");
+//        } else {
+//            System.out.println("Sala 1 não existe!");
+//        }
+
+//        Evento evento1 = new Evento();
+//        evento1.setAssunto("Computação");
+//        evento1.setData("04-05-2021");
+//        evento1.setEspacoEvento(sala1);
+//        evento1.setNome("Semana de computação UNIESP");
+
+//        System.out.println(evento1.toString());
     }
 }
