@@ -227,7 +227,6 @@ public class VisualizarFicha extends javax.swing.JFrame {
     }//GEN-LAST:event_txt1ActionPerformed
 
     private void visualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visualizarActionPerformed
-        // TODO add your handling code here:
         temp = b1.visualizar(currentUser.getNome(), txt1.getText());
         
         if (temp){
@@ -253,7 +252,6 @@ public class VisualizarFicha extends javax.swing.JFrame {
     }//GEN-LAST:event_visualizarActionPerformed
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
-        // TODO add your handling code here:
          MenuUsuario menu = new MenuUsuario(currentUser);
         this.setVisible(false);
         menu.setLocationRelativeTo(null);
