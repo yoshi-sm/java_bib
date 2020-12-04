@@ -129,6 +129,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Solicitar Ficha catalogr&#xe1;fica"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btsolicitarfichaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btvisualizarficha">
       <Properties>
