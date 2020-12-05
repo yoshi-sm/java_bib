@@ -11,18 +11,17 @@ package modelo;
  */
 public class Evento {
     
-    private String nome;
-    private EspacoEvento espacoEvento;
+    private String nome;    
     private String data;
     private String assunto;
+    private EspacoEvento espacoEvento;
     
     public Evento() {}
     
     public Evento(String nome, String data, String assunto) {
         this.nome = nome;
-        this.data = data;
-        this.espacoEvento = espacoEvento;
-        this.assunto = assunto;
+        this.data = data;        
+        this.assunto = assunto;        
     }
     
     
@@ -34,14 +33,7 @@ public class Evento {
         this.nome = nome;
     }
 
-    public EspacoEvento getEspacoEvento() {
-        return espacoEvento;
-    }
-
-    public void setEspacoEvento(EspacoEvento espacoEvento) {
-        this.espacoEvento = espacoEvento;
-    }
-
+    
     public String getData() {
         return data;
     }
@@ -56,6 +48,14 @@ public class Evento {
 
     public void setAssunto(String assunto) {
         this.assunto = assunto;
+    }
+    
+    public EspacoEvento getEspacoEvento() {
+        return espacoEvento;
+    }
+
+    public void setEspacoEvento(EspacoEvento espacoEvento) {
+        this.espacoEvento = espacoEvento;
     }
 
     @Override

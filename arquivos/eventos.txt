@@ -1,2 +1,1 @@
-aaaaa%##%null%##%espacoEvento{nome=Sala 1, local=Biblioteca}%##%aaaaa
-terceira semana de computação do Uniesp%##%espacoEvento{nome=quadra geral, local=Uniesp}%##%03-02-2021%##%tudo sobre computação
+agora%##%teste%##%teste2%##%03-04-2020%##%testando

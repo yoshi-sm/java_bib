@@ -48,7 +48,7 @@ public class ListaEvento {
             leitor = new Scanner(arquivo);
             while (leitor.hasNextLine()) {
                 temp = leitor.nextLine();
-                temp2 = temp.split("%##%", 4);
+                temp2 = temp.split("%##%", 5);
                 System.out.print(temp2[0]);
                 evento = new Evento(temp2[0], temp2[1], temp2[2]);
                 this.lista.add(evento);
@@ -68,7 +68,8 @@ public class ListaEvento {
         FileWriter conteudo;
         for(int i = 0; i < this.lista.size(); i++){
             temp += this.lista.get(i).getNome()+"%##%"+
-                    this.lista.get(i).getEspacoEvento()+"%##%"+
+                    this.lista.get(i).getEspacoEvento().getNome()+"%##%"+
+                    this.lista.get(i).getEspacoEvento().getLocal()+"%##%"+
                     this.lista.get(i).getData()+"%##%"+
                     this.lista.get(i).getAssunto()+"\n";
         

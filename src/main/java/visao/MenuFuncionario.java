@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import modelo.EspacoEvento;
 import modelo.Evento;
+import modelo.ListaEspacoEvento;
 import modelo.ListaEvento;
 import modelo.ListaLivro;
 import modelo.ListaUsuario;
@@ -24,9 +25,11 @@ public class MenuFuncionario extends javax.swing.JFrame {
     String temp_string;
     ArrayList<Usuario> listaU = new ArrayList<>();
     ListaUsuario listusu = new ListaUsuario(listaU);
-    ArrayList<Evento> listaE = new ArrayList<>();
-    //ArrayList<> listaE = new ArrayList<>();
+    ArrayList<Evento> listaE = new ArrayList<>();    
     ListaEvento a1 = new ListaEvento(listaE);
+    ArrayList<EspacoEvento> listaS= new ArrayList<EspacoEvento>();
+    ListaEspacoEvento a2 = new ListaEspacoEvento(listaS);
+    
     
     
     
@@ -328,23 +331,25 @@ public class MenuFuncionario extends javax.swing.JFrame {
 
     private void btrelatoriolivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btrelatoriolivroActionPerformed
         
-        a1.carregarEventos();       
+        a1.carregarEventos();
+        a2.carregarEspacoEventos();
         temp_string = "";
         
         for(int i = 0; i < listaE.size(); i++){
                 String nome = listaE.get(i).getNome();
-                EspacoEvento espacoEvento = listaE.get(i).getEspacoEvento();
+                String nomeEvento = listaS.get(i).getNome();
+                String localEvento = listaS.get(i).getLocal();
                 String dataEvento = listaE.get(i).getData();
-                String assunto = listaE.get(i).getAssunto();
-                
+                String assunto = listaE.get(i).getAssunto();                
 
                 temp_string += "------------------------" + "\n" + 
                                 "|  Nome: " + nome + "\n" +
-                                "|  Local do Evento: " + espacoEvento + "\n" +
+                                "|  Nome do Evento: " + nomeEvento + "\n" +
+                                "|  Local do Evento: " + localEvento + "\n" +
                                 "|  Data do Evento: " + dataEvento + "\n" +
                                 "|  Assunto: " + assunto + "\n" +                        
                                 "------------------------" + "\n";
-                                        
+                                  
                try {
                 FileWriter escritor = new FileWriter("arquivos/Relatório_de_Eventos.txt");
                 escritor.write(temp_string);
